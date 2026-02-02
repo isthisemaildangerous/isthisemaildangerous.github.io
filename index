@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is This Email Dangerous? - Free Phishing Detection Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .email-box {
+            background: white;
+            color: #333;
+            padding: 20px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .email-copy {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .email-box span {
+            color: #667eea;
+        }
+        
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.6em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: #5568d3;
+        }
+        
+        .copy-btn.copied {
+            background: #48bb78;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .how-it-works {
+            background: #f8f9fa;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.3em;
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .security-features {
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.3em;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .example {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .example-box {
+            background: white;
+            color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .risk-score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #f5576c;
+            margin-bottom: 20px;
+        }
+        
+        .reasons {
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .reasons li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .cta {
+            background: #667eea;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .email-copy-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .email-copy-cta span {
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .cta-button.copied {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .support {
+            background: #fff4e6;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .support h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .support p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .support-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+        
+        .support-button:hover {
+            transform: scale(1.05);
+            background: #ee5a52;
+        }
+        
+        .feedback {
+            background: #f0f4ff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .feedback h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .feedback p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .email-highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .feedback-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 20px 0 10px 0;
+        }
+        
+        .feedback-button:hover {
+            transform: scale(1.05);
+            background: #5568d3;
+        }
+        
+        .feedback-button.copied {
+            background: #48bb78;
+        }
+        
+        .note {
+            font-size: 0.9em !important;
+            font-style: italic;
+            color: #888 !important;
+            margin-top: 10px !important;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+            }
+            
+            .email-box {
+                font-size: 1.2em;
+                padding: 15px 20px;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <img src="logo.png" alt="Is This Email Dangerous Logo" class="logo" onerror="this.style.display='none'">
+        <h1>Is This Email Dangerous?</h1>
+        <p>Free AI-powered phishing detection service</p>
+        <p>Protect yourself and your loved ones from email scams</p>
+        <div class="email-box">
+            Forward suspicious emails to:<br>
+            <div class="email-copy">
+                <span>isthisemaildangerous@gmail.com</span>
+                <button onclick="copyEmail()" class="copy-btn">Copy Email</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Forward the Email</h3>
+                    <p>Got a suspicious email? Simply forward it to isthisemaildangerous@gmail.com</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI (powered by Claude) instantly analyzes the email for phishing indicators</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Your Results</h3>
+                    <p>Receive a detailed safety report within minutes with a risk score and specific warnings</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="security-features">
+        <div class="container">
+            <h2 class="section-title">Security & Privacy First</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Auto-Delete After Processing</h3>
+                    <p>All forwarded emails are automatically deleted within 60 minutes after analysis. We don't store your data.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Prompt Injection Protection</h3>
+                    <p>Our system detects and blocks attempts to manipulate the AI or extract user information from malicious emails.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👤</div>
+                    <h3>User Anonymization</h3>
+                    <p>Your email address is sanitized before analysis. The AI never sees who's making the request.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚫</div>
+                    <h3>No Data Collection</h3>
+                    <p>We don't build profiles, track usage patterns, or sell data. Each analysis is independent and private.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rate Limiting</h3>
+                    <p>Protection against abuse with reasonable usage limits to ensure service availability for everyone.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Comprehensive Analysis</h3>
+                    <p>Checks sender authenticity, suspicious links, urgency tactics, spoofing attempts, and more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <div class="container">
+            <h2 class="section-title">Example Analysis</h2>
+            <div class="example-box">
+                <div class="risk-score">RISK SCORE: 9/10</div>
+                <p><strong>Highly likely to be dangerous - we recommend that you don't click on any links or open attachments</strong></p>
+                <div class="reasons">
+                    <p><strong>REASONS:</strong></p>
+                    <ul>
+                        <li>Sender email domain (secure-bank-verify.com) is not affiliated with any legitimate banking institution</li>
+                        <li>Creates false urgency by claiming account will be "suspended within 24 hours"</li>
+                        <li>Requests sensitive information (account credentials) through a suspicious link</li>
+                        <li>Contains multiple spelling and grammar errors uncommon in professional bank communications</li>
+                        <li>URL in the email points to a recently registered domain with no established reputation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h2>Try It Now - It's Free!</h2>
+        <p>Forward any suspicious email to get instant analysis</p>
+        <div class="email-copy-cta">
+            <span>isthisemaildangerous@gmail.com</span>
+            <button onclick="copyEmail()" class="cta-button">Copy Email Address</button>
+        </div>
+    </div>
+
+    <div class="support">
+        <h2>Support This Project</h2>
+        <p>Help us keep this service free and accessible to everyone</p>
+        <p>All contributions go towards API costs and service improvements</p>
+        <a href="https://buymeacoffee.com/isthisemaildangerous" class="support-button" target="_blank">Buy Me a Coffee ☕</a>
+    </div>
+
+    <div class="feedback">
+        <div class="container">
+            <h2>We'd Love Your Feedback</h2>
+            <p>Have thoughts or ideas on how we can improve this service?</p>
+            <p>Please email us at <span class="email-highlight">isthisemaildangerous@gmail.com</span></p>
+            <button onclick="copyEmail()" class="feedback-button">Copy Email Address</button>
+            <p class="note">(Don't worry - direct emails won't trigger a rating since they're not forwarded)</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>Disclaimer:</strong> This is an automated analysis tool and should be used as guidance only. Always use your best judgment and report suspicious emails to your IT department or email provider.</p>
+            <p style="margin-top: 20px;">Powered by Claude AI • © 2026 Is This Email Dangerous</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyEmail() {
+            const email = 'isthisemaildangerous@gmail.com';
+            navigator.clipboard.writeText(email).then(() => {
+                // Get all copy buttons on the page
+                const buttons = document.querySelectorAll('.copy-btn, .cta-button, .feedback-button');
+                buttons.forEach(btn => {
+                    const originalText = btn.textContent;
+                    btn.textContent = '✓ Copied!';
+                    btn.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            }).catch(err => {
+                alert('Failed to copy email. Please copy manually: isthisemaildangerous@gmail.com');
+            });
+        }
+    </script>
+</body>
+</html>
