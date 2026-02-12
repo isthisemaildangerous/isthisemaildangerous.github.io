@@ -421,7 +421,7 @@
         <div class="email-box">
             Forward suspicious emails to:<br>
             <div class="email-copy">
-                <span>tom@guardmyemail.com</span>
+                <span>scan@guardmyemail.com</span>
                 <button onclick="copyEmail()" class="copy-btn">Copy Email</button>
             </div>
         </div>
@@ -434,7 +434,7 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Forward the Email</h3>
-                    <p>Got a suspicious email? Simply forward it to tom@guardmyemail.com</p>
+                    <p>Got a suspicious email? Simply forward it to scan@guardmyemail.com</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
@@ -512,7 +512,7 @@
         <h2>Try It Now - It's Free!</h2>
         <p>Forward any suspicious email to get instant analysis</p>
         <div class="email-copy-cta">
-            <span>tom@guardmyemail.com</span>
+            <span>scan@guardmyemail.com</span>
             <button onclick="copyEmail()" class="cta-button">Copy Email Address</button>
         </div>
     </div>
@@ -528,7 +528,7 @@
         <div class="container">
             <h2>We'd Love Your Feedback</h2>
             <p>Have thoughts or ideas on how we can improve this service?</p>
-            <p>Please email us at <span class="email-highlight">tom@guardmyemail.com</span></p>
+            <p>Please email us at <span class="email-highlight">scan@guardmyemail.com</span></p>
             <button onclick="copyEmail()" class="feedback-button">Copy Email Address</button>
             <p class="note">(Don't worry - direct emails won't trigger a rating since they're not forwarded)</p>
         </div>
@@ -543,7 +543,7 @@
 
     <script>
         function copyEmail() {
-            const email = 'tom@guardmyemail.com';
+            const email = 'scan@guardmyemail.com';
             navigator.clipboard.writeText(email).then(() => {
                 // Get all copy buttons on the page
                 const buttons = document.querySelectorAll('.copy-btn, .cta-button, .feedback-button');
@@ -558,7 +558,7 @@
                     }, 2000);
                 });
             }).catch(err => {
-                alert('Failed to copy email. Please copy manually: tom@guardmyemail.com');
+                alert('Failed to copy email. Please copy manually: scan@guardmyemail.com');
             });
         }
     </script>
