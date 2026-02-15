@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Guard my email</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2C3E50 0%, #34A853 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .content-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        h2 {
+            color: #2C3E50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #34A853;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #2C3E50;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        a {
+            color: #34A853;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight-box {
+            background: #FFF9E6;
+            border-left: 4px solid #FBBC04;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo-96x96.png" alt="Guard my email" class="logo">
+            <div>
+                <a href="index.html" class="back-link">← Back to Home</a>
+                <h1>Terms of Service</h1>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content-card">
+            <p class="last-updated">Last Updated: February 12, 2025</p>
+            
+            <div class="highlight-box">
+                <strong>Quick Summary:</strong> By using Guard my email, you agree to let us analyze emails you choose to scan for phishing threats. We don't store your emails. You're responsible for how you use our service. We provide the service "as is" and aren't liable for damages. You can cancel anytime.
+            </div>
+            
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing or using Guard my email ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not use our Service.</p>
+            
+            <h2>2. Description of Service</h2>
+            <p>Guard my email provides AI-powered email security analysis to detect phishing attempts and malicious emails. Our Service includes:</p>
+            <ul>
+                <li>Gmail add-on for real-time email scanning</li>
+                <li>Email forwarding service for analysis</li>
+                <li>Risk assessment and recommendations</li>
+                <li>Phishing probability scoring</li>
+            </ul>
+            
+            <h2>3. User Accounts</h2>
+            
+            <h3>3.1 Account Creation</h3>
+            <p>To use our Service, you must:</p>
+            <ul>
+                <li>Be at least 13 years of age</li>
+                <li>Provide accurate, current, and complete information</li>
+                <li>Maintain the security of your account credentials</li>
+                <li>Notify us immediately of any unauthorized access</li>
+            </ul>
+            
+            <h3>3.2 Account Responsibility</h3>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>All activities under your account</li>
+                <li>Maintaining confidentiality of your password</li>
+                <li>Compliance with these Terms</li>
+            </ul>
+            
+            <h2>4. Acceptable Use</h2>
+            
+            <h3>4.1 Permitted Use</h3>
+            <p>You may use our Service to:</p>
+            <ul>
+                <li>Scan your own emails for security threats</li>
+                <li>Analyze emails you have permission to review</li>
+                <li>Improve your email security awareness</li>
+            </ul>
+            
+            <h3>4.2 Prohibited Use</h3>
+            <p>You may NOT:</p>
+            <ul>
+                <li>Scan emails without proper authorization</li>
+                <li>Use the Service for illegal activities</li>
+                <li>Attempt to circumvent security measures</li>
+                <li>Reverse engineer or copy our technology</li>
+                <li>Resell or redistribute the Service</li>
+                <li>Send malicious content to our Service</li>
+                <li>Abuse or overload our systems</li>
+                <li>Use the Service to spam or harass others</li>
+            </ul>
+            
+            <h2>5. Subscription and Payment</h2>
+            
+            <h3>5.1 Free Tier</h3>
+            <ul>
+                <li>Limited to 5 scans per month (email forwarding)</li>
+                <li>Subject to change with notice</li>
+                <li>May include promotional messages</li>
+            </ul>
+            
+            <h3>5.2 Paid Subscription</h3>
+            <ul>
+                <li>Billed monthly or annually</li>
+                <li>Prices displayed at time of purchase</li>
+                <li>Automatically renews unless canceled</li>
+                <li>No refunds for partial months</li>
+            </ul>
+            
+            <h3>5.3 Payment Terms</h3>
+            <ul>
+                <li>Valid payment method required</li>
+                <li>You authorize automatic charges</li>
+                <li>We may change prices with 30 days notice</li>
+                <li>Failed payments may result in service suspension</li>
+            </ul>
+            
+            <h3>5.4 Cancellation</h3>
+            <ul>
+                <li>Cancel anytime through account settings</li>
+                <li>Access continues until end of billing period</li>
+                <li>No refunds for unused time</li>
+            </ul>
+            
+            <h3>5.5 Refund Policy</h3>
+            <ul>
+                <li>14-day money-back guarantee for new subscribers</li>
+                <li>No refunds after 14 days</li>
+                <li>Refunds at our sole discretion for service issues</li>
+            </ul>
+            
+            <h2>6. Service Limitations</h2>
+            
+            <h3>6.1 No Guarantee of Accuracy</h3>
+            <p>While we strive for accuracy, we cannot guarantee:</p>
+            <ul>
+                <li>100% detection of all phishing attempts</li>
+                <li>Zero false positives or false negatives</li>
+                <li>Complete protection from email threats</li>
+                <li>Suggested recommendations are the best course of action</li>
+            </ul>
+            
+            <h3>6.2 Service Availability</h3>
+            <ul>
+                <li>We aim for 99.9% uptime but don't guarantee it</li>
+                <li>Maintenance may cause temporary interruptions</li>
+                <li>We may modify or discontinue features</li>
+            </ul>
+            
+            <h3>6.3 Usage Limits</h3>
+            <ul>
+                <li>Free tier: 5 scans/month</li>
+                <li>Paid tier: Unlimited (fair use policy applies)</li>
+                <li>We may throttle excessive usage</li>
+            </ul>
+            
+            <h2>7. User Content and Privacy</h2>
+            
+            <h3>7.1 Email Content</h3>
+            <ul>
+                <li>You grant us permission to analyze emails you submit</li>
+                <li>We process content temporarily and do not store it</li>
+                <li>See our Privacy Policy for details</li>
+            </ul>
+            
+            <h3>7.2 Your Responsibilities</h3>
+            <ul>
+                <li>Only scan emails you have permission to analyze</li>
+                <li>Ensure compliance with applicable laws</li>
+                <li>Do not submit sensitive personal data unnecessarily</li>
+            </ul>
+            
+            <h2>8. Intellectual Property</h2>
+            
+            <h3>8.1 Our Rights</h3>
+            <p>We own all rights to:</p>
+            <ul>
+                <li>The Service and its technology</li>
+                <li>Our logos, trademarks, and branding</li>
+                <li>All content we create</li>
+                <li>Our algorithms and analysis methods</li>
+            </ul>
+            
+            <h3>8.2 Your Rights</h3>
+            <ul>
+                <li>You retain all rights to your email content</li>
+                <li>We claim no ownership of your data</li>
+            </ul>
+            
+            <h2>9. Disclaimers</h2>
+            
+            <h3>9.1 "AS IS" Service</h3>
+            <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
+            <ul>
+                <li>Merchantability</li>
+                <li>Fitness for a particular purpose</li>
+                <li>Non-infringement</li>
+                <li>Accuracy or reliability</li>
+            </ul>
+            
+            <h3>9.2 No Guarantee</h3>
+            <p>We do not guarantee that:</p>
+            <ul>
+                <li>The Service will meet your requirements</li>
+                <li>The Service will be uninterrupted or error-free</li>
+                <li>All phishing attempts will be detected</li>
+                <li>Results will always be accurate</li>
+            </ul>
+            
+            <h2>10. Limitation of Liability</h2>
+            
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
+            
+            <h3>10.1 No Liability for Damages</h3>
+            <p>WE ARE NOT LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING:</p>
+            <ul>
+                <li>Lost profits or revenue</li>
+                <li>Data loss</li>
+                <li>Business interruption</li>
+                <li>Phishing attacks not detected</li>
+                <li>Harm from false positives or negatives</li>
+            </ul>
+            
+            <h3>10.2 Maximum Liability</h3>
+            <p>Our total liability shall not exceed the amount you paid us in the 12 months before the claim, or $100, whichever is greater.</p>
+            
+            <h2>11. Indemnification</h2>
+            <p>You agree to indemnify and hold us harmless from any claims, damages, or expenses arising from:</p>
+            <ul>
+                <li>Your use of the Service</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any law or rights of others</li>
+                <li>Your unauthorized scanning of emails</li>
+            </ul>
+            
+            <h2>12. Third-Party Services</h2>
+            <p>Our Service uses third-party providers:</p>
+            <ul>
+                <li><strong>Anthropic (Claude AI):</strong> For email analysis</li>
+                <li><strong>Payment processors:</strong> For billing</li>
+                <li><strong>Google Cloud Platform:</strong> For infrastructure</li>
+            </ul>
+            <p>Their terms and policies also apply.</p>
+            
+            <h2>13. Termination</h2>
+            
+            <h3>13.1 By You</h3>
+            <ul>
+                <li>Cancel your subscription anytime</li>
+                <li>Delete your account through settings</li>
+            </ul>
+            
+            <h3>13.2 By Us</h3>
+            <p>We may suspend or terminate your account if:</p>
+            <ul>
+                <li>You violate these Terms</li>
+                <li>Your account is inactive for 12+ months</li>
+                <li>We discontinue the Service</li>
+                <li>Required by law</li>
+                <li>You engage in abusive behavior</li>
+            </ul>
+            
+            <h3>13.3 Effect of Termination</h3>
+            <ul>
+                <li>Your right to use the Service ends immediately</li>
+                <li>We may delete your account data</li>
+                <li>Provisions that should survive will remain in effect</li>
+            </ul>
+            
+            <h2>14. Changes to Terms</h2>
+            <p>We may modify these Terms at any time:</p>
+            <ul>
+                <li>Changes posted on this page with updated date</li>
+                <li>Material changes notified via email</li>
+                <li>Continued use constitutes acceptance</li>
+                <li>If you disagree, stop using the Service</li>
+            </ul>
+            
+            <h2>15. Changes to Service</h2>
+            <p>We reserve the right to:</p>
+            <ul>
+                <li>Modify or discontinue features</li>
+                <li>Change pricing with notice</li>
+                <li>Update the Service technology</li>
+                <li>Discontinue the Service entirely</li>
+            </ul>
+            
+            <h2>16. Governing Law</h2>
+            <p>These Terms are governed by the laws of [Your State/Country], without regard to conflict of law principles.</p>
+            
+            <h2>17. Dispute Resolution</h2>
+            
+            <h3>17.1 Informal Resolution</h3>
+            <p>Contact us first to resolve disputes informally: support@guardmyemail.com</p>
+            
+            <h3>17.2 Arbitration</h3>
+            <p>Disputes not resolved informally shall be settled by binding arbitration under the rules of [Arbitration Organization].</p>
+            
+            <h3>17.3 Class Action Waiver</h3>
+            <p>You agree to resolve disputes individually, not as part of a class action.</p>
+            
+            <h2>18. Miscellaneous</h2>
+            
+            <h3>18.1 Entire Agreement</h3>
+            <p>These Terms constitute the entire agreement between you and Guard my email.</p>
+            
+            <h3>18.2 Severability</h3>
+            <p>If any provision is found invalid, the remaining provisions remain in effect.</p>
+            
+            <h3>18.3 No Waiver</h3>
+            <p>Our failure to enforce any right doesn't waive that right.</p>
+            
+            <h3>18.4 Assignment</h3>
+            <p>You cannot transfer your rights. We may transfer ours with notice.</p>
+            
+            <h2>19. Contact Information</h2>
+            <p>For questions about these Terms:</p>
+            <ul>
+                <li><strong>Email:</strong> legal@guardmyemail.com</li>
+                <li><strong>Support:</strong> support@guardmyemail.com</li>
+                <li><strong>Website:</strong> <a href="https://guardmyemail.com">guardmyemail.com</a></li>
+            </ul>
+            
+            <h2>20. Acknowledgment</h2>
+            <p>By using Guard my email, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Guard my email. All rights reserved.</p>
+        <p>
+            <a href="index.html">Home</a> | 
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="mailto:support@guardmyemail.com">Contact</a>
+        </p>
+    </footer>
+</body>
+</html>
