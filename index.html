@@ -532,13 +532,59 @@
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <p><strong>Disclaimer:</strong> This is an automated analysis tool and should be used as guidance only. Always use your best judgment and report suspicious emails to your IT department or email provider.</p>
-            <p style="margin-top: 20px;">Powered by Claude AI • © 2026 Guard My Email</p>
-        </div>
-    </footer>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Guard my email. All rights reserved.</p>
+        <nav class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="mailto:support@guardmyemail.com">Contact</a>
+        </nav>
+    </div>
+</footer>
 
+<style>
+footer {
+    background: #2C3E50;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #34A853;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+</style>
     <script>
         function copyEmail() {
             const email = 'scan@guardmyemail.com';
