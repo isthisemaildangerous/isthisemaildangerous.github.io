@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Guard my email</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2C3E50 0%, #34A853 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .content-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        h2 {
+            color: #2C3E50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #34A853;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #2C3E50;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        a {
+            color: #34A853;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo-96x96.png" alt="Guard my email" class="logo">
+            <div>
+                <a href="index.html" class="back-link">← Back to Home</a>
+                <h1>Privacy Policy</h1>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content-card">
+            <p class="last-updated">Last Updated: February 12, 2025</p>
+            
+            <h2>1. Introduction</h2>
+            <p>Guard my email ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our email security service and Gmail add-on.</p>
+            
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 Email Content (Temporary Processing Only)</h3>
+            <p>When you scan an email using our service:</p>
+            <ul>
+                <li>We temporarily process the email content (sender, subject, body, headers) to analyze phishing threats</li>
+                <li>This data is sent to Claude AI (Anthropic) for analysis</li>
+                <li><strong>We do NOT store or retain any email content after analysis is complete</strong></li>
+                <li>Email content is processed in real-time and immediately discarded</li>
+            </ul>
+            
+            <h3>2.2 Account Information</h3>
+            <p>We collect:</p>
+            <ul>
+                <li>Email address (for account authentication)</li>
+                <li>Google account ID (for Gmail add-on integration)</li>
+                <li>Usage statistics (number of scans, timestamps)</li>
+                <li>Subscription/payment information (if you use paid features)</li>
+            </ul>
+            
+            <h3>2.3 Technical Information</h3>
+            <ul>
+                <li>IP address</li>
+                <li>Browser type and version</li>
+                <li>Device information</li>
+                <li>Error logs and performance data</li>
+            </ul>
+            
+            <h2>3. How We Use Your Information</h2>
+            <p>We use collected information to:</p>
+            <ul>
+                <li>Provide phishing detection and email security analysis</li>
+                <li>Authenticate your account and manage subscriptions</li>
+                <li>Improve our service quality and detection accuracy</li>
+                <li>Send service updates and security notifications</li>
+                <li>Comply with legal obligations</li>
+                <li>Detect and prevent fraud or abuse</li>
+            </ul>
+            
+            <h2>4. Data Sharing and Third Parties</h2>
+            
+            <h3>4.1 Anthropic (Claude AI)</h3>
+            <p>Email content is sent to Anthropic's Claude API for AI-powered phishing analysis. Anthropic's privacy policy applies to this processing: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a></p>
+            
+            <h3>4.2 We Do NOT:</h3>
+            <ul>
+                <li>Sell your personal information to third parties</li>
+                <li>Share your email content with advertisers</li>
+                <li>Use your emails for marketing purposes</li>
+                <li>Store your email content beyond the analysis session</li>
+            </ul>
+            
+            <h3>4.3 We May Share Information With:</h3>
+            <ul>
+                <li>Service providers (hosting, payment processing, analytics)</li>
+                <li>Legal authorities (when required by law)</li>
+                <li>Business partners (with your explicit consent)</li>
+            </ul>
+            
+            <h2>5. Data Retention</h2>
+            <ul>
+                <li><strong>Email Content:</strong> Not stored (processed in real-time only)</li>
+                <li><strong>Account Information:</strong> Retained while your account is active</li>
+                <li><strong>Usage Statistics:</strong> Retained for 12 months</li>
+                <li><strong>Payment Records:</strong> Retained for 7 years (legal requirement)</li>
+            </ul>
+            
+            <h2>6. Data Security</h2>
+            <p>We implement industry-standard security measures:</p>
+            <ul>
+                <li>End-to-end encryption for data transmission</li>
+                <li>Secure HTTPS connections</li>
+                <li>Regular security audits</li>
+                <li>Access controls and authentication</li>
+                <li>SOC 2 compliant infrastructure</li>
+            </ul>
+            
+            <h2>7. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your personal data</li>
+                <li><strong>Correction:</strong> Update inaccurate information</li>
+                <li><strong>Deletion:</strong> Request deletion of your account and data</li>
+                <li><strong>Portability:</strong> Receive your data in a machine-readable format</li>
+                <li><strong>Opt-out:</strong> Unsubscribe from marketing communications</li>
+                <li><strong>Withdraw Consent:</strong> Revoke permissions at any time</li>
+            </ul>
+            
+            <h2>8. GDPR Compliance (EU Users)</h2>
+            <p>If you are in the European Union:</p>
+            <ul>
+                <li>We process data under legitimate interest and consent legal bases</li>
+                <li>You have additional rights under GDPR</li>
+                <li>Data transfers outside the EU use Standard Contractual Clauses</li>
+                <li>Contact our Data Protection Officer at privacy@guardmyemail.com</li>
+            </ul>
+            
+            <h2>9. CCPA Compliance (California Users)</h2>
+            <p>California residents have the right to:</p>
+            <ul>
+                <li>Know what personal information is collected</li>
+                <li>Know if personal information is sold or disclosed</li>
+                <li>Opt-out of the sale of personal information (we don't sell data)</li>
+                <li>Request deletion of personal information</li>
+                <li>Non-discrimination for exercising privacy rights</li>
+            </ul>
+            
+            <h2>10. Children's Privacy</h2>
+            <p>Our service is not directed to children under 13. We do not knowingly collect information from children under 13. If we discover such collection, we will delete the information immediately.</p>
+            
+            <h2>11. Gmail Add-on Specific</h2>
+            <p>Our Gmail add-on:</p>
+            <ul>
+                <li>Only accesses emails you explicitly choose to scan</li>
+                <li>Requires minimal permissions (read current message only)</li>
+                <li>Does not access your entire inbox</li>
+                <li>Does not read, store, or access emails you don't scan</li>
+                <li>Complies with Google's API Services User Data Policy</li>
+            </ul>
+            
+            <h2>12. Cookies and Tracking</h2>
+            <p>We use:</p>
+            <ul>
+                <li><strong>Essential Cookies:</strong> For authentication and service functionality</li>
+                <li><strong>Analytics Cookies:</strong> To understand service usage (can be opted out)</li>
+                <li><strong>No Advertising Cookies:</strong> We do not use cookies for advertising</li>
+            </ul>
+            
+            <h2>13. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy periodically. We will notify you of significant changes via:</p>
+            <ul>
+                <li>Email notification</li>
+                <li>In-app notification</li>
+                <li>Website banner</li>
+            </ul>
+            <p>Continued use after changes constitutes acceptance of the updated policy.</p>
+            
+            <h2>14. Contact Us</h2>
+            <p>For privacy-related questions or requests:</p>
+            <ul>
+                <li><strong>Email:</strong> privacy@guardmyemail.com</li>
+                <li><strong>Support:</strong> support@guardmyemail.com</li>
+                <li><strong>Website:</strong> <a href="https://guardmyemail.com">guardmyemail.com</a></li>
+                <li><strong>Response Time:</strong> We respond to requests within 30 days</li>
+            </ul>
+            
+            <h2>15. Data Protection Officer</h2>
+            <p>For EU users, contact our Data Protection Officer:</p>
+            <p>Email: dpo@guardmyemail.com</p>
+            
+            <h2>16. Supervisory Authority</h2>
+            <p>EU users have the right to lodge a complaint with their local supervisory authority if they believe their data protection rights have been violated.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Guard my email. All rights reserved.</p>
+        <p>
+            <a href="index.html">Home</a> | 
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="mailto:support@guardmyemail.com">Contact</a>
+        </p>
+    </footer>
+</body>
+</html>
