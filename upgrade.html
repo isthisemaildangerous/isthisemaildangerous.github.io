@@ -797,8 +797,8 @@
     <!-- Stripe Checkout Script -->
     <script src="https://js.stripe.com/v3/"></script>
     <script>
-        // Initialize Stripe (replace with your actual publishable key)
-        const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY');
+        // Initialize Stripe
+        const stripe = Stripe('pk_test_51T1EWPE5ASSFcjhgJCpTl0eVA7Yl2pqykGBXE8CGbJ6uaalKkqXqGdbzKur04YjCBIjdJ9pz6mfZBJtq07GMKYO400dGDeZ6U7');
         
         // Get user email if available (from URL parameter or localStorage)
         const urlParams = new URLSearchParams(window.location.search);
@@ -824,7 +824,7 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        priceId: 'price_monthly_YOUR_PRICE_ID', // Replace with actual Stripe price ID
+                        priceId: 'price_1T1EpWE5ASSFcjhgbRJB7hwK',
                         customerEmail: userEmail,
                         mode: 'subscription'
                     })
@@ -858,7 +858,7 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        priceId: 'price_annual_YOUR_PRICE_ID', // Replace with actual Stripe price ID
+                        priceId: 'price_1T1EqDE5ASSFcjhgtf8nkyN5',
                         customerEmail: userEmail,
                         mode: 'subscription'
                     })
