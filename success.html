@@ -3,56 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Successful! - Guard my email</title>
+    <title>Welcome to Premium! - Guard my email</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: sans-serif;
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #2C3E50 0%, #34A853 100%);
             color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
         .success-box {
             background: white;
             color: #333;
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 700px;
             padding: 60px 40px;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .icon { font-size: 5rem; margin-bottom: 2rem; }
-        a { 
+        h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+            color: #2C3E50; 
+        }
+        .icon { 
+            font-size: 5rem; 
+            margin-bottom: 2rem; 
+        }
+        p { 
+            font-size: 1.125rem; 
+            margin-bottom: 1rem; 
+            line-height: 1.6; 
+        }
+        .steps {
+            background: #F9FAFB;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        .steps h2 {
+            color: #2C3E50;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .step {
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #34A853;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        .step strong {
+            color: #2C3E50;
+            display: block;
+            margin-bottom: 5px;
+        }
+        a.button { 
             display: inline-block;
             background: #34A853;
             color: white;
-            padding: 15px 40px;
+            padding: 18px 40px;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-top: 2rem;
             font-weight: bold;
+            font-size: 1.125rem;
+            transition: all 0.3s;
+        }
+        a.button:hover {
+            background: #2E7D32;
+            transform: scale(1.02);
+        }
+        .help {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #E5E7EB;
+            color: #666;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
     <div class="success-box">
-        <div class="icon">🎉</div>
-        <h1>Welcome to Premium!</h1>
-        <p>Your payment was successful. You now have unlimited email scans!</p>
-        <p>Check your email for your receipt and welcome message.</p>
-        <a href="index.html">Go to Dashboard →</a>
-    </div>
-    
-    <script>
-        // Get session ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const sessionId = urlParams.get('session_id');
+        <div style="text-align: center;">
+            <div class="icon">🎉</div>
+            <h1>Welcome to Premium!</h1>
+            <p><strong>Your payment was successful!</strong> You now have unlimited phishing scans.</p>
+        </div>
         
-        // Optional: Verify the session with your backend
-        if (sessionId) {
-            console.log('Payment session:', sessionId);
-        }
-    </script>
+        <div class="steps">
+            <h2>📲 Next Steps: Install the Gmail Add-on</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <strong>Click the install button below</strong>
+                <span>This will open the add-on installation page</span>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <strong>Click "Install"</strong>
+                <span>Grant the necessary permissions when prompted</span>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <strong>Open Gmail</strong>
+                <span>Look for "Guard my email" in the right sidebar</span>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <strong>Start scanning!</strong>
+                <span>Open any email and click "Scan now" - unlimited scans for you!</span>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="ADD_YOUR_INSTALL_LINK_HERE" class="button">
+                🛡️ Install Gmail Add-on Now
+            </a>
+        </div>
+        
+        <div class="help">
+            <strong>Need help?</strong><br>
+            Email us at <a href="mailto:support@guardmyemail.com">support@guardmyemail.com</a><br>
+            Check your email for your receipt and welcome message.
+        </div>
+    </div>
 </body>
 </html>
