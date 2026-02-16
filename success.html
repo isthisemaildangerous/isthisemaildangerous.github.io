@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful! - Guard my email</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .success-box {
+            background: white;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .icon { font-size: 5rem; margin-bottom: 2rem; }
+        a { 
+            display: inline-block;
+            background: #34A853;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-box">
+        <div class="icon">🎉</div>
+        <h1>Welcome to Premium!</h1>
+        <p>Your payment was successful. You now have unlimited email scans!</p>
+        <p>Check your email for your receipt and welcome message.</p>
+        <a href="index.html">Go to Dashboard →</a>
+    </div>
+    
+    <script>
+        // Get session ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        
+        // Optional: Verify the session with your backend
+        if (sessionId) {
+            console.log('Payment session:', sessionId);
+        }
+    </script>
+</body>
+</html>
