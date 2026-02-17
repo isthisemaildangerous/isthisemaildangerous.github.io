@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guard My Email - Free Phishing Detection Service</title>
   
-  <link rel="icon" type="image/png" sizes="32x32" href="/logo-favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/logo-favicon-16x16.png">
-  <link rel="shortcut icon" href="/logo-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo-favicon-16x16.png">
+    <link rel="shortcut icon" href="/logo-favicon-32x32.png">
     <style>
         * {
             margin: 0;
@@ -207,7 +207,231 @@
             color: #666;
             line-height: 1.8;
         }
-        
+
+        /* Mobile Support Section */
+        .mobile-support {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-support::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(84, 203, 95, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .mobile-support .section-title {
+            color: white;
+        }
+
+        .mobile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .mobile-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .mobile-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.12);
+        }
+
+        .mobile-card .platform-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .badge-android {
+            background: rgba(61, 220, 132, 0.2);
+            color: #3DDC84;
+            border: 1px solid rgba(61, 220, 132, 0.3);
+        }
+
+        .badge-ios {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .badge-all {
+            background: rgba(84, 203, 95, 0.2);
+            color: #54cb5f;
+            border: 1px solid rgba(84, 203, 95, 0.3);
+        }
+
+        .mobile-card .platform-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .mobile-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .mobile-card p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        .mobile-card .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dot-green { background: #54cb5f; }
+        .dot-yellow { background: #FBBC04; }
+        .dot-blue { background: #4285F4; }
+
+        /* Freemium Section */
+        .freemium {
+            background: white;
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .plan-card {
+            border-radius: 16px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .plan-free {
+            background: #f8f9fa;
+            border: 2px solid #E5E7EB;
+        }
+
+        .plan-premium {
+            background: linear-gradient(135deg, #2C3E50 0%, #34A853 100%);
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .plan-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .plan-premium h3 { color: white; }
+        .plan-free h3 { color: #213455; }
+
+        .plan-price {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin: 15px 0 5px 0;
+        }
+
+        .plan-premium .plan-price { color: white; }
+        .plan-free .plan-price { color: #213455; }
+
+        .plan-period {
+            font-size: 0.9em;
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .plan-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .plan-premium .plan-features li {
+            border-bottom-color: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .plan-free .plan-features li { color: #555; }
+
+        .plan-btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1em;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .plan-btn-free {
+            background: #213455;
+            color: white;
+        }
+
+        .plan-btn-free:hover {
+            background: #1a2a44;
+        }
+
+        .plan-btn-premium {
+            background: white;
+            color: #2C3E50;
+        }
+
+        .plan-btn-premium:hover {
+            background: #f0f0f0;
+            transform: scale(1.02);
+        }
+
         .example {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
@@ -227,17 +451,6 @@
             font-weight: bold;
             color: #f5576c;
             margin-bottom: 20px;
-        }
-        
-        .reasons {
-            text-align: left;
-            margin-top: 20px;
-            list-style-position: inside;
-        }
-        
-        .reasons li {
-            margin-bottom: 10px;
-            line-height: 1.6;
         }
         
         .cta {
@@ -377,14 +590,36 @@
         }
         
         footer {
-            background: #213455;
+            background: #2C3E50;
             color: white;
+            padding: 40px 20px;
             text-align: center;
-            padding: 30px 20px;
+            margin-top: 0;
         }
-        
-        footer p {
-            opacity: 0.8;
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #34A853;
+            text-decoration: underline;
         }
         
         @media (max-width: 768px) {
@@ -408,6 +643,11 @@
             .section-title {
                 font-size: 2em;
             }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -425,6 +665,7 @@
         </div>
     </div>
 
+    <!-- How It Works -->
     <div class="how-it-works">
         <div class="container">
             <h2 class="section-title">How It Works</h2>
@@ -448,6 +689,113 @@
         </div>
     </div>
 
+    <!-- Freemium Plans -->
+    <div class="freemium">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="plan-grid">
+
+                <div class="plan-card plan-free">
+                    <h3>Free</h3>
+                    <div class="plan-price">$0</div>
+                    <div class="plan-period">Forever free</div>
+                    <ul class="plan-features">
+                        <li>✉️ 5 email forwards/month</li>
+                        <li>🛡️ AI phishing detection</li>
+                        <li>📊 Risk score & reasons</li>
+                        <li>🔒 Private & secure</li>
+                    </ul>
+                    <button onclick="copyEmail()" class="plan-btn plan-btn-free">
+                        Start for Free
+                    </button>
+                </div>
+
+                <div class="plan-card plan-premium">
+                    <h3>Premium</h3>
+                    <div class="plan-price">$4.99</div>
+                    <div class="plan-period">/month · Cancel anytime</div>
+                    <ul class="plan-features">
+                        <li>✉️ Unlimited email forwards</li>
+                        <li>⚡ Gmail add-on (instant results)</li>
+                        <li>📱 Android Gmail app support</li>
+                        <li>🛡️ All free features included</li>
+                        <li>💬 Priority support</li>
+                    </ul>
+                    <a href="upgrade.html" class="plan-btn plan-btn-premium">
+                        Upgrade to Premium
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Support -->
+    <div class="mobile-support">
+        <div class="container">
+            <h2 class="section-title">📱 Mobile Support</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.7); max-width: 600px; margin: -30px auto 0; font-size: 1.1em;">
+                Guard my email works across all your devices
+            </p>
+
+            <div class="mobile-grid">
+
+                <div class="mobile-card">
+                    <span class="platform-badge badge-all">✉️ All Devices</span>
+                    <span class="platform-icon">📧</span>
+                    <h3>Email Forwarding</h3>
+                    <p>Works on every device and email client. Simply forward any suspicious email to scan@guardmyemail.com and receive an analysis reply.</p>
+                    <div class="status">
+                        <div class="status-dot dot-green"></div>
+                        <span style="color: #54cb5f;">Available on all devices</span>
+                    </div>
+                </div>
+
+                <div class="mobile-card">
+                    <span class="platform-badge badge-android">🤖 Android</span>
+                    <span class="platform-icon">📱</span>
+                    <h3>Gmail Add-on</h3>
+                    <p>Premium subscribers get the full Gmail add-on experience on Android. Scan any email with one tap - results appear instantly in the Gmail app.</p>
+                    <div class="status">
+                        <div class="status-dot dot-green"></div>
+                        <span style="color: #3DDC84;">Full add-on support</span>
+                    </div>
+                </div>
+
+                <div class="mobile-card">
+                    <span class="platform-badge badge-ios">🍎 iPhone & iPad</span>
+                    <span class="platform-icon">📲</span>
+                    <h3>Email Forwarding</h3>
+                    <p>Gmail add-ons are not supported on iOS by Apple. iPhone and iPad users can use our email forwarding service, which works perfectly from the Gmail or Apple Mail app.</p>
+                    <div class="status">
+                        <div class="status-dot dot-yellow"></div>
+                        <span style="color: #FBBC04;">Forwarding service available</span>
+                    </div>
+                </div>
+
+                <div class="mobile-card">
+                    <span class="platform-badge badge-all">💻 Desktop</span>
+                    <span class="platform-icon">🖥️</span>
+                    <h3>Gmail Add-on + Forwarding</h3>
+                    <p>The full experience. Premium subscribers get the Gmail sidebar add-on for instant one-click scanning alongside the email forwarding service.</p>
+                    <div class="status">
+                        <div class="status-dot dot-blue"></div>
+                        <span style="color: #4285F4;">Full experience available</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding: 25px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.95em;">
+                    💡 <strong style="color: white;">iPhone users:</strong> Forward suspicious emails to 
+                    <strong style="color: #54cb5f;">scan@guardmyemail.com</strong> from your Gmail or Apple Mail app — it works exactly the same way!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Features -->
     <div class="security-features">
         <div class="container">
             <h2 class="section-title">Security & Privacy First</h2>
@@ -474,8 +822,8 @@
                 </div>
                 <div class="feature">
                     <div class="feature-icon">⚡</div>
-                    <h3>Rate Limiting</h3>
-                    <p>Protection against abuse with reasonable usage limits to ensure service availability for everyone.</p>
+                    <h3>Usage Limits</h3>
+                    <p>Free users get 5 scans per month. Upgrade to Premium for unlimited scans across all platforms.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🔍</div>
@@ -486,6 +834,7 @@
         </div>
     </div>
 
+    <!-- Example -->
     <div class="example">
         <div class="container">
             <h2 class="section-title">Example Analysis</h2>
@@ -506,15 +855,20 @@
         </div>
     </div>
 
+    <!-- CTA -->
     <div class="cta">
         <h2>Try It Now - It's Free!</h2>
-        <p>Forward any suspicious email to get instant analysis</p>
+        <p>Forward any suspicious email to get instant analysis. 5 free scans per month.</p>
         <div class="email-copy-cta">
             <span>scan@guardmyemail.com</span>
             <button onclick="copyEmail()" class="cta-button">Copy Email Address</button>
         </div>
+        <p style="margin-top: 20px; opacity: 0.8; font-size: 0.95em;">
+            Need more? <a href="upgrade.html" style="color: white; font-weight: bold; text-decoration: underline;">Upgrade to Premium</a> for unlimited scans.
+        </p>
     </div>
 
+    <!-- Support -->
     <div class="support">
         <h2>Support This Project</h2>
         <p>Help us keep this service free and accessible to everyone</p>
@@ -522,75 +876,33 @@
         <a href="https://buymeacoffee.com/guardmyemail" class="support-button" target="_blank">Buy Me a Coffee ☕</a>
     </div>
 
+    <!-- Feedback -->
     <div class="feedback">
         <div class="container">
             <h2>We'd Love Your Feedback</h2>
             <p>Have thoughts or ideas on how we can improve this service?</p>
-            <p>Please email us at <span class="email-highlight">scan@guardmyemail.com</span></p>
-            <button onclick="copyEmail()" class="feedback-button">Copy Email Address</button>
+            <p>Please email us at <span class="email-highlight">support@guardmyemail.com</span></p>
             <p class="note">(Don't worry - direct emails won't trigger a rating since they're not forwarded)</p>
         </div>
     </div>
 
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Guard my email. All rights reserved.</p>
-        <nav class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="upgrade.html">Pricing</a>
-            <a href="mailto:support@guardmyemail.com">Contact</a>
-        </nav>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Guard my email. All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="upgrade.html">Pricing</a>
+                <a href="mailto:support@guardmyemail.com">Contact</a>
+            </nav>
+        </div>
+    </footer>
 
-<style>
-footer {
-    background: #2C3E50;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 80px;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-links {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #34A853;
-    text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
-</style>
     <script>
         function copyEmail() {
             const email = 'scan@guardmyemail.com';
             navigator.clipboard.writeText(email).then(() => {
-                // Get all copy buttons on the page
                 const buttons = document.querySelectorAll('.copy-btn, .cta-button, .feedback-button');
                 buttons.forEach(btn => {
                     const originalText = btn.textContent;
