@@ -683,6 +683,36 @@
             font-weight: 600;
         }
         
+        .clickable-email {
+            display: inline-block;
+            background: #E8F5E9;
+            color: #2E7D32;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid #A5D6A7;
+            margin-top: 5px;
+        }
+        
+        .clickable-email:hover {
+            background: #C8E6C9;
+            border-color: #66BB6A;
+            transform: scale(1.02);
+        }
+        
+        .clickable-email:active {
+            transform: scale(0.98);
+        }
+        
+        .clickable-email.copied {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+        
         .tooltip-copy-btn {
             background: #34A853;
             color: white;
@@ -835,7 +865,11 @@
                             <div class="tooltip-arrow"></div>
                             <h4>How to Get Started:</h4>
                             <ol>
-                                <li>Copy this email address:<br><strong>scan@guardmyemail.com</strong></li>
+                                <li>Copy this email address:<br>
+                                    <span class="clickable-email" onclick="copyEmailFromTooltip(this)" title="Click to copy">
+                                        scan@guardmyemail.com
+                                    </span>
+                                </li>
                                 <li>Forward any suspicious email to it</li>
                                 <li>Get instant analysis in your inbox</li>
                             </ol>
@@ -1052,12 +1086,33 @@
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="upgrade.html">Pricing</a>
-                <a href="mailto:support@guardmyemail.com">Contact</a>
+                <a href="/cdn-cgi/l/email-protection#9be8eeebebf4e9efdbfceefae9fff6e2fef6faf2f7b5f8f4f6">Contact</a>
             </nav>
         </div>
     </footer>
 
     <script>
+        // Define tooltip functions first for immediate availability
+        function showHowToStart() {
+            const tooltip = document.querySelector('.how-to-tooltip');
+            tooltip.classList.add('show');
+            
+            // Close tooltip when clicking outside
+            setTimeout(() => {
+                document.addEventListener('click', closeTooltipOnClickOutside);
+            }, 100);
+        }
+        
+        function closeTooltipOnClickOutside(event) {
+            const tooltip = document.querySelector('.how-to-tooltip');
+            const button = document.querySelector('.plan-btn-free');
+            
+            if (!tooltip.contains(event.target) && !button.contains(event.target)) {
+                tooltip.classList.remove('show');
+                document.removeEventListener('click', closeTooltipOnClickOutside);
+            }
+        }
+        
         function copyEmail() {
             const email = 'scan@guardmyemail.com';
             navigator.clipboard.writeText(email).then(() => {
@@ -1075,17 +1130,6 @@
             }).catch(err => {
                 alert('Failed to copy email. Please copy manually: scan@guardmyemail.com');
             });
-        }
-        
-        // Show how-to tooltip
-        function showHowToStart() {
-            const tooltip = document.querySelector('.how-to-tooltip');
-            tooltip.classList.add('show');
-            
-            // Close tooltip when clicking outside
-            setTimeout(() => {
-                document.addEventListener('click', closeTooltipOnClickOutside);
-            }, 100);
         }
         
         // Copy email and close tooltip
@@ -1110,15 +1154,22 @@
             });
         }
         
-        // Close tooltip when clicking outside
-        function closeTooltipOnClickOutside(event) {
-            const tooltip = document.querySelector('.how-to-tooltip');
-            const button = document.querySelector('.plan-btn-free');
+        // Copy email when clicking on it in tooltip
+        function copyEmailFromTooltip(element) {
+            const email = 'scan@guardmyemail.com';
             
-            if (!tooltip.contains(event.target) && !button.contains(event.target)) {
-                tooltip.classList.remove('show');
-                document.removeEventListener('click', closeTooltipOnClickOutside);
-            }
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = element.textContent;
+                element.textContent = '✓ Copied!';
+                element.classList.add('copied');
+                
+                setTimeout(() => {
+                    element.textContent = originalText;
+                    element.classList.remove('copied');
+                }, 1500);
+            }).catch(err => {
+                alert('Failed to copy. Please copy manually: scan@guardmyemail.com');
+            });
         }
         
         // Handle enterprise form submission
@@ -1155,7 +1206,7 @@ Please follow up within 24 hours.`;
                 // Show success message
                 setTimeout(() => {
                     submitButton.textContent = '✓ Request Sent!';
-                    submitButton.style.background = '#34A853';
+                    submitButton.style.background = '#2C3E50';
                     
                     setTimeout(() => {
                         submitButton.textContent = originalText;
@@ -1166,11 +1217,4 @@ Please follow up within 24 hours.`;
                 }, 500);
                 
             } catch (error) {
-                alert('Error sending request. Please email us directly at support@guardmyemail.com');
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }
-        });
-    </script>
-</body>
-</html>
+                alert('Error s
