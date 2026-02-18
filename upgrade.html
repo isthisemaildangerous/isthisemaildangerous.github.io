@@ -1004,7 +1004,7 @@
         }
         
         // Initialize Stripe (replace with your actual publishable key)
-        const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY');
+        const stripe = Stripe('pk_live_51T1EWCE0mK6l668HqMzfQcEETetLzZw7BenTal28MvymPFHPkwuj6BvE3ul0k8OaFdQCikEiCwQp55U1zyNnna8700sZgHFE6Q');
         
         // Get user email if available (from URL parameter or localStorage)
         const urlParams = new URLSearchParams(window.location.search);
@@ -1024,13 +1024,13 @@
             
             try {
                 // Call your backend to create a Stripe Checkout session
-                const response = await fetch('https://api.guardmyemail.com/create-checkout-session', {
+                const response = await fetch('https://guardmyemail-backend.vercel.app/create-checkout-session', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        priceId: 'price_monthly_YOUR_PRICE_ID', // Replace with actual Stripe price ID
+                        priceId: 'price_1T20FZE0mK6l668HYqkcXIbF',
                         customerEmail: userEmail,
                         mode: 'subscription'
                     })
@@ -1058,10 +1058,34 @@
             showLoading();
             
             try {
-                const response = await fetch('https://api.guardmyemail.com/create-checkout-session', {
+                const response = await fetch('https://guardmyemail-backend.vercel.app/create-checkout-session', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        priceId: 'price_annual_YOUR_PRICE_ID
+                        priceId: 'price_1T20GCE0mK6l668HZpvDdtok',
+                        customerEmail: userEmail,
+                        mode: 'subscription'
+                    })
+                });
+                
+                const session = await response.json();
+                
+                const result = await stripe.redirectToCheckout({
+                    sessionId: session.id
+                });
+                
+                if (result.error) {
+                    alert(result.error.message);
+                    document.getElementById('loading').style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
