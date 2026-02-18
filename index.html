@@ -599,6 +599,118 @@
             color: rgba(255,255,255,0.8);
         }
         
+        /* Start for Free Tooltip */
+        .start-free-container {
+            position: relative;
+        }
+        
+        .how-to-tooltip {
+            display: none;
+            position: absolute;
+            bottom: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border: 2px solid #34A853;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            width: 320px;
+            animation: tooltipFadeIn 0.3s ease;
+        }
+        
+        .how-to-tooltip.show {
+            display: block;
+        }
+        
+        @keyframes tooltipFadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        .tooltip-arrow {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #34A853;
+        }
+        
+        .tooltip-arrow::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: -9px;
+            width: 0;
+            height: 0;
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-top: 9px solid white;
+        }
+        
+        .how-to-tooltip h4 {
+            color: #2C3E50;
+            margin: 0 0 15px 0;
+            font-size: 16px;
+        }
+        
+        .how-to-tooltip ol {
+            text-align: left;
+            margin: 0 0 15px 0;
+            padding-left: 20px;
+            color: #555;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .how-to-tooltip li {
+            margin-bottom: 10px;
+        }
+        
+        .how-to-tooltip strong {
+            color: #34A853;
+            font-weight: 600;
+        }
+        
+        .tooltip-copy-btn {
+            background: #34A853;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .tooltip-copy-btn:hover {
+            background: #2E7D32;
+        }
+        
+        .tooltip-copy-btn.copied {
+            background: #4CAF50;
+        }
+        
+        @media (max-width: 768px) {
+            .how-to-tooltip {
+                width: 280px;
+                left: 50%;
+            }
+        }
+        
         footer {
             background: #2C3E50;
             color: white;
@@ -715,9 +827,23 @@
                         <li>📊 Risk score & reasons</li>
                         <li>🔒 Private & secure</li>
                     </ul>
-                    <button onclick="copyEmail()" class="plan-btn plan-btn-free">
-                        Start for Free
-                    </button>
+                    <div class="start-free-container">
+                        <button onclick="showHowToStart()" class="plan-btn plan-btn-free">
+                            Start for Free
+                        </button>
+                        <div class="how-to-tooltip">
+                            <div class="tooltip-arrow"></div>
+                            <h4>How to Get Started:</h4>
+                            <ol>
+                                <li>Copy this email address:<br><strong>scan@guardmyemail.com</strong></li>
+                                <li>Forward any suspicious email to it</li>
+                                <li>Get instant analysis in your inbox</li>
+                            </ol>
+                            <button onclick="copyEmailAndClose()" class="tooltip-copy-btn">
+                                📋 Copy Email Address
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="plan-card plan-premium">
@@ -948,6 +1074,50 @@
             }).catch(err => {
                 alert('Failed to copy email. Please copy manually: scan@guardmyemail.com');
             });
+        }
+        
+        // Show how-to tooltip
+        function showHowToStart() {
+            const tooltip = document.querySelector('.how-to-tooltip');
+            tooltip.classList.add('show');
+            
+            // Close tooltip when clicking outside
+            setTimeout(() => {
+                document.addEventListener('click', closeTooltipOnClickOutside);
+            }, 100);
+        }
+        
+        // Copy email and close tooltip
+        function copyEmailAndClose() {
+            const email = 'scan@guardmyemail.com';
+            const btn = document.querySelector('.tooltip-copy-btn');
+            
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied to Clipboard!';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    const tooltip = document.querySelector('.how-to-tooltip');
+                    tooltip.classList.remove('show');
+                    btn.textContent = originalText;
+                    btn.classList.remove('copied');
+                    document.removeEventListener('click', closeTooltipOnClickOutside);
+                }, 1500);
+            }).catch(err => {
+                alert('Failed to copy. Please copy manually: scan@guardmyemail.com');
+            });
+        }
+        
+        // Close tooltip when clicking outside
+        function closeTooltipOnClickOutside(event) {
+            const tooltip = document.querySelector('.how-to-tooltip');
+            const button = document.querySelector('.plan-btn-free');
+            
+            if (!tooltip.contains(event.target) && !button.contains(event.target)) {
+                tooltip.classList.remove('show');
+                document.removeEventListener('click', closeTooltipOnClickOutside);
+            }
         }
         
         // Handle enterprise form submission
