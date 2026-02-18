@@ -40,56 +40,6 @@
             min-height: 100vh;
         }
         
-        /* Header */
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-        
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--navy);
-            letter-spacing: 0.5px;
-        }
-        
-        .back-link {
-            color: var(--gray-600);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .back-link:hover {
-            color: var(--green);
-        }
-        
         /* Hero Section */
         .hero {
             max-width: 1200px;
@@ -597,17 +547,6 @@
 </head>
 <body>
     
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo-section">
-                <img src="logo-96x96.png" alt="Guard my email" class="logo">
-                <div class="logo-text">GUARD MY EMAIL</div>
-            </div>
-            <a href="index.html" class="back-link">← Back to Home</a>
-        </div>
-    </header>
-    
     <!-- Hero Section -->
     <section class="hero">
         <img src="https://raw.githubusercontent.com/isthisemaildangerous/isthisemaildangerous.github.io/main/logo.png" alt="Guard My Email" style="max-width: 300px; height: auto; margin: 0 auto 30px; display: block;">
@@ -1004,7 +943,7 @@
         }
         
         // Initialize Stripe (replace with your actual publishable key)
-        const stripe = Stripe('pk_live_51T1EWCE0mK6l668HqMzfQcEETetLzZw7BenTal28MvymPFHPkwuj6BvE3ul0k8OaFdQCikEiCwQp55U1zyNnna8700sZgHFE6Q');
+        const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY');
         
         // Get user email if available (from URL parameter or localStorage)
         const urlParams = new URLSearchParams(window.location.search);
@@ -1030,7 +969,7 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        priceId: 'price_1T20FZE0mK6l668HYqkcXIbF',
+                        priceId: 'price_monthly_YOUR_PRICE_ID', // Replace with actual Stripe price ID
                         customerEmail: userEmail,
                         mode: 'subscription'
                     })
@@ -1064,7 +1003,7 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        priceId: 'price_1T20GCE0mK6l668HZpvDdtok',
+                        priceId: 'price_annual_YOUR_PRICE_ID', // Replace with actual Stripe price ID
                         customerEmail: userEmail,
                         mode: 'subscription'
                     })
