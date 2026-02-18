@@ -254,7 +254,7 @@
             
             <div class="platform-note">
                 <strong>📧 Can't access a desktop?</strong>
-                <p>You can still use our email forwarding service! Forward any suspicious email to <strong>scan@guardmyemail.com</strong> and get unlimited analyses as a Premium subscriber.</p>
+                <p>You can still use our email forwarding service! Forward any suspicious email to <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="136070727d5374667261777e6a767e727a7f3d707c7e">[email&#160;protected]</a></strong> and get unlimited analyses as a Premium subscriber.</p>
             </div>
         </div>
         
@@ -271,45 +271,10 @@
                 <div class="step-number">1</div>
                 <div class="step-content">
                     <h3>Use Email Forwarding (Unlimited!)</h3>
-                    <p>Forward any suspicious email to <strong>scan@guardmyemail.com</strong> from your iPhone's Gmail or Mail app.</p>
+                    <p>Forward any suspicious email to <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="443727252a042331253620293d2129252d286a272b29">[email&#160;protected]</a></strong> from your iPhone's Gmail or Mail app.</p>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 30px; padding: 20px; background: #FFF3CD; border-radius: 8px;">
-    <p style="color: #856404; margin-bottom: 15px;">
-        <strong>Not what you expected?</strong><br>
-        If you prefer the Gmail add-on experience and have access to a desktop or Android device, we recommend trying that first. Otherwise, you can cancel anytime.
-    </p>
-    <button onclick="openCustomerPortal()" style="background: #667eea; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">
-        Manage Subscription & Refunds
-    </button>
-</div>
-
-<script>
-async function openCustomerPortal() {
-    try {
-        const email = new URLSearchParams(window.location.search).get('email');
-        if (!email) {
-            alert('Please contact support@guardmyemail.com for subscription management.');
-            return;
-        }
-        
-        const response = await fetch('https://guardmyemail-backend.vercel.app/create-portal-session', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email })
-        });
-        
-        const data = await response.json();
-        if (data.url) {
-            window.location.href = data.url;
-        }
-    } catch (error) {
-        alert('Please contact support@guardmyemail.com for subscription management.');
-    }
-}
-</script>
-
             <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
@@ -328,7 +293,7 @@ async function openCustomerPortal() {
             
             <div class="platform-note">
                 <strong>✅ Your Premium Benefits Still Apply:</strong>
-                <p>• Unlimited email forwards to scan@guardmyemail.com<br>
+                <p>• Unlimited email forwards to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="512232303f1136243023353c28343c30383d7f323e3c">[email&#160;protected]</a><br>
                 • Instant detailed analysis<br>
                 • No monthly limits<br>
                 • Priority support</p>
@@ -336,11 +301,10 @@ async function openCustomerPortal() {
         </div>
         
         <div class="help">
-            Need help? Email us at <a href="mailto:support@guardmyemail.com">support@guardmyemail.com</a>
+            Need help? Email us at <a href="/cdn-cgi/l/email-protection#90e3e5e0e0ffe2e4d0f7e5f1e2f4fde9f5fdf1f9fcbef3fffd"><span class="__cf_email__" data-cfemail="becdcbceced1cccafed9cbdfccdad3c7dbd3dfd7d290ddd1d3">[email&#160;protected]</span></a>
         </div>
     </div>
     
-    <script>
         // Detect platform and show appropriate instructions
         function detectPlatform() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -348,22 +312,3 @@ async function openCustomerPortal() {
             // Check if iOS
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 document.getElementById('desktop-instructions').classList.add('hidden');
-                document.getElementById('ios-instructions').classList.remove('hidden');
-                return;
-            }
-            
-            // Check if Android
-            if (/android/i.test(userAgent)) {
-                document.getElementById('desktop-instructions').classList.add('hidden');
-                document.getElementById('android-instructions').classList.remove('hidden');
-                return;
-            }
-            
-            // Desktop - default instructions already showing
-        }
-        
-        // Run detection on page load
-        detectPlatform();
-    </script>
-</body>
-</html>
