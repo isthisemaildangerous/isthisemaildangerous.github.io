@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upgrade to Premium - Guard my email</title>
-    <meta name="description" content="Upgrade to unlimited phishing scans. Protect your inbox with AI-powered security.">
+    <meta name="description" content="Upgrade to unlimited email scam detection. Protect your inbox with AI-powered security.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,6 +120,97 @@
             font-weight: 600;
             font-size: 0.875rem;
             margin-bottom: 2rem;
+        }
+        
+        /* Platform Warning */
+        .platform-warning {
+            max-width: 800px;
+            margin: -20px auto 40px;
+            padding: 0 20px;
+        }
+        
+        .warning-content {
+            background: #FFF3CD;
+            border: 3px solid #FBBC04;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(251, 188, 4, 0.2);
+        }
+        
+        .warning-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .warning-title {
+            color: #856404;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .warning-body {
+            color: #856404;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .warning-body p {
+            margin-bottom: 12px;
+        }
+        
+        .warning-body strong {
+            font-weight: 700;
+        }
+        
+        .warning-body ul {
+            margin: 10px 0 10px 20px;
+        }
+        
+        .warning-body li {
+            margin-bottom: 6px;
+        }
+        
+        .acknowledge-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            padding: 15px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .acknowledge-checkbox:hover {
+            background: rgba(255,255,255,0.8);
+            border-color: #FBBC04;
+        }
+        
+        .acknowledge-checkbox input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-label {
+            color: #856404;
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .cta-button:disabled {
+            background: var(--gray-200) !important;
+            color: var(--gray-600) !important;
+            cursor: not-allowed !important;
+            opacity: 0.6;
         }
         
         /* Pricing Cards */
@@ -517,10 +608,23 @@
     
     <!-- Hero Section -->
     <section class="hero">
-        <div class="badge">🛡️ Protect Your Inbox</div>
+        <img src="https://raw.githubusercontent.com/isthisemaildangerous/isthisemaildangerous.github.io/main/logo.png" alt="Guard My Email" style="max-width: 300px; height: auto; margin: 0 auto 30px; display: block;">
         <h1>Upgrade to Unlimited Protection</h1>
-        <p>Stop email attacks before they reach you. Get unlimited AI-powered email scans with instant results.</p>
+        <p>Stop email scams before they reach you. Get unlimited AI-powered email scans with instant results.</p>
     </section>
+    
+    <!-- iOS/Platform Warning -->
+    <div id="platform-warning" class="platform-warning" style="display: none;">
+        <div class="warning-content">
+            <div class="warning-icon">⚠️</div>
+            <h3 class="warning-title"></h3>
+            <div class="warning-body"></div>
+            <label class="acknowledge-checkbox">
+                <input type="checkbox" id="platform-acknowledge">
+                <span class="checkbox-label"></span>
+            </label>
+        </div>
+    </div>
     
     <!-- Pricing Cards -->
     <div class="pricing-container">
@@ -549,7 +653,7 @@
                 </li>
                 <li>
                     <span class="check-icon">✓</span>
-                    <span class="feature-text">Basic phishing detection</span>
+                    <span class="feature-text">Basic scam detection</span>
                 </li>
                 <li>
                     <span class="check-icon">✓</span>
@@ -739,8 +843,8 @@
         <h2 class="faq-title">Frequently Asked Questions</h2>
         
         <div class="faq-item">
-            <div class="faq-question">What happens after my free trial ends?</div>
-            <div class="faq-answer">You'll be charged $4.99/month (or $49/year if you chose annual). You can cancel anytime before the trial ends with no charge.</div>
+            <div class="faq-question">When will I be charged?</div>
+            <div class="faq-answer">You'll be charged immediately when you subscribe - $4.99/month for monthly or $49/year for annual. Your subscription renews automatically unless you cancel.</div>
         </div>
         
         <div class="faq-item">
@@ -755,7 +859,16 @@
         
         <div class="faq-item">
             <div class="faq-question">How does the 14-day money-back guarantee work?</div>
-            <div class="faq-answer">If you're not satisfied within 14 days of your first payment, email us at support@guardmyemail.com and we'll refund you in full, no questions asked.</div>
+            <div class="faq-answer">If you're not satisfied within 14 days of your first payment, email us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5c6c0c5c5dac7c1f5d2c0d4c7d1d8ccd0d8d4dcd99bd6dad8">[email&#160;protected]</a> with "Refund Request" in the subject line. We'll process your full refund within 2-3 business days, no questions asked. This is especially important for iOS users who may not realize the Gmail add-on isn't available on iPhone/iPad.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Does the Gmail add-on work on mobile?</div>
+            <div class="faq-answer">
+                <strong>Android:</strong> Yes! The add-on works great on Android Gmail app. You'll need to install it from desktop first, then it automatically appears on your phone.<br><br>
+                <strong>iPhone/iPad:</strong> No, Gmail add-ons aren't supported on iOS due to Apple restrictions. Premium iOS users get unlimited email forwarding to scan@guardmyemail.com instead.<br><br>
+                If this doesn't work for you, we offer a 14-day money-back guarantee.
+            </div>
         </div>
         
         <div class="faq-item">
@@ -783,22 +896,113 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Guard my email. All rights reserved.</p>
+            <p>&copy; 2026 Guard My Email. All rights reserved.</p>
             <div class="footer-links">
                 <a href="index.html">Home</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="terms.html">Terms</a>
-                <a href="upgrade.html">Pricing</a> | 
-                <a href="mailto:support@guardmyemail.com">Contact</a>
+                <a href="/cdn-cgi/l/email-protection#c6b5b3b6b6a9b4b286a1b3a7b4a2abbfa3aba7afaae8a5a9ab">Contact</a>
             </div>
         </div>
     </footer>
     
     <!-- Stripe Checkout Script -->
-    <script src="https://js.stripe.com/v3/"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://js.stripe.com/v3/"></script>
     <script>
-        // Initialize Stripe
-        const stripe = Stripe('pk_test_51T1EWPE5ASSFcjhgJCpTl0eVA7Yl2pqykGBXE8CGbJ6uaalKkqXqGdbzKur04YjCBIjdJ9pz6mfZBJtq07GMKYO400dGDeZ6U7');
+        // Platform Detection
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+        const isAndroid = /android/i.test(userAgent);
+        const isMobile = isIOS || isAndroid;
+        
+        // Show platform-specific warnings
+        if (isIOS) {
+            showIOSWarning();
+        } else if (isAndroid) {
+            showAndroidWarning();
+        }
+        
+        function showIOSWarning() {
+            const warning = document.getElementById('platform-warning');
+            const title = warning.querySelector('.warning-title');
+            const body = warning.querySelector('.warning-body');
+            const checkboxLabel = warning.querySelector('.checkbox-label');
+            
+            title.textContent = 'iPhone/iPad Users - Important Information';
+            body.innerHTML = `
+                <p><strong>Gmail add-ons are not available on iOS</strong> due to Apple's restrictions.</p>
+                
+                <p><strong>What you'll get with Premium on iOS:</strong></p>
+                <ul>
+                    <li>✅ <strong>Unlimited email forwarding</strong> to scan@guardmyemail.com</li>
+                    <li>✅ Detailed safety analysis delivered to your inbox</li>
+                    <li>✅ Works from any email app (Gmail, Apple Mail, etc.)</li>
+                    <li>✅ Same AI-powered protection as desktop</li>
+                </ul>
+                
+                <p><strong>If you want the Gmail add-on experience,</strong> you'll need to use it on a desktop computer or Android device.</p>
+                
+                <p style="margin-top: 15px;"><strong>💰 14-Day Money-Back Guarantee:</strong> If email forwarding doesn't meet your needs, we offer a full refund within 14 days, no questions asked.</p>
+            `;
+            
+            checkboxLabel.textContent = 'I understand the Gmail add-on doesn\'t work on iOS, and I\'m okay using unlimited email forwarding instead';
+            
+            warning.style.display = 'block';
+            disableCheckoutButtons();
+            setupAcknowledgment();
+        }
+        
+        function showAndroidWarning() {
+            const warning = document.getElementById('platform-warning');
+            const title = warning.querySelector('.warning-title');
+            const body = warning.querySelector('.warning-body');
+            const checkboxLabel = warning.querySelector('.checkbox-label');
+            
+            title.textContent = 'Android Users - Setup Required';
+            body.innerHTML = `
+                <p><strong>The Gmail add-on will work on your Android device,</strong> but requires initial setup from a desktop browser.</p>
+                
+                <p><strong>Here's how it works:</strong></p>
+                <ul>
+                    <li>📱 Install the add-on from desktop first (one-time setup)</li>
+                    <li>📱 After desktop setup, it automatically appears in your Gmail Android app</li>
+                    <li>📱 Scan emails with one tap at the bottom of each message</li>
+                </ul>
+                
+                <p><strong>Don't have access to a desktop?</strong> You can still use unlimited email forwarding to scan@guardmyemail.com from your Android device.</p>
+            `;
+            
+            checkboxLabel.textContent = 'I understand I need to set up the add-on from a desktop browser first (or use email forwarding)';
+            
+            warning.style.display = 'block';
+            disableCheckoutButtons();
+            setupAcknowledgment();
+        }
+        
+        function disableCheckoutButtons() {
+            const buttons = document.querySelectorAll('.cta-button[onclick*="select"]');
+            buttons.forEach(btn => {
+                if (!btn.onclick.toString().includes('selectFree')) {
+                    btn.disabled = true;
+                }
+            });
+        }
+        
+        function setupAcknowledgment() {
+            const checkbox = document.getElementById('platform-acknowledge');
+            const buttons = document.querySelectorAll('.cta-button[onclick*="select"]');
+            
+            checkbox.addEventListener('change', (e) => {
+                buttons.forEach(btn => {
+                    if (!btn.onclick.toString().includes('selectFree')) {
+                        btn.disabled = !e.target.checked;
+                    }
+                });
+            });
+        }
+        
+        // Initialize Stripe (replace with your actual publishable key)
+        const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY');
         
         // Get user email if available (from URL parameter or localStorage)
         const urlParams = new URLSearchParams(window.location.search);
@@ -818,13 +1022,13 @@
             
             try {
                 // Call your backend to create a Stripe Checkout session
-                    const response = await fetch('https://guardmyemail-backend.vercel.app/create-checkout-session', {
+                const response = await fetch('https://api.guardmyemail.com/create-checkout-session', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        priceId: 'price_1T1EpWE5ASSFcjhgbRJB7hwK',
+                        priceId: 'price_monthly_YOUR_PRICE_ID', // Replace with actual Stripe price ID
                         customerEmail: userEmail,
                         mode: 'subscription'
                     })
@@ -852,35 +1056,16 @@
             showLoading();
             
             try {
-                    const response = await fetch('https://guardmyemail-backend.vercel.app/create-checkout-session', {
+                const response = await fetch('https://api.guardmyemail.com/create-checkout-session', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        priceId: 'price_1T1EqDE5ASSFcjhgtf8nkyN5',
+                        priceId: 'price_annual_YOUR_PRICE_ID', // Replace with actual Stripe price ID
                         customerEmail: userEmail,
                         mode: 'subscription'
                     })
                 });
                 
-                const session = await response.json();
-                
-                const result = await stripe.redirectToCheckout({
-                    sessionId: session.id
-                });
-                
-                if (result.error) {
-                    alert(result.error.message);
-                    document.getElementById('loading').style.display = 'none';
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Something went wrong. Please try again.');
-                document.getElementById('loading').style.display = 'none';
-            }
-        }
-    </script>
-    
-</body>
-</html>
+                const session = awa
