@@ -3,138 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Premium! - Guard my email</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Payment Successful - Guard My Email</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, #2C3E50 0%, #34A853 100%);
-            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
         }
-        .success-box {
+        
+        .container {
             background: white;
-            color: #333;
-            max-width: 700px;
-            padding: 60px 40px;
-            border-radius: 20px;
+            border-radius: 16px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
         }
-        h1 { 
-            font-size: 2.5rem; 
-            margin-bottom: 1rem; 
-            color: #2C3E50; 
-        }
-        .icon { 
-            font-size: 5rem; 
-            margin-bottom: 2rem; 
-        }
-        p { 
-            font-size: 1.125rem; 
-            margin-bottom: 1rem; 
-            line-height: 1.6; 
-        }
-        .steps {
-            background: #F9FAFB;
-            padding: 30px;
-            border-radius: 12px;
-            margin: 30px 0;
-            text-align: left;
-        }
-        .steps h2 {
-            color: #2C3E50;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        .step {
-            margin-bottom: 20px;
-            padding-left: 40px;
-            position: relative;
-        }
-        .step-number {
-            position: absolute;
-            left: 0;
-            top: 0;
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
             background: #34A853;
-            color: white;
-            width: 28px;
-            height: 28px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 0.875rem;
+            margin: 0 auto 30px;
+            font-size: 40px;
+            color: white;
         }
-        .step strong {
+        
+        h1 {
+            color: #2C3E50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .instructions {
+            background: #F9FAFB;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .instructions h2 {
+            color: #2C3E50;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+        
+        .step-content h3 {
+            color: #2C3E50;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .step-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .step-content a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .step-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .platform-note {
+            background: #E8F5E9;
+            border-left: 4px solid #34A853;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .platform-note.ios {
+            background: #FFF3CD;
+            border-left-color: #FBBC04;
+        }
+        
+        .platform-note strong {
             color: #2C3E50;
             display: block;
             margin-bottom: 5px;
         }
-        a.button { 
-            display: inline-block;
-            background: #34A853;
-            color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 12px;
-            margin-top: 2rem;
-            font-weight: bold;
-            font-size: 1.125rem;
-            transition: all 0.3s;
+        
+        .platform-note p {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.6;
         }
-        a.button:hover {
-            background: #2E7D32;
-            transform: scale(1.02);
-        }
+        
         .help {
             margin-top: 30px;
             padding-top: 30px;
             border-top: 2px solid #E5E7EB;
             color: #666;
-            font-size: 0.95rem;
+            font-size: 14px;
+        }
+        
+        .help a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .instructions {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="success-box">
-        <div style="text-align: center;">
-            <div class="icon">🎉</div>
-            <h1>Welcome to Premium!</h1>
-            <p><strong>Your payment was successful!</strong> You now have unlimited email scans.</p>
+    <div class="container">
+        <div class="success-icon">✓</div>
+        <h1>Payment Successful!</h1>
+        <p class="subtitle">Your account has been upgraded to Premium</p>
+        
+        <!-- Desktop Instructions -->
+        <div id="desktop-instructions" class="instructions">
+            <h2>📧 How to Use Your Premium Add-on</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Open Gmail Settings</h3>
+                    <p>Go to <a href="https://gmail.com/mail/u/0/#settings/addons" target="_blank">Gmail → Settings → Add-ons</a></p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Install "Guard my email"</h3>
+                    <p>Find our add-on in the list and click Install. If you don't see it, you may need to be added as a test user first.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Start Scanning!</h3>
+                    <p>Open any email and look for the Guard my email panel on the right side. Click "Scan now" to check any email instantly.</p>
+                </div>
+            </div>
+            
+            <div class="platform-note">
+                <strong>✅ Your Premium Benefits:</strong>
+                <p>• Unlimited email scans every month<br>
+                • Instant results in Gmail<br>
+                • Detailed threat analysis<br>
+                • Priority support</p>
+            </div>
         </div>
         
-<div class="steps">
-    <h2>📲 Installation Instructions</h2>
-    
-    <div class="step">
-        <div class="step-number">1</div>
-        <strong>Check your email</strong>
-        <span>We'll send you installation instructions within 24 hours</span>
-    </div>
-    
-    <div class="step">
-        <div class="step-number">2</div>
-        <strong>Open Gmail Settings</strong>
-        <span>Click the gear icon → "See all settings" → "Add-ons" tab</span>
-    </div>
-    
-    <div class="step">
-        <div class="step-number">3</div>
-        <strong>Install the add-on</strong>
-        <span>Look for "Guard my email" and click Install</span>
-    </div>
-</div>
-       
+        <!-- Mobile Android Instructions -->
+        <div id="android-instructions" class="instructions hidden">
+            <h2>📱 Using Guard My Email on Android</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Desktop Setup Required</h3>
+                    <p>Gmail add-ons must first be installed from a desktop browser. Visit this page on your computer to complete installation.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>After Desktop Installation</h3>
+                    <p>Once installed on desktop, the add-on will automatically appear in your Gmail Android app at the bottom of each email.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Start Scanning on Mobile</h3>
+                    <p>Open any email, scroll to the bottom, and tap "Guard my email" to scan for threats with unlimited premium scans.</p>
+                </div>
+            </div>
+            
+            <div class="platform-note">
+                <strong>📧 Can't access a desktop?</strong>
+                <p>You can still use our email forwarding service! Forward any suspicious email to <strong>scan@guardmyemail.com</strong> and get unlimited analyses as a Premium subscriber.</p>
+            </div>
+        </div>
+        
+        <!-- Mobile iOS Instructions -->
+        <div id="ios-instructions" class="instructions hidden">
+            <h2>📱 Using Guard My Email on iPhone/iPad</h2>
+            
+            <div class="platform-note ios">
+                <strong>⚠️ Gmail Add-ons Not Available on iOS</strong>
+                <p>Apple doesn't allow Gmail add-ons in the iOS Gmail app. However, you still have full Premium access!</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Use Email Forwarding (Unlimited!)</h3>
+                    <p>Forward any suspicious email to <strong>scan@guardmyemail.com</strong> from your iPhone's Gmail or Mail app.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Receive Instant Analysis</h3>
+                    <p>You'll get a detailed safety report in your inbox within minutes - no limits as a Premium subscriber!</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Optional: Use on Desktop</h3>
+                    <p>When you're on a computer, visit <a href="https://gmail.com/mail/u/0/#settings/addons" target="_blank">Gmail Settings → Add-ons</a> to install the full add-on for instant scanning.</p>
+                </div>
+            </div>
+            
+            <div class="platform-note">
+                <strong>✅ Your Premium Benefits Still Apply:</strong>
+                <p>• Unlimited email forwards to scan@guardmyemail.com<br>
+                • Instant detailed analysis<br>
+                • No monthly limits<br>
+                • Priority support</p>
+            </div>
+        </div>
+        
         <div class="help">
-            <strong>Need help?</strong><br>
-            Email us at <a href="mailto:support@guardmyemail.com">support@guardmyemail.com</a><br>
-            Check your email for your receipt and welcome message.
+            Need help? Email us at <a href="mailto:support@guardmyemail.com">support@guardmyemail.com</a>
         </div>
     </div>
+    
+    <script>
+        // Detect platform and show appropriate instructions
+        function detectPlatform() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // Check if iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                document.getElementById('desktop-instructions').classList.add('hidden');
+                document.getElementById('ios-instructions').classList.remove('hidden');
+                return;
+            }
+            
+            // Check if Android
+            if (/android/i.test(userAgent)) {
+                document.getElementById('desktop-instructions').classList.add('hidden');
+                document.getElementById('android-instructions').classList.remove('hidden');
+                return;
+            }
+            
+            // Desktop - default instructions already showing
+        }
+        
+        // Run detection on page load
+        detectPlatform();
+    </script>
 </body>
 </html>
