@@ -1057,6 +1057,7 @@
         </div>
     </footer>
 
+    <script>
         function copyEmail() {
             const email = 'scan@guardmyemail.com';
             navigator.clipboard.writeText(email).then(() => {
@@ -1130,3 +1131,46 @@
                 employees: this.employees.value,
                 timestamp: new Date().toISOString()
             };
+              
+            // Send to your backend or email
+            const submitButton = this.querySelector('.enterprise-submit');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                // For now, just send an email to yourself
+                const emailBody = `New Enterprise Lead:
+                
+Company: ${formData.company}
+Contact Email: ${formData.email}
+Number of Employees: ${formData.employees}
+Submitted: ${formData.timestamp}
+
+Please follow up within 24 hours.`;
+                
+                // Option 1: mailto link (opens user's email client)
+                window.location.href = `mailto:support@guardmyemail.com?subject=Enterprise Lead: ${encodeURIComponent(formData.company)}&body=${encodeURIComponent(emailBody)}`;
+                
+                // Show success message
+                setTimeout(() => {
+                    submitButton.textContent = '✓ Request Sent!';
+                    submitButton.style.background = '#34A853';
+                    
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                        submitButton.style.background = '';
+                        this.reset();
+                    }, 3000);
+                }, 500);
+                
+            } catch (error) {
+                alert('Error sending request. Please email us directly at support@guardmyemail.com');
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
