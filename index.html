@@ -502,56 +502,100 @@
             color: white;
         }
         
-        .feedback {
-            background: #f0f4ff;
-            padding: 60px 20px;
+        .enterprise {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 20px;
             text-align: center;
+            color: white;
         }
         
-        .feedback h2 {
-            font-size: 2em;
+        .enterprise h2 {
+            font-size: 2.5em;
             margin-bottom: 20px;
-            color: #213455;
+            color: white;
+            font-weight: 700;
         }
         
-        .feedback p {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            color: #666;
+        .enterprise-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: left;
         }
         
-        .email-highlight {
-            color: #667eea;
-            font-weight: 600;
+        .benefit-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s;
         }
         
-        .feedback-button {
-            background: #667eea;
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+        
+        .benefit-icon {
+            font-size: 1.5em;
+            color: #34A853;
+            background: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .enterprise-form {
+            max-width: 600px;
+            margin: 40px auto;
+            display: grid;
+            gap: 15px;
+        }
+        
+        .enterprise-form input {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            background: white;
+            color: #333;
+        }
+        
+        .enterprise-form input::placeholder {
+            color: #999;
+        }
+        
+        .enterprise-submit {
+            background: #34A853;
             color: white;
             border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 700;
             font-size: 1.1em;
             cursor: pointer;
             transition: all 0.3s;
-            margin: 20px 0 10px 0;
+            margin-top: 10px;
         }
         
-        .feedback-button:hover {
-            transform: scale(1.05);
-            background: #5568d3;
+        .enterprise-submit:hover {
+            background: #2E7D32;
+            transform: scale(1.02);
         }
         
-        .feedback-button.copied {
-            background: #48bb78;
-        }
-        
-        .note {
-            font-size: 0.9em !important;
-            font-style: italic;
-            color: #888 !important;
-            margin-top: 10px !important;
+        .enterprise-note {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
         }
         
         footer {
@@ -833,13 +877,43 @@
         </p>
     </div>
 
-    <!-- Feedback -->
-    <div class="feedback">
+    <!-- Enterprise Section -->
+    <div class="enterprise">
         <div class="container">
-            <h2>We'd Love Your Feedback</h2>
-            <p>Have thoughts or ideas on how we can improve this service?</p>
-            <p>Please email us at <span class="email-highlight">scan@guardmyemail.com</span></p>
-            <p class="note">(Don't worry - direct emails won't trigger a rating since they're not forwarded)</p>
+            <h2>Protect Your Entire Organization</h2>
+            <p style="font-size: 1.2em; color: rgba(255,255,255,0.9); margin-bottom: 40px;">Get Guard My Email for your whole team with centralized management and billing.</p>
+            
+            <div class="enterprise-benefits">
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Domain-wide deployment</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Unlimited scans for all employees</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Centralized admin dashboard</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Priority enterprise support</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Custom training & onboarding</span>
+                </div>
+            </div>
+            
+            <form id="enterprise-form" class="enterprise-form">
+                <input type="text" name="company" placeholder="Company name" required>
+                <input type="email" name="email" placeholder="Work email" required>
+                <input type="number" name="employees" placeholder="Number of employees" min="1" required>
+                <button type="submit" class="enterprise-submit">Request Enterprise Demo</button>
+            </form>
+            
+            <p class="enterprise-note">We typically respond within 24 hours with pricing and next steps.</p>
         </div>
     </div>
 
@@ -851,12 +925,12 @@
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="upgrade.html">Pricing</a>
-                <a href="mailto:support@guardmyemail.com">Contact</a>
+                <a href="/cdn-cgi/l/email-protection#96e5e3e6e6f9e4e2d6f1e3f7e4f2fbeff3fbf7fffab8f5f9fb">Contact</a>
             </nav>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         function copyEmail() {
             const email = 'scan@guardmyemail.com';
@@ -876,6 +950,57 @@
                 alert('Failed to copy email. Please copy manually: scan@guardmyemail.com');
             });
         }
+        
+        // Handle enterprise form submission
+        document.getElementById('enterprise-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                company: this.company.value,
+                email: this.email.value,
+                employees: this.employees.value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Send to your backend or email
+            const submitButton = this.querySelector('.enterprise-submit');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                // For now, just send an email to yourself
+                const emailBody = `New Enterprise Lead:
+                
+Company: ${formData.company}
+Contact Email: ${formData.email}
+Number of Employees: ${formData.employees}
+Submitted: ${formData.timestamp}
+
+Please follow up within 24 hours.`;
+                
+                // Option 1: mailto link (opens user's email client)
+                window.location.href = `mailto:support@guardmyemail.com?subject=Enterprise Lead: ${encodeURIComponent(formData.company)}&body=${encodeURIComponent(emailBody)}`;
+                
+                // Show success message
+                setTimeout(() => {
+                    submitButton.textContent = '✓ Request Sent!';
+                    submitButton.style.background = '#34A853';
+                    
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                        submitButton.style.background = '';
+                        this.reset();
+                    }, 3000);
+                }, 500);
+                
+            } catch (error) {
+                alert('Error sending request. Please email us directly at support@guardmyemail.com');
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
     </script>
 </body>
 </html>
