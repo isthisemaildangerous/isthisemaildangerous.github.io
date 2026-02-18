@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="cloudflare-email-protection" content="off">
     <title>Guard My Email - Free Email Scam Detection Service</title>
   
     <link rel="icon" type="image/png" sizes="32x32" href="/logo-favicon-32x32.png">
@@ -668,7 +669,7 @@
         <div class="email-box">
             Forward suspicious emails to:<br>
             <div class="email-copy">
-                <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95e6f6f4fbd5f2e0f4e7f1f8ecf0f8f4fcf9bbf6faf8">[email&#160;protected]</a></span>
+                <span>scan@guardmyemail.com</span>
                 <button onclick="copyEmail()" class="copy-btn">Copy Email</button>
             </div>
         </div>
@@ -682,7 +683,7 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Forward the Email</h3>
-                    <p>Got a suspicious email? Simply forward it to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f1c0c0e012f081a0e1d0b02160a020e0603410c0002">[email&#160;protected]</a></p>
+                    <p>Got a suspicious email? Simply forward it to scan@guardmyemail.com</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
@@ -753,7 +754,7 @@
                     <span class="platform-badge badge-all">✉️ All Devices</span>
                     <span class="platform-icon">📧</span>
                     <h3>Email Forwarding</h3>
-                    <p>Works on every device and email client. Simply forward any suspicious email to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8bf8e8eae5cbecfeeaf9efe6f2eee6eae2e7a5e8e4e6">[email&#160;protected]</a> and receive an analysis reply.</p>
+                    <p>Works on every device and email client. Simply forward any suspicious email to scan@guardmyemail.com and receive an analysis reply.</p>
                     <div class="status">
                         <div class="status-dot dot-green"></div>
                         <span style="color: #54cb5f;">Available on all devices</span>
@@ -798,7 +799,7 @@
             <div style="text-align: center; margin-top: 40px; padding: 25px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
                 <p style="color: rgba(255,255,255,0.6); font-size: 0.95em;">
                     💡 <strong style="color: white;">iPhone users:</strong> Forward suspicious emails to 
-                    <strong style="color: #54cb5f;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="136070727d5374667261777e6a767e727a7f3d707c7e">[email&#160;protected]</a></strong> from your Gmail or Apple Mail app — it works exactly the same way!
+                    <strong style="color: #54cb5f;">scan@guardmyemail.com</strong> from your Gmail or Apple Mail app — it works exactly the same way!
                 </p>
             </div>
         </div>
@@ -869,7 +870,7 @@
         <h2>Try It Now - It's Free!</h2>
         <p>Forward any suspicious email to get instant analysis. 5 free scans per month.</p>
         <div class="email-copy-cta">
-            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80f3e3e1eec0e7f5e1f2e4edf9e5ede1e9ecaee3efed">[email&#160;protected]</a></span>
+            <span>scan@guardmyemail.com</span>
             <button onclick="copyEmail()" class="cta-button">Copy Email Address</button>
         </div>
         <p style="margin-top: 20px; opacity: 0.8; font-size: 0.95em;">
@@ -925,7 +926,7 @@
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="upgrade.html">Pricing</a>
-                <a href="/cdn-cgi/l/email-protection#8efdfbfefee1fcfacee9fbeffceae3f7ebe3efe7e2a0ede1e3">Contact</a>
+                <a href="mailto:support@guardmyemail.com">Contact</a>
             </nav>
         </div>
     </footer>
@@ -959,8 +960,3 @@
                 employees: this.employees.value,
                 timestamp: new Date().toISOString()
             };
-            
-            // Send to your backend or email
-            const submitButton = this.querySelector('.enterprise-submit');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = 'Sending...';
