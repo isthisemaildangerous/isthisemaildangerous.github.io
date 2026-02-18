@@ -275,6 +275,41 @@
                 </div>
             </div>
             
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: #FFF3CD; border-radius: 8px;">
+    <p style="color: #856404; margin-bottom: 15px;">
+        <strong>Not what you expected?</strong><br>
+        If you prefer the Gmail add-on experience and have access to a desktop or Android device, we recommend trying that first. Otherwise, you can cancel anytime.
+    </p>
+    <button onclick="openCustomerPortal()" style="background: #667eea; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">
+        Manage Subscription & Refunds
+    </button>
+</div>
+
+<script>
+async function openCustomerPortal() {
+    try {
+        const email = new URLSearchParams(window.location.search).get('email');
+        if (!email) {
+            alert('Please contact support@guardmyemail.com for subscription management.');
+            return;
+        }
+        
+        const response = await fetch('https://guardmyemail-backend.vercel.app/create-portal-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+        });
+        
+        const data = await response.json();
+        if (data.url) {
+            window.location.href = data.url;
+        }
+    } catch (error) {
+        alert('Please contact support@guardmyemail.com for subscription management.');
+    }
+}
+</script>
+
             <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
