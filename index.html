@@ -480,6 +480,15 @@
             font-weight: 600;
         }
         
+        .email-display-box {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 500px;
+        }
+        
         .cta-button {
             display: inline-block;
             background: white;
@@ -809,11 +818,8 @@
         <p>Free AI-powered scam detection service</p>
         <p>Protect yourself and your loved ones from email scams</p>
         <div class="email-box">
-            Forward suspicious emails to:<br>
-            <div class="email-copy">
-                <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c3f2f2d220c2b392d3e28213529212d2520622f2321">[email&#160;protected]</a></span>
-                <button onclick="copyEmail()" class="copy-btn">Copy Email</button>
-            </div>
+            <p style="margin-bottom: 10px;">Forward suspicious emails to:</p>
+            <p style="font-size: 1.5em; font-weight: 700; color: #34A853;">scan@guardmyemail.com</p>
         </div>
     </div>
 
@@ -825,7 +831,7 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Forward the Email</h3>
-                    <p>Got a suspicious email? Simply forward it to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aad9c9cbc4eacddfcbd8cec7d3cfc7cbc3c684c9c5c7">[email&#160;protected]</a></p>
+                    <p>Got a suspicious email? Simply forward it to scan@guardmyemail.com</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
@@ -857,26 +863,9 @@
                         <li>📊 Risk score & reasons</li>
                         <li>🔒 Private & secure</li>
                     </ul>
-                    <div class="start-free-container">
-                        <button onclick="showHowToStart()" class="plan-btn plan-btn-free">
-                            Start for Free
-                        </button>
-                        <div class="how-to-tooltip">
-                            <div class="tooltip-arrow"></div>
-                            <h4>How to Get Started:</h4>
-                            <ol>
-                                <li>Copy this email address:<br>
-                                    <span class="clickable-email" onclick="copyEmailFromTooltip(this)" title="Click to copy">
-                                        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e29181838ca285978390868f9b878f838b8ecc818d8f">[email&#160;protected]</a>
-                                    </span>
-                                </li>
-                                <li>Forward any suspicious email to it</li>
-                                <li>Get instant analysis in your inbox</li>
-                            </ol>
-                            <button onclick="copyEmailAndClose()" class="tooltip-copy-btn">
-                                📋 Copy Email Address
-                            </button>
-                        </div>
+                    <div class="plan-instructions">
+                        <p style="margin: 15px 0 5px 0; font-size: 0.9em; color: #666;">Forward emails to:</p>
+                        <p style="font-size: 1.1em; font-weight: 700; color: #213455; margin: 0;">scan@guardmyemail.com</p>
                     </div>
                 </div>
 
@@ -914,7 +903,7 @@
                     <span class="platform-badge badge-all">✉️ All Devices</span>
                     <span class="platform-icon">📧</span>
                     <h3>Email Forwarding</h3>
-                    <p>Works on every device and email client. Simply forward any suspicious email to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f98a9a9897b99e8c988b9d94809c94989095d79a9694">[email&#160;protected]</a> and receive an analysis reply.</p>
+                    <p>Works on every device and email client. Simply forward any suspicious email to scan@guardmyemail.com and receive an analysis reply.</p>
                     <div class="status">
                         <div class="status-dot dot-green"></div>
                         <span style="color: #54cb5f;">Available on all devices</span>
@@ -959,7 +948,7 @@
             <div style="text-align: center; margin-top: 40px; padding: 25px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
                 <p style="color: rgba(255,255,255,0.6); font-size: 0.95em;">
                     💡 <strong style="color: white;">iPhone users:</strong> Forward suspicious emails to 
-                    <strong style="color: #54cb5f;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="46352527280621332734222b3f232b272f2a6825292b">[email&#160;protected]</a></strong> from your Gmail or Apple Mail app — it works exactly the same way!
+                    <strong style="color: #54cb5f;">scan@guardmyemail.com</strong> from your Gmail or Apple Mail app — it works exactly the same way!
                 </p>
             </div>
         </div>
@@ -1029,9 +1018,9 @@
     <div class="cta">
         <h2>Try It Now - It's Free!</h2>
         <p>Forward any suspicious email to get instant analysis. 5 free scans per month.</p>
-        <div class="email-copy-cta">
-            <span>scan@guardmyemail.com</span>
-            <button onclick="copyEmail()" class="cta-button">Copy Email Address</button>
+        <div class="email-display-box">
+            <p style="margin-bottom: 10px; font-size: 0.9em; opacity: 0.9;">Forward suspicious emails to:</p>
+            <p style="font-size: 1.8em; font-weight: 700; letter-spacing: 1px; margin: 0;">scan@guardmyemail.com</p>
         </div>
         <p style="margin-top: 20px; opacity: 0.8; font-size: 0.95em;">
             Need more? <a href="upgrade.html" style="color: white; font-weight: bold; text-decoration: underline;">Upgrade to Premium</a> for unlimited scans.
@@ -1091,7 +1080,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Define tooltip functions first for immediate availability
         function showHowToStart() {
             const tooltip = document.querySelector('.how-to-tooltip');
@@ -1208,10 +1197,4 @@
                     element.classList.remove('copied');
                 }, 1500);
             }).catch(err => {
-                alert('Failed to copy. Please copy manually: ' + atob('c2NhbkBndWFyZG15ZW1haWwuY29t'));
-            });
-        }
-        
-        // Handle enterprise form submission
-        document.getElementById('enterprise-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
+                alert('Failed to copy. Please copy manually: ' + atob('c2NhbkBndWFyZG15ZW1haWwuY29t'
