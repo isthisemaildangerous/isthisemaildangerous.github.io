@@ -811,7 +811,7 @@
         <div class="email-box">
             Forward suspicious emails to:<br>
             <div class="email-copy">
-                <span>scan@guardmyemail.com</span>
+                <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c3f2f2d220c2b392d3e28213529212d2520622f2321">[email&#160;protected]</a></span>
                 <button onclick="copyEmail()" class="copy-btn">Copy Email</button>
             </div>
         </div>
@@ -825,7 +825,7 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Forward the Email</h3>
-                    <p>Got a suspicious email? Simply forward it to scan@guardmyemail.com</p>
+                    <p>Got a suspicious email? Simply forward it to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aad9c9cbc4eacddfcbd8cec7d3cfc7cbc3c684c9c5c7">[email&#160;protected]</a></p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
@@ -867,7 +867,7 @@
                             <ol>
                                 <li>Copy this email address:<br>
                                     <span class="clickable-email" onclick="copyEmailFromTooltip(this)" title="Click to copy">
-                                        scan@guardmyemail.com
+                                        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e29181838ca285978390868f9b878f838b8ecc818d8f">[email&#160;protected]</a>
                                     </span>
                                 </li>
                                 <li>Forward any suspicious email to it</li>
@@ -914,7 +914,7 @@
                     <span class="platform-badge badge-all">✉️ All Devices</span>
                     <span class="platform-icon">📧</span>
                     <h3>Email Forwarding</h3>
-                    <p>Works on every device and email client. Simply forward any suspicious email to scan@guardmyemail.com and receive an analysis reply.</p>
+                    <p>Works on every device and email client. Simply forward any suspicious email to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f98a9a9897b99e8c988b9d94809c94989095d79a9694">[email&#160;protected]</a> and receive an analysis reply.</p>
                     <div class="status">
                         <div class="status-dot dot-green"></div>
                         <span style="color: #54cb5f;">Available on all devices</span>
@@ -959,7 +959,7 @@
             <div style="text-align: center; margin-top: 40px; padding: 25px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
                 <p style="color: rgba(255,255,255,0.6); font-size: 0.95em;">
                     💡 <strong style="color: white;">iPhone users:</strong> Forward suspicious emails to 
-                    <strong style="color: #54cb5f;">scan@guardmyemail.com</strong> from your Gmail or Apple Mail app — it works exactly the same way!
+                    <strong style="color: #54cb5f;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="46352527280621332734222b3f232b272f2a6825292b">[email&#160;protected]</a></strong> from your Gmail or Apple Mail app — it works exactly the same way!
                 </p>
             </div>
         </div>
@@ -1030,7 +1030,7 @@
         <h2>Try It Now - It's Free!</h2>
         <p>Forward any suspicious email to get instant analysis. 5 free scans per month.</p>
         <div class="email-copy-cta">
-            <span>scan@guardmyemail.com</span>
+            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="215242404f6146544053454c58444c40484d0f424e4c">[email&#160;protected]</a></span>
             <button onclick="copyEmail()" class="cta-button">Copy Email Address</button>
         </div>
         <p style="margin-top: 20px; opacity: 0.8; font-size: 0.95em;">
@@ -1086,12 +1086,12 @@
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="upgrade.html">Pricing</a>
-                <a href="mailto:support@guardmyemail.com">Contact</a>
+                <a href="/cdn-cgi/l/email-protection#d4a7a1a4a4bba6a094b3a1b5a6b0b9adb1b9b5bdb8fab7bbb9">Contact</a>
             </nav>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Define tooltip functions first for immediate availability
         function showHowToStart() {
             const tooltip = document.querySelector('.how-to-tooltip');
@@ -1114,7 +1114,8 @@
         }
         
         function copyEmail() {
-            const email = 'scan@guardmyemail.com';
+            // Email encoded to prevent obfuscation - decodes to scan@guardmyemail.com
+            const email = atob('c2NhbkBndWFyZG15ZW1haWwuY29t');
             
             // Check if clipboard API is available
             if (!navigator.clipboard) {
@@ -1164,7 +1165,8 @@
                     }, 2000);
                 });
             } catch (err) {
-                alert('Failed to copy. Please copy manually: scan@guardmyemail.com');
+                // Decode email for display in alert
+                alert('Failed to copy. Please copy manually: ' + atob('c2NhbkBndWFyZG15ZW1haWwuY29t'));
             }
             
             document.body.removeChild(textArea);
@@ -1172,7 +1174,7 @@
         
         // Copy email and close tooltip
         function copyEmailAndClose() {
-            const email = 'scan@guardmyemail.com';
+            const email = atob('c2NhbkBndWFyZG15ZW1haWwuY29t'); // scan@guardmyemail.com
             const btn = document.querySelector('.tooltip-copy-btn');
             
             navigator.clipboard.writeText(email).then(() => {
@@ -1188,13 +1190,11 @@
                     document.removeEventListener('click', closeTooltipOnClickOutside);
                 }, 1500);
             }).catch(err => {
-                alert('Failed to copy. Please copy manually: scan@guardmyemail.com');
+                alert('Failed to copy. Please copy manually: ' + atob('c2NhbkBndWFyZG15ZW1haWwuY29t'));
             });
         }
-        
-        // Copy email when clicking on it in tooltip
         function copyEmailFromTooltip(element) {
-            const email = 'scan@guardmyemail.com';
+            const email = atob('c2NhbkBndWFyZG15ZW1haWwuY29t'); // scan@guardmyemail.com
             
             navigator.clipboard.writeText(email).then(() => {
                 const originalText = element.textContent;
@@ -1206,36 +1206,10 @@
                     element.classList.remove('copied');
                 }, 1500);
             }).catch(err => {
-                alert('Failed to copy. Please copy manually: scan@guardmyemail.com');
+                alert('Failed to copy. Please copy manually: ' + atob('c2NhbkBndWFyZG15ZW1haWwuY29t'));
             });
         }
         
         // Handle enterprise form submission
         document.getElementById('enterprise-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            const formData = {
-                company: this.company.value,
-                email: this.email.value,
-                employees: this.employees.value,
-                timestamp: new Date().toISOString()
-            };
-              
-            // Send to your backend or email
-            const submitButton = this.querySelector('.enterprise-submit');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            try {
-                // For now, just send an email to yourself
-                const emailBody = `New Enterprise Lead:
-                
-Company: ${formData.company}
-Contact Email: ${formData.email}
-Number of Employees: ${formData.employees}
-Submitted: ${formData.timestamp}
-
-Please follow up within 24 hours.`;
-                
-                // Option 1
