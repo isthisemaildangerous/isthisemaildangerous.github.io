@@ -455,7 +455,7 @@
         }
         
         .cta {
-            background: #667eea;
+            background: #213455;
             color: white;
             padding: 80px 20px;
             text-align: center;
@@ -1030,7 +1030,7 @@
         <h2>Try It Now - It's Free!</h2>
         <p>Forward any suspicious email to get instant analysis. 5 free scans per month.</p>
         <div class="email-copy-cta">
-            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="215242404f6146544053454c58444c40484d0f424e4c">[email&#160;protected]</a></span>
+            <span>scan@guardmyemail.com</span>
             <button onclick="copyEmail()" class="cta-button">Copy Email Address</button>
         </div>
         <p style="margin-top: 20px; opacity: 0.8; font-size: 0.95em;">
@@ -1193,6 +1193,8 @@
                 alert('Failed to copy. Please copy manually: ' + atob('c2NhbkBndWFyZG15ZW1haWwuY29t'));
             });
         }
+        
+        // Copy email when clicking on it in tooltip
         function copyEmailFromTooltip(element) {
             const email = atob('c2NhbkBndWFyZG15ZW1haWwuY29t'); // scan@guardmyemail.com
             
