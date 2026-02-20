@@ -205,6 +205,12 @@
     </style>
 </head>
 <body>
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 100;">
+        <a href="index.html" style="color: white; text-decoration: none; font-size: 1.1em; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+            <span>←</span> <span>Back to Home</span>
+        </a>
+    </div>
+    
     <div class="header">
         <h1>$55 Billion Lost to Business Email Compromise in a Decade</h1>
         <p>Don't let your organization become the next victim. Protect your entire team with AI-powered email security.</p>
@@ -397,12 +403,12 @@
                 <a href="privacy.html" style="color: white; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
                 <a href="terms.html" style="color: white; text-decoration: none; margin: 0 15px;">Terms of Service</a>
                 <a href="upgrade.html" style="color: white; text-decoration: none; margin: 0 15px;">Pricing</a>
-                <a href="mailto:support@guardmyemail.com" style="color: white; text-decoration: none; margin: 0 15px;">Contact</a>
+                <a href="/cdn-cgi/l/email-protection#01727471716e73754166746073656c78646c60686d2f626e6c" style="color: white; text-decoration: none; margin: 0 15px;">Contact</a>
             </nav>
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Currency conversion for enterprise pricing
         const pricing = {
             usd: {
@@ -420,9 +426,3 @@
             eur: {
                 symbol: '€',
                 small: '€1.80',
-                medium: '€2.25',
-                large: '€2.70'
-            }
-        };
-
-        document.getElementById('currency-selector').addEventListener(
