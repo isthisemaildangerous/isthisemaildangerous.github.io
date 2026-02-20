@@ -211,6 +211,15 @@
     </div>
 
     <div class="container">
+        <div style="text-align: right; margin-bottom: 20px;">
+            <label style="margin-right: 10px; font-weight: 600; color: #213455;">Currency:</label>
+            <select id="currency-selector" style="padding: 8px 15px; border: 2px solid #54cb5f; border-radius: 6px; font-size: 1em; cursor: pointer;">
+                <option value="usd">USD ($)</option>
+                <option value="gbp">GBP (£)</option>
+                <option value="eur">EUR (€)</option>
+            </select>
+        </div>
+        
         <div class="comparison-grid">
             <!-- Individual Plan -->
             <div class="plan-card">
@@ -266,13 +275,6 @@
             <div class="plan-card enterprise">
                 <div class="plan-header">
                     <div class="plan-name">Enterprise</div>
-                    <div style="margin: 15px 0;">
-                        <select id="currency-selector" style="padding: 8px 15px; border: 2px solid #54cb5f; border-radius: 6px; font-size: 1em; cursor: pointer;">
-                            <option value="usd">USD ($)</option>
-                            <option value="gbp">GBP (£)</option>
-                            <option value="eur">EUR (€)</option>
-                        </select>
-                    </div>
                     <div class="plan-price" id="enterprise-price">From $2/user/month</div>
                     <div class="plan-description">For organizations of all sizes</div>
                 </div>
@@ -316,7 +318,7 @@
                     </li>
                 </ul>
 
-                <a href="mailto:support@guardmyemail.com?subject=Enterprise Demo Request" class="cta-button">Request Demo</a>
+                <a href="/cdn-cgi/l/email-protection#30434540405f42447057455142545d49555d51595c1e535f5d0f4345525a5553440d755e44554240425943551074555d5f1062554145554344" class="cta-button">Request Demo</a>
             </div>
         </div>
     </div>
@@ -381,14 +383,23 @@
     <div class="container" style="text-align: center; padding: 80px 20px;">
         <h2 style="font-size: 2.5em; color: #213455; margin-bottom: 20px;">Ready to Protect Your Organization?</h2>
         <p style="font-size: 1.2em; color: #666; margin-bottom: 30px;">Schedule a demo to see how Guard My Email can protect your entire team</p>
-        <a href="mailto:support@guardmyemail.com?subject=Enterprise Demo Request" style="display: inline-block; padding: 18px 40px; background: #54cb5f; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.2em;">Request Enterprise Demo</a>
+        <a href="/cdn-cgi/l/email-protection#e89b9d9898879a9ca88f9d899a8c85918d85898184c68b8785d79b9d8a828d8b9cd5ad869c8d9a989a819b8dc8ac8d8587c8ba8d999d8d9b9c" style="display: inline-block; padding: 18px 40px; background: #54cb5f; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.2em;">Request Enterprise Demo</a>
     </div>
 
     <footer style="background: #2C3E50; color: white; padding: 40px 20px; text-align: center;">
-        <p style="font-size: 0.85em; color: rgba(255,255,255,0.7); margin-bottom: 15px;">
-            Source: <a href="https://www.ic3.gov/PSA/2024/PSA240911" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.9); text-decoration: underline;">FBI Internet Crime Complaint Center - Business Email Compromise Report 2024</a>
-        </p>
-        <p>&copy; 2026 Guard My Email. All rights reserved.</p>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p style="font-size: 0.85em; color: rgba(255,255,255,0.7); margin-bottom: 15px;">
+                Source: <a href="https://www.ic3.gov/PSA/2024/PSA240911" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.9); text-decoration: underline;">FBI Internet Crime Complaint Center - Business Email Compromise Report 2024</a>
+            </p>
+            <p style="margin-bottom: 15px;">&copy; 2026 Guard My Email. All rights reserved.</p>
+            <nav style="margin-top: 15px;">
+                <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px;">Home</a>
+                <a href="privacy.html" style="color: white; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
+                <a href="terms.html" style="color: white; text-decoration: none; margin: 0 15px;">Terms of Service</a>
+                <a href="upgrade.html" style="color: white; text-decoration: none; margin: 0 15px;">Pricing</a>
+                <a href="mailto:support@guardmyemail.com" style="color: white; text-decoration: none; margin: 0 15px;">Contact</a>
+            </nav>
+        </div>
     </footer>
 
     <script>
@@ -414,11 +425,4 @@
             }
         };
 
-        document.getElementById('currency-selector').addEventListener('change', function(e) {
-            const currency = e.target.value;
-            const selected = pricing[currency];
-            document.getElementById('enterprise-price').textContent = `From ${selected.small}/user/month`;
-        });
-    </script>
-</body>
-</html>
+        document.getElementById('currency-selector').addEventListener(
