@@ -2,31 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="cloudflare-email-protection" content="off">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upgrade to Premium - Guard my email</title>
-    <meta name="description" content="Upgrade to unlimited email scam detection. Protect your inbox with AI-powered security.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <meta name="cloudflare-email-protection" content="off">
+    <title>Guard My Email - Free Email Scam Detection Service</title>
+  
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo-favicon-16x16.png">
+    <link rel="shortcut icon" href="/logo-favicon-32x32.png">
     <style>
-        :root {
-            --navy: #2C3E50;
-            --green: #34A853;
-            --light-green: #E8F5E9;
-            --dark-green: #2E7D32;
-            --gray-50: #F9FAFB;
-            --gray-100: #F3F4F6;
-            --gray-200: #E5E7EB;
-            --gray-600: #4B5563;
-            --gray-900: #111827;
-            --shadow: 0 10px 40px rgba(0,0,0,0.1);
-            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -34,1116 +17,1203 @@
         }
         
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: var(--gray-900);
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
+            color: #213455;
         }
         
-        /* Hero Section */
         .hero {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.5) 0%, rgba(118, 75, 162, 0.5) 100%),
+                        url('./hero-image3.jpg') center/cover no-repeat;
+            background-attachment: fixed;
+            color: white;
+            padding: 80px 20px;
             text-align: center;
+            position: relative;
+            min-height: 500px;
         }
         
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            line-height: 1.2;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.15);
+            z-index: 0;
+        }
+        
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero p {
-            font-size: 1.25rem;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
         
-        .badge {
+        .email-box {
+            background: white;
+            color: #213455;
+            padding: 20px 30px;
+            border-radius: 10px;
             display: inline-block;
-            background: var(--light-green);
-            color: var(--dark-green);
-            padding: 8px 20px;
-            border-radius: 50px;
+            font-size: 1.5em;
             font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 2rem;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
-        /* Platform Warning */
-        .platform-warning {
-            max-width: 800px;
-            margin: -20px auto 40px;
-            padding: 0 20px;
+        .email-copy {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
-        .warning-content {
-            background: #FFF3CD;
-            border: 3px solid #FBBC04;
+        .email-box span {
+            color: #54cb5f;
+        }
+        
+        .copy-btn {
+            background: #54cb5f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.6em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: #48b553;
+        }
+        
+        .copy-btn.copied {
+            background: #48bb78;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #213455;
+        }
+        
+        .how-it-works {
+            background: #f8f9fa;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #54cb5f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+            color: #213455;
+            font-size: 1.3em;
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .security-features {
+            background: white;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #54cb5f;
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            margin-bottom: 15px;
+            color: #213455;
+            font-size: 1.3em;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Mobile Support Section */
+        .mobile-support {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-support::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(84, 203, 95, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .mobile-support .section-title {
+            color: white;
+        }
+
+        .mobile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .mobile-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 4px 12px rgba(251, 188, 4, 0.2);
+            position: relative;
+            transition: transform 0.3s, background 0.3s;
         }
-        
-        .warning-icon {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 15px;
+
+        .mobile-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.12);
         }
-        
-        .warning-title {
-            color: #856404;
-            font-size: 1.5rem;
+
+        .mobile-card .platform-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8em;
             font-weight: 700;
-            text-align: center;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .badge-android {
+            background: rgba(61, 220, 132, 0.2);
+            color: #3DDC84;
+            border: 1px solid rgba(61, 220, 132, 0.3);
+        }
+
+        .badge-ios {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .badge-all {
+            background: rgba(84, 203, 95, 0.2);
+            color: #54cb5f;
+            border: 1px solid rgba(84, 203, 95, 0.3);
+        }
+
+        .mobile-card .platform-icon {
+            font-size: 3em;
             margin-bottom: 15px;
+            display: block;
+        }
+
+        .mobile-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .mobile-card p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        .mobile-card .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dot-green { background: #54cb5f; }
+        .dot-yellow { background: #FBBC04; }
+        .dot-blue { background: #4285F4; }
+
+        /* Freemium Section */
+        .freemium {
+            background: white;
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .plan-card {
+            border-radius: 16px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .plan-free {
+            background: #f8f9fa;
+            border: 2px solid #E5E7EB;
+        }
+
+        .plan-premium {
+            background: linear-gradient(135deg, #2C3E50 0%, #34A853 100%);
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .plan-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .plan-premium h3 { color: white; }
+        .plan-free h3 { color: #213455; }
+
+        .plan-price {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin: 15px 0 5px 0;
+        }
+
+        .plan-premium .plan-price { color: white; }
+        .plan-free .plan-price { color: #213455; }
+
+        .plan-period {
+            font-size: 0.9em;
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .plan-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .plan-premium .plan-features li {
+            border-bottom-color: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .plan-free .plan-features li { color: #555; }
+
+        .plan-btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1em;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .plan-btn-free {
+            background: #213455;
+            color: white;
+        }
+
+        .plan-btn-free:hover {
+            background: #1a2a44;
+        }
+
+        .plan-btn-premium {
+            background: white;
+            color: #2C3E50;
+        }
+
+        .plan-btn-premium:hover {
+            background: #f0f0f0;
+            transform: scale(1.02);
+        }
+
+        .example {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
         }
         
-        .warning-body {
-            color: #856404;
-            font-size: 1rem;
-            line-height: 1.8;
+        .example-box {
+            background: white;
+            color: #213455;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .risk-score {
+            font-size: 2em;
+            font-weight: bold;
+            color: #f5576c;
             margin-bottom: 20px;
         }
         
-        .warning-body p {
-            margin-bottom: 12px;
-        }
-        
-        .warning-body strong {
-            font-weight: 700;
-        }
-        
-        .warning-body ul {
-            margin: 10px 0 10px 20px;
-        }
-        
-        .warning-body li {
-            margin-bottom: 6px;
-        }
-        
-        .acknowledge-checkbox {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            cursor: pointer;
-            padding: 15px;
-            background: rgba(255,255,255,0.5);
-            border-radius: 8px;
-            border: 2px solid transparent;
-            transition: all 0.3s;
-        }
-        
-        .acknowledge-checkbox:hover {
-            background: rgba(255,255,255,0.8);
-            border-color: #FBBC04;
-        }
-        
-        .acknowledge-checkbox input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            margin-top: 2px;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-        
-        .checkbox-label {
-            color: #856404;
-            font-weight: 600;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        .cta-button:disabled {
-            background: var(--gray-200) !important;
-            color: var(--gray-600) !important;
-            cursor: not-allowed !important;
-            opacity: 0.6;
-        }
-        
-        /* Currency Selector */
-        .currency-selector-container {
-            max-width: 1100px;
-            margin: 0 auto 30px;
-            padding: 0 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .currency-label {
-            font-weight: 600;
-            color: var(--gray-900);
-        }
-        
-        .currency-select {
-            padding: 8px 15px;
-            border: 2px solid var(--gray-200);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .currency-select:hover {
-            border-color: var(--green);
-        }
-        
-        .currency-select:focus {
-            outline: none;
-            border-color: var(--green);
-            box-shadow: 0 0 0 3px rgba(52, 168, 83, 0.1);
-        }
-        
-        /* Pricing Cards */
-        .pricing-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        
-        .pricing-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            position: relative;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 3px solid transparent;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .pricing-card.popular {
-            border-color: var(--green);
-            transform: scale(1.05);
-        }
-        
-        .pricing-card.popular::before {
-            content: '⭐ MOST POPULAR';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--green);
+        .cta {
+            background: #213455;
             color: white;
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
+            padding: 80px 20px;
+            text-align: center;
         }
         
-        .plan-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
         
-        .plan-description {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            min-height: 40px;
-        }
-        
-        .price {
+        .email-copy-cta {
             display: flex;
-            align-items: baseline;
-            gap: 8px;
-            margin-bottom: 0.5rem;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
         
-        .price-amount {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--navy);
-            line-height: 1;
-        }
-        
-        .price-currency {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--gray-600);
-        }
-        
-        .price-period {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-        }
-        
-        .price-note {
-            color: var(--gray-600);
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .savings {
-            display: inline-block;
-            background: #FFF3CD;
-            color: #856404;
-            padding: 4px 12px;
-            border-radius: 6px;
+        .email-copy-cta span {
+            font-size: 1.3em;
             font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
+        }
+        
+        .email-display-box {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 500px;
         }
         
         .cta-button {
-            width: 100%;
-            padding: 16px 32px;
-            font-size: 1.125rem;
-            font-weight: 700;
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
             border: none;
-            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s;
-            font-family: inherit;
-            margin-bottom: 2rem;
+            transition: transform 0.3s;
         }
         
-        .cta-button.primary {
-            background: var(--green);
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .cta-button.copied {
+            background: #48bb78;
             color: white;
         }
         
-        .cta-button.primary:hover {
-            background: var(--dark-green);
-            transform: scale(1.02);
+        .enterprise {
+            background: #54cb5f;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
         }
         
-        .cta-button.secondary {
-            background: var(--gray-100);
-            color: var(--navy);
-        }
-        
-        .cta-button.secondary:hover {
-            background: var(--gray-200);
-        }
-        
-        .features-list {
-            list-style: none;
-            margin: 0;
-        }
-        
-        .features-list li {
-            padding: 12px 0;
-            display: flex;
-            align-items: start;
-            gap: 12px;
-            border-bottom: 1px solid var(--gray-100);
-        }
-        
-        .features-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .check-icon {
-            color: var(--green);
+        .enterprise h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: white;
             font-weight: 700;
-            font-size: 1.25rem;
+        }
+        
+        .enterprise-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: left;
+        }
+        
+        .benefit-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s;
+        }
+        
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+        
+        .benefit-icon {
+            font-size: 1.5em;
+            color: white;
+            background: #2C3E50;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0;
         }
         
-        .feature-text {
-            color: var(--gray-900);
-            font-weight: 500;
+        .enterprise-form {
+            max-width: 600px;
+            margin: 40px auto;
+            display: grid;
+            gap: 15px;
         }
         
-        .feature-text strong {
-            color: var(--navy);
-        }
-        
-        /* Comparison Table */
-        .comparison-section {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-        
-        .comparison-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--navy);
-            margin-bottom: 3rem;
-        }
-        
-        .comparison-table {
+        .enterprise-form input {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
             background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            overflow-x: auto;
+            color: #333;
         }
         
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .enterprise-form input::placeholder {
+            color: #999;
         }
         
-        thead th {
-            padding: 20px;
+        .enterprise-submit {
+            background: #2C3E50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 1.125rem;
-            color: var(--navy);
-            border-bottom: 2px solid var(--gray-200);
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
         }
         
-        tbody td {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--gray-100);
+        .enterprise-submit:hover {
+            background: #1a252f;
+            transform: scale(1.02);
         }
         
-        tbody tr:last-child td {
-            border-bottom: none;
+        .enterprise-note {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
         }
         
-        tbody td:first-child {
-            text-align: left;
-            font-weight: 600;
-            color: var(--gray-900);
+        /* Start for Free Tooltip */
+        .start-free-container {
+            position: relative;
         }
         
-        .check-mark {
-            color: var(--green);
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .x-mark {
-            color: var(--gray-200);
-            font-size: 1.5rem;
-        }
-        
-        /* FAQ Section */
-        .faq-section {
-            max-width: 800px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-        
-        .faq-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--navy);
-            margin-bottom: 3rem;
-        }
-        
-        .faq-item {
+        .how-to-tooltip {
+            display: none;
+            position: absolute;
+            bottom: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%);
             background: white;
+            border: 2px solid #34A853;
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            width: 320px;
+            animation: tooltipFadeIn 0.3s ease;
         }
         
-        .faq-question {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 1rem;
+        .how-to-tooltip.show {
+            display: block;
         }
         
-        .faq-answer {
-            color: var(--gray-600);
+        @keyframes tooltipFadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        .tooltip-arrow {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #34A853;
+        }
+        
+        .tooltip-arrow::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: -9px;
+            width: 0;
+            height: 0;
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-top: 9px solid white;
+        }
+        
+        .how-to-tooltip h4 {
+            color: #2C3E50;
+            margin: 0 0 15px 0;
+            font-size: 16px;
+        }
+        
+        .how-to-tooltip ol {
+            text-align: left;
+            margin: 0 0 15px 0;
+            padding-left: 20px;
+            color: #555;
+            font-size: 14px;
             line-height: 1.8;
         }
         
-        /* Trust Section */
-        .trust-section {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 0 20px;
-            text-align: center;
+        .how-to-tooltip li {
+            margin-bottom: 10px;
         }
         
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--gray-600);
+        .how-to-tooltip strong {
+            color: #34A853;
             font-weight: 600;
         }
         
-        .trust-icon {
-            font-size: 2rem;
+        .clickable-email {
+            display: inline-block;
+            background: #E8F5E9;
+            color: #2E7D32;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid #A5D6A7;
+            margin-top: 5px;
         }
         
-        /* Footer */
+        .clickable-email:hover {
+            background: #C8E6C9;
+            border-color: #66BB6A;
+            transform: scale(1.02);
+        }
+        
+        .clickable-email:active {
+            transform: scale(0.98);
+        }
+        
+        .clickable-email.copied {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+        
+        .tooltip-copy-btn {
+            background: #34A853;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .tooltip-copy-btn:hover {
+            background: #2E7D32;
+        }
+        
+        .tooltip-copy-btn.copied {
+            background: #4CAF50;
+        }
+        
+        @media (max-width: 768px) {
+            .how-to-tooltip {
+                width: 280px;
+                left: 50%;
+            }
+        }
+        
         footer {
-            background: var(--navy);
+            background: #2C3E50;
             color: white;
             padding: 40px 20px;
-            margin-top: 100px;
+            text-align: center;
+            margin-top: 0;
         }
-        
+
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
         }
-        
+
         .footer-links {
+            margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 30px;
-            margin-top: 20px;
             flex-wrap: wrap;
         }
-        
+
         .footer-links a {
             color: white;
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
+            font-size: 14px;
+            transition: color 0.3s;
         }
-        
+
         .footer-links a:hover {
-            opacity: 1;
+            color: #34A853;
+            text-decoration: underline;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .logo {
+                max-width: 200px;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1em;
             }
             
-            .pricing-container {
-                grid-template-columns: 1fr;
+            .hero {
+                background-attachment: scroll;
             }
             
-            .pricing-card.popular {
-                transform: scale(1);
+            .email-box {
+                font-size: 1.2em;
+                padding: 15px 20px;
             }
             
-            .comparison-title,
-            .faq-title {
-                font-size: 1.75rem;
+            .section-title {
+                font-size: 2em;
             }
-            
-            .comparison-table {
-                padding: 20px;
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
             }
-            
-            table {
-                font-size: 0.875rem;
-            }
-        }
-        
-        /* Loading state for payment */
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .spinner {
-            border: 3px solid var(--gray-200);
-            border-top: 3px solid var(--green);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <img src="https://raw.githubusercontent.com/isthisemaildangerous/isthisemaildangerous.github.io/main/logo.png" alt="Guard My Email" style="max-width: 300px; height: auto; margin: 0 auto 30px; display: block;">
-        <h1>Upgrade to Unlimited Protection</h1>
-        <p>Stop email scams before they reach you. Get unlimited AI-powered email scans with instant results.</p>
-    </section>
-    
-    <!-- Currency Selector -->
-    <div class="currency-selector-container">
-        <label for="currency-select" class="currency-label">Currency:</label>
-        <select id="currency-select" class="currency-select">
-            <option value="usd">USD ($)</option>
-            <option value="gbp">GBP (£)</option>
-            <option value="eur">EUR (€)</option>
-        </select>
+    <div class="hero">
+        <img src="logo.png" alt="Guard My Email" class="logo">
+        <p>Free AI-powered scam detection service</p>
+        <p>Protect yourself and your loved ones from email scams</p>
+        <div class="email-box">
+            <p style="margin-bottom: 10px;">Forward suspicious emails to:</p>
+            <p style="font-size: 1.5em; font-weight: 700; color: #34A853;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7a4b4b6b997b0a2b6a5b3baaeb2bab6bebbf9b4b8ba">[email&#160;protected]</a></p>
+        </div>
     </div>
-    
-    <!-- Pricing Cards -->
-    <div class="pricing-container">
-        
-        <!-- Free Plan -->
-        <div class="pricing-card">
-            <div class="plan-name">Free</div>
-            <div class="plan-description">Perfect for trying out our service</div>
-            
-            <div class="price">
-                <span class="price-currency" data-currency-symbol>$</span>
-                <span class="price-amount">0</span>
+
+    <!-- How It Works -->
+    <div class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Forward the Email</h3>
+                    <p>Got a suspicious email? Simply forward it to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cebdadafa08ea9bbafbcaaa3b7aba3afa7a2e0ada1a3">[email&#160;protected]</a></p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI (powered by Claude) instantly analyzes the email to check if it's safe or dangerous</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Your Results</h3>
+                    <p>Receive a detailed safety report within minutes with a risk score and specific warnings</p>
+                </div>
             </div>
-            <div class="price-note">Forever free</div>
-            
-            <button class="cta-button secondary" onclick="selectFree()">Current Plan</button>
-            
-            <ul class="features-list">
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text"><strong>5 scans per month</strong></span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Email forwarding service</span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Basic scam detection</span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Risk assessment</span>
-                </li>
-                <li>
-                    <span class="x-mark">✗</span>
-                    <span class="feature-text" style="opacity: 0.5;">Gmail add-on</span>
-                </li>
-                <li>
-                    <span class="x-mark">✗</span>
-                    <span class="feature-text" style="opacity: 0.5;">Priority support</span>
-                </li>
-            </ul>
         </div>
-        
-        <!-- Monthly Plan -->
-        <div class="pricing-card popular">
-            <div class="plan-name">Premium Monthly</div>
-            <div class="plan-description">Best for individuals who want flexibility</div>
-            
-            <div class="price">
-                <span class="price-currency" data-currency-symbol>$</span>
-                <span class="price-amount" data-price-monthly>4.99</span>
-                <span class="price-period">/month</span>
-            </div>
-            <div class="price-note">Billed monthly • Cancel anytime</div>
-            
-            <button class="cta-button primary" onclick="selectMonthly()">
-                🚀 Get Monthly Plan
-            </button>
-            
-            <ul class="features-list">
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text"><strong>Unlimited scans</strong></span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Gmail add-on access</span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Instant results</span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Detailed threat analysis</span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Priority email support</span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">14-day money-back guarantee</span>
-                </li>
-            </ul>
-        </div>
-        
-        <!-- Annual Plan -->
-        <div class="pricing-card">
-            <div class="plan-name">Premium Annual</div>
-            <div class="plan-description">Best value for committed users</div>
-            
-            <div class="savings" data-savings>💰 Save 17% ($10/year)</div>
-            
-            <div class="price">
-                <span class="price-currency" data-currency-symbol>$</span>
-                <span class="price-amount" data-price-annual>49</span>
-                <span class="price-period">/year</span>
-            </div>
-            <div class="price-note" data-monthly-equivalent>$4.08/month when billed annually</div>
-            
-            <button class="cta-button primary" onclick="selectAnnual()">
-                🎯 Get Annual Plan
-            </button>
-            
-            <ul class="features-list">
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text"><strong>Everything in Monthly</strong></span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text"><strong>Save $10 per year</strong></span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Lock in your price</span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Unlimited scans forever</span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">Priority support</span>
-                </li>
-                <li>
-                    <span class="check-icon">✓</span>
-                    <span class="feature-text">14-day money-back guarantee</span>
-                </li>
-            </ul>
-        </div>
-        
     </div>
-    
-    <!-- Comparison Table -->
-    <section class="comparison-section">
-        <h2 class="comparison-title">Compare Plans</h2>
-        <div class="comparison-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th style="text-align: left;">Feature</th>
-                        <th>Free</th>
-                        <th>Premium</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Scans per month</td>
-                        <td>5</td>
-                        <td><strong>Unlimited</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Email forwarding</td>
-                        <td><span class="check-mark">✓</span></td>
-                        <td><span class="check-mark">✓</span></td>
-                    </tr>
-                    <tr>
-                        <td>Gmail add-on</td>
-                        <td><span class="x-mark">✗</span></td>
-                        <td><span class="check-mark">✓</span></td>
-                    </tr>
-                    <tr>
-                        <td>Instant results</td>
-                        <td><span class="x-mark">✗</span></td>
-                        <td><span class="check-mark">✓</span></td>
-                    </tr>
-                    <tr>
-                        <td>Detailed analysis</td>
-                        <td><span class="check-mark">✓</span></td>
-                        <td><span class="check-mark">✓</span></td>
-                    </tr>
-                    <tr>
-                        <td>Risk assessment</td>
-                        <td><span class="check-mark">✓</span></td>
-                        <td><span class="check-mark">✓</span></td>
-                    </tr>
-                    <tr>
-                        <td>Priority support</td>
-                        <td><span class="x-mark">✗</span></td>
-                        <td><span class="check-mark">✓</span></td>
-                    </tr>
-                    <tr>
-                        <td>Money-back guarantee</td>
-                        <td>-</td>
-                        <td><strong>14 days</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-    
-    <!-- Trust Section -->
-    <section class="trust-section">
-        <div class="trust-badges">
-            <div class="trust-badge">
-                <span class="trust-icon">🔒</span>
-                <span>Secure Payment</span>
-            </div>
-            <div class="trust-badge">
-                <span class="trust-icon">💳</span>
-                <span>Cancel Anytime</span>
-            </div>
-            <div class="trust-badge">
-                <span class="trust-icon">✓</span>
-                <span>14-Day Guarantee</span>
+
+    <!-- Freemium Plans -->
+    <div class="freemium">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="plan-grid">
+
+                <div class="plan-card plan-free">
+                    <h3>Free</h3>
+                    <div class="plan-price">$0</div>
+                    <div class="plan-period">Forever free</div>
+                    <ul class="plan-features">
+                        <li>✉️ 5 email forwards/month</li>
+                        <li>🛡️ AI scam detection</li>
+                        <li>📊 Risk score & reasons</li>
+                        <li>🔒 Private & secure</li>
+                    </ul>
+                    <div class="plan-instructions">
+                        <p style="margin: 15px 0 5px 0; font-size: 0.9em; color: #666;">Forward emails to:</p>
+                        <p style="font-size: 1.1em; font-weight: 700; color: #213455; margin: 0;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ec9f8f8d82ac8b998d9e88819589818d8580c28f8381">[email&#160;protected]</a></p>
+                    </div>
+                </div>
+
+                <div class="plan-card plan-premium">
+                    <h3>Premium</h3>
+                    <div class="plan-price">$4.99</div>
+                    <div class="plan-period">/month · Cancel anytime</div>
+                    <ul class="plan-features">
+                        <li>✉️ Unlimited email forwards</li>
+                        <li>⚡ Gmail add-on (instant results)</li>
+                        <li>📱 Android Gmail app support</li>
+                        <li>🛡️ All free features included</li>
+                        <li>💬 Priority support</li>
+                    </ul>
+                    <a href="upgrade.html" class="plan-btn plan-btn-premium">
+                        Upgrade to Premium
+                    </a>
+                </div>
+
             </div>
         </div>
-    </section>
-    
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <h2 class="faq-title">Frequently Asked Questions</h2>
-        
-        <div class="faq-item">
-            <div class="faq-question">When will I be charged?</div>
-            <div class="faq-answer">You'll be charged immediately when you subscribe - $4.99/month for monthly or $49/year for annual. Your subscription renews automatically unless you cancel.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Can I cancel my subscription?</div>
-            <div class="faq-answer">Yes! You can cancel anytime from your account settings. You'll continue to have access until the end of your billing period.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">What's the difference between monthly and annual?</div>
-            <div class="faq-answer">Both plans include the same features. Annual saves you $10/year (17% off) and locks in your price so you're protected from future price increases.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">How does the 14-day money-back guarantee work?</div>
-            <div class="faq-answer">If you're not satisfied within 14 days of your first payment, email us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5c6c0c5c5dac7c1f5d2c0d4c7d1d8ccd0d8d4dcd99bd6dad8">[email&#160;protected]</a> with "Refund Request" in the subject line. We'll process your full refund within 2-3 business days, no questions asked. This is especially important for iOS users who may not realize the Gmail add-on isn't available on iPhone/iPad.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Does the Gmail add-on work on mobile?</div>
-            <div class="faq-answer">
-                <strong>Android:</strong> Yes! The add-on works great on Android Gmail app. You'll need to install it from desktop first, then it automatically appears on your phone.<br><br>
-                <strong>iPhone/iPad:</strong> No, Gmail add-ons aren't supported on iOS due to Apple restrictions. Premium iOS users get unlimited email forwarding to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9deefefcf3ddfae8fceff9f0e4f8f0fcf4f1b3fef2f0">[email&#160;protected]</a> instead.<br><br>
-                If this doesn't work for you, we offer a 14-day money-back guarantee.
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Do my free scans carry over if I upgrade?</div>
-            <div class="faq-answer">Once you upgrade to Premium, you get unlimited scans immediately. Your free tier scans no longer apply.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Is my payment information secure?</div>
-            <div class="faq-answer">Yes! We use Stripe, a trusted payment processor used by millions of businesses. We never store your credit card information.</div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">Can I upgrade or downgrade later?</div>
-            <div class="faq-answer">Yes! You can switch between monthly and annual plans anytime. Changes take effect at your next billing cycle.</div>
-        </div>
-    </section>
-    
-    <!-- Loading State (hidden by default) -->
-    <div id="loading" class="loading">
-        <div class="spinner"></div>
-        <p>Redirecting to secure checkout...</p>
     </div>
-    
-    <!-- Footer -->
+
+    <!-- Works with Any Device -->
+    <div class="mobile-support">
+        <div class="container">
+            <h2 class="section-title">📱 Works with Any Device</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.7); max-width: 600px; margin: -30px auto 0; font-size: 1.1em;">
+                Guard my email works across all your devices
+            </p>
+
+            <div class="mobile-grid">
+
+                <div class="mobile-card">
+                    <span class="platform-badge badge-all">✉️ All Devices</span>
+                    <span class="platform-icon">📧</span>
+                    <h3>Email Forwarding</h3>
+                    <p>Works on every device and email client. Simply forward any suspicious email to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86f5e5e7e8c6e1f3e7f4e2ebffe3ebe7efeaa8e5e9eb">[email&#160;protected]</a> and receive an analysis reply.</p>
+                    <div class="status">
+                        <div class="status-dot dot-green"></div>
+                        <span style="color: #54cb5f;">Available on all devices</span>
+                    </div>
+                </div>
+
+                <div class="mobile-card">
+                    <span class="platform-badge badge-android">🤖 Android</span>
+                    <span class="platform-icon">📱</span>
+                    <h3>Gmail Add-on</h3>
+                    <p>Premium subscribers get the full Gmail add-on experience on Android. Scan any email with one tap - results appear instantly in the Gmail app.</p>
+                    <div class="status">
+                        <div class="status-dot dot-green"></div>
+                        <span style="color: #3DDC84;">Full add-on support</span>
+                    </div>
+                </div>
+
+                <div class="mobile-card">
+                    <span class="platform-badge badge-ios">🍎 iPhone & iPad</span>
+                    <span class="platform-icon">📲</span>
+                    <h3>Email Forwarding</h3>
+                    <p>Gmail add-ons are not supported on iOS by Apple. iPhone and iPad users can use our email forwarding service, which works perfectly from the Gmail or Apple Mail app.</p>
+                    <div class="status">
+                        <div class="status-dot dot-yellow"></div>
+                        <span style="color: #FBBC04;">Forwarding service available</span>
+                    </div>
+                </div>
+
+                <div class="mobile-card">
+                    <span class="platform-badge badge-all">💻 Desktop</span>
+                    <span class="platform-icon">🖥️</span>
+                    <h3>Gmail Add-on + Forwarding</h3>
+                    <p>The full experience. Premium subscribers get the Gmail sidebar add-on for instant one-click scanning alongside the email forwarding service.</p>
+                    <div class="status">
+                        <div class="status-dot dot-blue"></div>
+                        <span style="color: #4285F4;">Full experience available</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding: 25px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.95em;">
+                    💡 <strong style="color: white;">iPhone users:</strong> Forward suspicious emails to 
+                    <strong style="color: #54cb5f;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="493a2a2827092e3c283b2d24302c24282025672a2624">[email&#160;protected]</a></strong> from your Gmail or Apple Mail app — it works exactly the same way!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Features -->
+    <div class="security-features">
+        <div class="container">
+            <h2 class="section-title">Security & Privacy First</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Auto-Delete After Processing</h3>
+                    <p>All forwarded emails are automatically deleted within 60 minutes after analysis. We don't store your data.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Prompt Injection Protection</h3>
+                    <p>Our system detects and blocks attempts to manipulate the AI or extract user information from malicious emails.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👤</div>
+                    <h3>Privacy-Focused Analysis</h3>
+                    <p>Email content is analyzed by AI but not permanently stored. Your email address is only used for usage tracking.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚫</div>
+                    <h3>No Data Collection</h3>
+                    <p>We don't build profiles, track usage patterns, or sell data. Each analysis is independent and private.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Usage Limits</h3>
+                    <p>Free users get 5 scans per month. Upgrade to Premium for unlimited scans across all platforms.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Comprehensive Analysis</h3>
+                    <p>Checks sender authenticity, suspicious links, urgency tactics, spoofing attempts, and more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example">
+        <div class="container">
+            <h2 class="section-title">Example Analysis</h2>
+            <div class="example-box">
+                <div class="risk-score">RISK SCORE: 9/10</div>
+                <p><strong>Highly likely to be dangerous - we recommend that you don't click on any links or open attachments</strong></p>
+                <div class="reasons">
+                    <p><strong>REASONS:</strong></p>
+                    <ul style="list-style-position: inside; padding-left: 0;">
+                        <li>Sender email domain (secure-bank-verify.com) is not affiliated with any legitimate banking institution</li>
+                        <li>Creates false urgency by claiming account will be "suspended within 24 hours"</li>
+                        <li>Requests sensitive information (account credentials) through a suspicious link</li>
+                        <li>Contains multiple spelling and grammar errors uncommon in professional bank communications</li>
+                        <li>URL in the email points to a recently registered domain with no established reputation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+        <h2>Try It Now - It's Free!</h2>
+        <p>Forward any suspicious email to get instant analysis. 5 free scans per month.</p>
+        <div class="email-display-box">
+            <p style="margin-bottom: 10px; font-size: 0.9em; opacity: 0.9;">Forward suspicious emails to:</p>
+            <p style="font-size: 1.8em; font-weight: 700; letter-spacing: 1px; margin: 0;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8dfeeeece3cdeaf8ecffe9e0f4e8e0ece4e1a3eee2e0">[email&#160;protected]</a></p>
+        </div>
+        <p style="margin-top: 20px; opacity: 0.8; font-size: 0.95em;">
+            Need more? <a href="upgrade.html" style="color: white; font-weight: bold; text-decoration: underline;">Upgrade to Premium</a> for unlimited scans.
+        </p>
+    </div>
+
+    <!-- Enterprise Section -->
+    <div class="enterprise">
+        <div class="container">
+            <h2>Protect Your Entire Organization</h2>
+            <p style="font-size: 1.2em; color: rgba(255,255,255,0.9); margin-bottom: 40px;">Get Guard My Email for your whole team with centralized management and billing.</p>
+            
+            <div class="enterprise-benefits">
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Domain-wide deployment</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Unlimited scans for all employees</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Centralized admin dashboard</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Priority enterprise support</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <span>Custom training & onboarding</span>
+                </div>
+            </div>
+            
+            <form id="enterprise-form" class="enterprise-form">
+                <input type="text" name="company" placeholder="Company name" required>
+                <input type="email" name="email" placeholder="Work email" required>
+                <input type="number" name="employees" placeholder="Number of employees" min="1" required>
+                <button type="submit" class="enterprise-submit">Request Enterprise Demo</button>
+            </form>
+            
+            <p class="enterprise-note" id="enterprise-thanks" style="display: none; color: white; background: rgba(255,255,255,0.2); padding: 20px; border-radius: 8px; margin-top: 20px;">
+                ✓ Thank you! We'll contact you within 24 hours with pricing and next steps.
+            </p>
+            <p class="enterprise-note enterprise-default">We typically respond within 24 hours with pricing and next steps.</p>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Guard My Email. All rights reserved.</p>
-            <div class="footer-links">
+            <p>&copy; 2026 Guard my email. All rights reserved.</p>
+            <nav class="footer-links">
                 <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="/cdn-cgi/l/email-protection#c6b5b3b6b6a9b4b286a1b3a7b4a2abbfa3aba7afaae8a5a9ab">Contact</a>
-            </div>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="upgrade.html">Pricing</a>
+                <a href="/cdn-cgi/l/email-protection#d4a7a1a4a4bba6a094b3a1b5a6b0b9adb1b9b5bdb8fab7bbb9">Contact</a>
+            </nav>
         </div>
     </footer>
-    
-    <!-- Stripe Checkout Script -->
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        // Currency and Pricing Configuration
-        const PRICE_IDS = {
-            monthly: {
-                usd: 'price_1T20FZE0mK6l668HYqkcXIbF',
-                gbp: 'price_1T282jE0mK6l668HHOBxHCY3',
-                eur: 'price_1T2831E0mK6l668H6E3LFbYT'
-            },
-            annual: {
-                usd: 'price_1T20GCE0mK6l668HZpvDdtok',
-                gbp: 'price_1T283JE0mK6l668HESEqB6sG',
-                eur: 'price_1T283ZE0mK6l668HF4RLnIVy'
-            }
-        };
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Define tooltip functions first for immediate availability
+        function showHowToStart() {
+            const tooltip = document.querySelector('.how-to-tooltip');
+            tooltip.classList.add('show');
+            
+            // Close tooltip when clicking outside
+            setTimeout(() => {
+                document.addEventListener('click', closeTooltipOnClickOutside);
+            }, 100);
+        }
         
-        const PRICING = {
-            usd: {
-                symbol: '$',
-                monthly: '4.99',
-                annual: '49',
-                monthlyEquivalent: '$4.08/month when billed annually',
-                savings: '💰 Save 17% ($10/year)'
-            },
-            gbp: {
-                symbol: '£',
-                monthly: '3.99',
-                annual: '39',
-                monthlyEquivalent: '£3.25/month when billed annually',
-                savings: '💰 Save 17% (£9/year)'
-            },
-            eur: {
-                symbol: '€',
-                monthly: '4.49',
-                annual: '45',
-                monthlyEquivalent: '€3.75/month when billed annually',
-                savings: '💰 Save 17% (€9/year)'
-            }
-        };
-        
-        // Current selected currency
-        let currentCurrency = 'usd';
-        
-        // Detect user's country and set currency
-        async function detectCurrency() {
-            try {
-                const response = await fetch('https://ipapi.co/json/');
-                const data = await response.json();
-                const countryCode = data.country_code;
-                
-                // Map country to currency
-                const currencyMap = {
-                    'GB': 'gbp',
-                    // Eurozone countries
-                    'AT': 'eur', 'BE': 'eur', 'CY': 'eur', 'EE': 'eur',
-                    'FI': 'eur', 'FR': 'eur', 'DE': 'eur', 'GR': 'eur',
-                    'IE': 'eur', 'IT': 'eur', 'LV': 'eur', 'LT': 'eur',
-                    'LU': 'eur', 'MT': 'eur', 'NL': 'eur', 'PT': 'eur',
-                    'SK': 'eur', 'SI': 'eur', 'ES': 'eur'
-                };
-                
-                return currencyMap[countryCode] || 'usd';
-            } catch (error) {
-                console.log('Currency detection failed, defaulting to USD');
-                return 'usd';
+        function closeTooltipOnClickOutside(event) {
+            const tooltip = document.querySelector('.how-to-tooltip');
+            const button = document.querySelector('.plan-btn-free');
+            
+            if (!tooltip.contains(event.target) && !button.contains(event.target)) {
+                tooltip.classList.remove('show');
+                document.removeEventListener('click', closeTooltipOnClickOutside);
             }
         }
         
-        // Update all prices on the page
-        function updatePrices(currency) {
-            currentCurrency = currency;
-            const pricing = PRICING[currency];
+        function copyEmail() {
+            // Email encoded to prevent obfuscation - decodes to scan@guardmyemail.com
+            const email = atob('c2NhbkBndWFyZG15ZW1haWwuY29t');
             
-            // Update currency symbols
-            document.querySelectorAll('[data-currency-symbol]').forEach(el => {
-                el.textContent = pricing.symbol;
-            });
+            // Check if clipboard API is available
+            if (!navigator.clipboard) {
+                // Fallback for older browsers or non-HTTPS
+                fallbackCopyEmail(email);
+                return;
+            }
             
-            // Update monthly price
-            document.querySelectorAll('[data-price-monthly]').forEach(el => {
-                el.textContent = pricing.monthly;
-            });
-            
-            // Update annual price
-            document.querySelectorAll('[data-price-annual]').forEach(el => {
-                el.textContent = pricing.annual;
-            });
-            
-            // Update monthly equivalent
-            document.querySelectorAll('[data-monthly-equivalent]').forEach(el => {
-                el.textContent = pricing.monthlyEquivalent;
-            });
-            
-            // Update savings text
-            document.querySelectorAll('[data-savings]').forEach(el => {
-                el.textContent = pricing.savings;
+            navigator.clipboard.writeText(email).then(() => {
+                const buttons = document.querySelectorAll('.copy-btn, .cta-button, .feedback-button');
+                buttons.forEach(btn => {
+                    const originalText = btn.textContent;
+                    btn.textContent = '✓ Copied!';
+                    btn.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            }).catch(err => {
+                console.error('Clipboard error:', err);
+                fallbackCopyEmail(email);
             });
         }
         
-        // Initialize on page load
-        window.addEventListener('DOMContentLoaded', async () => {
-            // Detect currency
-            const detectedCurrency = await detectCurrency();
-            
-            // Set dropdown and update prices
-            const select = document.getElementById('currency-select');
-            select.value = detectedCurrency;
-            updatePrices(detectedCurrency);
-            
-            // Listen for manual changes
-            select.addEventListener('change', (e) => {
-                updatePrices(e.target.value);
-            });
-        });
-        
-        // Initialize Stripe (replace with your actual publishable key)
-        const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY');
-        
-        // Get user email if available (from URL parameter or localStorage)
-        const urlParams = new URLSearchParams(window.location.search);
-        const userEmail = urlParams.get('email') || localStorage.getItem('userEmail') || '';
-        
-        function showLoading() {
-            document.getElementById('loading').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-        
-        function selectFree() {
-            alert('You are currently on the Free plan. No action needed!');
-        }
-        
-        async function selectMonthly() {
-            showLoading();
+        // Fallback copy method for older browsers or HTTP
+        function fallbackCopyEmail(email) {
+            const textArea = document.createElement('textarea');
+            textArea.value = email;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.select();
             
             try {
-                // Use the correct price ID for selected currency
-                const priceId = PRICE_IDS.monthly[currentCurrency];
+                document.execCommand('copy');
+                const buttons = document.querySelectorAll('.copy-btn, .cta-button, .feedback-button');
+                buttons.forEach(btn => {
+                    const originalText = btn.textContent;
+                    btn.textContent = '✓ Copied!';
+                    btn.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.classList.remove('copied');
+                    }, 2000);
+                });
+            } catch (err) {
+                // Decode email for display in alert
+                alert('Failed to copy. Please copy manually: ' + atob('c2NhbkBndWFyZG15ZW1haWwuY29t'));
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        // Copy email and close tooltip
+        function copyEmailAndClose() {
+            const email = atob('c2NhbkBndWFyZG15ZW1haWwuY29t'); // scan@guardmyemail.com
+            const btn = document.querySelector('.tooltip-copy-btn');
+            
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied to Clipboard!';
+                btn.classList.add('copied');
                 
-                // Call your backend to create a Stripe Checkout session
-                const response = await fetch('https://guardmyemail-backend.vercel.app/create-checkout-session', {
+                setTimeout(() => {
+                    const tooltip = document.querySelector('.how-to-tooltip');
+                    tooltip.classList.remove('show');
+                    btn.textContent = originalText;
+                    btn.classList.remove('copied');
+                    document.removeEventListener('click', closeTooltipOnClickOutside);
+                }, 1500);
+            }).catch(err => {
+                alert('Failed to copy. Please copy manually: ' + atob('c2NhbkBndWFyZG15ZW1haWwuY29t'));
+            });
+        }
+        
+        // Handle enterprise form submission
+        const ENTERPRISE_FORM_URL = 'YOUR_WEB_APP_URL_HERE'; // Replace with your Apps Script web app URL
+        
+        document.getElementById('enterprise-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                company: this.company.value,
+                email: this.email.value,
+                employees: this.employees.value,
+                timestamp: new Date().toISOString()
+            };
+            
+            const submitButton = this.querySelector('.enterprise-submit');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                const response = await fetch(ENTERPRISE_FORM_URL, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({
-                        priceId: priceId,
-                        customerEmail: userEmail,
-                        mode: 'subscription'
-                    })
+                    body: JSON.stringify(formData)
                 });
                 
-                // Check if backend returned an error
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    console.error('Backend error:', errorText);
-                    throw new Error(`Backend returned ${response.status}: ${errorText}`);
-                }
-                
-                const session = await response.json();
-                
-                // Verify session was created
-                if (!session || !session.id) {
-                    console.error('Invalid session response:', session);
-                    throw new Error('Backend did not return a valid session ID. Please check your Stripe configuration.');
-                }
-                
-                // Redirect to Stripe Checkout
-                const result = await stripe.redirectToCheckout({
-                    sessionId: session.id
-                });
-                
-                if (result.error) {
-                    alert(result.error.message);
-                    document.getElementById('loading').style.display = 'none';
-                }
-            } catch (error) {
-                console.error('Detailed error:', error);
-                
-                // Show helpful error message
-                let errorMsg = 'Payment setup failed.\n\n';
-                
-                if (error.message && error.message.includes('price')) {
-                    errorMsg += 'Issue: Invalid price configuration.\n';
-                    errorMsg += 'The site administrator needs to update the Stripe price IDs.\n\n';
-                } else if (error.message) {
-                    errorMsg += 'Error: ' + error.message + '\n\n';
-                } else {
-                    errorMsg += 'Unknown error occurred.\n\n';
-                }
-                
-                errorMsg += 'Please contact support@guardmyemail.com for assistance.';
-                
-                alert(errorMsg);
-                document.getElementById('loading').style.display = 'none';
-            }
-        }
-        
-        async function selectAnnual() {
-            showLoading();
-            
-            try {
-                // Use the correct price ID for selected currency
-                const priceId = PRICE_IDS.annual[currentCurrency];
-                
-                const response = await fetch('https://guardmyemail-backend.vercel.app/create-checkout-session', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        priceId: priceId,
-                        customerEmail: userEmail,
-                        mode: 'subscription'
-                    })
-                });
-                
-                // Check if backend returned an error
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    console.error('Backend error:', errorText);
-                    throw new Error(`Backend returned ${response.status}: ${errorText}`);
-                }
-                
-                const session = await response.json();
-                
-                // Verify session was created
-                if (!session || !session.id) {
-                    console.error('Invalid session response:', session);
-                    throw new Error('Backend did not return a valid session ID. Please check your Stripe configuration.');
-                }
-                
-                const result = await stripe.redirectToCheckout({
-                    sessionId: session.id
-                });
-                
-                if (result.error) {
-                    alert(result.error.message);
-                    document.getElementById('loading').style.display = 'none';
-                }
-            } catch (error) {
-                console.error('Detailed error:', error);
-                
-                // Show helpful error message
-                let errorMsg = 'Payment setup failed.\n\n';
-                
-                if (error.message && error.message.includes('price')) {
-                    errorMsg += 'Issue: Invalid price configuration.\n';
-                    errorMsg += 'The site administrator needs to update the Stripe price IDs.\n\n';
-                } else if (error.message) {
-                    errorMsg += 'Error: ' + error.message + '\n\n';
-                } else {
-                    errorMsg += 'Unknown error occurred.\n\n';
-                }
-                
-                errorMsg += 'Please contact support@guardmyemail.com for assistance.';
-                
-                alert(errorMsg);
-                document.getElementById('loading').style.display = 'none';
-            }
-        }
-    </script>
-</body>
-</html>
+                // Show success message
+                document.querySelector('.enterprise-default').style.display = 'none';
+                document.getElementById('enterprise-thanks').style.display = 'block';
