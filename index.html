@@ -1134,15 +1134,16 @@
             <p>&copy; 2026 Guard my email. All rights reserved.</p>
             <nav class="footer-links">
                 <a href="index.html">Home</a>
+                <a href="enterprise.html">Enterprise</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="upgrade.html">Pricing</a>
-                <a href="/cdn-cgi/l/email-protection#53202623233c21271334263221373e2a363e323a3f7d303c3e">Contact</a>
+                <a href="mailto:support@guardmyemail.com">Contact</a>
             </nav>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Define tooltip functions first for immediate availability
         function showHowToStart() {
             const tooltip = document.querySelector('.how-to-tooltip');
@@ -1254,25 +1255,4 @@
             const formData = {
                 company: this.company.value,
                 email: this.email.value,
-                employees: this.employees.value,
-                timestamp: new Date().toISOString()
-            };
-            
-            const submitButton = this.querySelector('.enterprise-submit');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            try {
-                const response = await fetch(ENTERPRISE_FORM_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                // Show success message
-                document.querySelector('.enterprise-default').style.display = 'none';
-                document.getElementById
+                employees: this.employees.val
