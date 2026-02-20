@@ -64,6 +64,30 @@
             opacity: 0.95;
         }
         
+        .hero-stat {
+            font-size: 2.5em;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
+        }
+        
+        .hero-stat-highlight {
+            color: #FF4444;
+            font-size: 1.1em;
+        }
+        
+        .hero-warning {
+            font-size: 1.6em;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            color: #FFFFFF;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
         .email-box {
             background: white;
             color: #213455;
@@ -744,6 +768,19 @@
         }
         
         @media (max-width: 768px) {
+            .hero-stat {
+                font-size: 1.8em;
+            }
+            
+            .hero-warning {
+                font-size: 1.3em;
+            }
+            
+            .email-box {
+                font-size: 1.2em;
+                padding: 15px 20px;
+            }
+            
             .how-to-tooltip {
                 width: 280px;
                 left: 50%;
@@ -815,11 +852,14 @@
 <body>
     <div class="hero">
         <img src="logo.png" alt="Guard My Email" class="logo">
-        <p style="font-size: 1.3em; font-weight: 600; line-height: 1.4; margin-bottom: 10px;">$16.6 billion lost by 900,000 people to email scams and cybercrime in 2024 alone.</p>
-        <p style="font-size: 1.3em; font-weight: 600; line-height: 1.4;">Don't let it happen to yourself or your loved ones.</p>
+        <p class="hero-stat">
+            <span class="hero-stat-highlight">$16.6 billion</span> lost by <span class="hero-stat-highlight">900,000 people</span><br>
+            to email scams in 2024 alone.
+        </p>
+        <p class="hero-warning">Don't let it happen to yourself or your loved ones.</p>
         <div class="email-box">
-            <p style="margin-bottom: 10px;">Try the free scam detection - simply forward any suspicious email to:</p>
-            <p style="font-size: 1.5em; font-weight: 700; color: #34A853;">scan@guardmyemail.com</p>
+            <p style="margin-bottom: 10px; font-size: 0.65em; opacity: 0.8;">Try the free scam detection - simply forward any suspicious email to:</p>
+            <p style="font-size: 1em; font-weight: 700; color: #34A853; margin: 0;">scan@guardmyemail.com</p>
         </div>
     </div>
 
