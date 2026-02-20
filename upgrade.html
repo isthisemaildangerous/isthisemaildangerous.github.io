@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="cloudflare-email-protection" content="off">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upgrade to Premium - Guard my email</title>
     <meta name="description" content="Upgrade to unlimited email scam detection. Protect your inbox with AI-powered security.">
@@ -611,7 +612,7 @@
             <div class="plan-description">Perfect for trying out our service</div>
             
             <div class="price">
-                <span class="price-currency">$</span>
+                <span class="price-currency" data-currency-symbol>$</span>
                 <span class="price-amount">0</span>
             </div>
             <div class="price-note">Forever free</div>
@@ -711,11 +712,11 @@
             <ul class="features-list">
                 <li>
                     <span class="check-icon">✓</span>
-                    <span class="feature-text"><strong>Everything in Monthly</strong></span>
+                    <span class="feature-text"><strong>Everything in Premium Monthly</strong></span>
                 </li>
                 <li>
                     <span class="check-icon">✓</span>
-                    <span class="feature-text"><strong>Save $10 per year</strong></span>
+                    <span class="feature-text" data-savings-text><strong>Save $10 per year</strong></span>
                 </li>
                 <li>
                     <span class="check-icon">✓</span>
@@ -905,21 +906,24 @@
                 monthly: '4.99',
                 annual: '49',
                 monthlyEquivalent: '$4.08/month when billed annually',
-                savings: '💰 Save 17% ($10/year)'
+                savings: '💰 Save 18% ($11/year)',
+                savingsText: 'Save $11 per year'
             },
             gbp: {
                 symbol: '£',
                 monthly: '3.99',
                 annual: '39',
                 monthlyEquivalent: '£3.25/month when billed annually',
-                savings: '💰 Save 17% (£9/year)'
+                savings: '💰 Save 19% (£9/year)',
+                savingsText: 'Save £9 per year'
             },
             eur: {
                 symbol: '€',
                 monthly: '4.49',
                 annual: '45',
                 monthlyEquivalent: '€3.75/month when billed annually',
-                savings: '💰 Save 17% (€9/year)'
+                savings: '💰 Save 16% (€9/year)',
+                savingsText: 'Save €9 per year'
             }
         };
         
@@ -980,6 +984,11 @@
             document.querySelectorAll('[data-savings]').forEach(el => {
                 el.textContent = pricing.savings;
             });
+            
+            // Update savings feature text
+            document.querySelectorAll('[data-savings-text]').forEach(el => {
+                el.innerHTML = '<strong>' + pricing.savingsText + '</strong>';
+            });
         }
         
         // Initialize on page load
@@ -998,8 +1007,8 @@
             });
         });
         
-        // Initialize Stripe         
-        const stripe = Stripe('pk_live_51T1EWCE0mK6l668HqMzfQcEETetLzZw7BenTal28MvymPFHPkwuj6BvE3ul0k8OaFdQCikEiCwQp55U1zyNnna8700sZgHFE6Q');
+        // Initialize Stripe (replace with your actual publishable key)
+        const stripe = Stripe('pk_test_YOUR_PUBLISHABLE_KEY');
         
         // Get user email if available (from URL parameter or localStorage)
         const urlParams = new URLSearchParams(window.location.search);
