@@ -212,7 +212,7 @@
     </div>
     
     <div class="header">
-        <h1>$55 Billion Lost to Business Email Compromise in a Decade</h1>
+        <h1>Companies lost $55 Billion to Email Scams in a Decade</h1>
         <p>Don't let your organization become the next victim. Protect your entire team with AI-powered email security.</p>
     </div>
 
@@ -324,7 +324,7 @@
                     </li>
                 </ul>
 
-                <a href="/cdn-cgi/l/email-protection#30434540405f42447057455142545d49555d51595c1e535f5d0f4345525a5553440d755e44554240425943551074555d5f1062554145554344" class="cta-button">Request Demo</a>
+                <a href="mailto:support@guardmyemail.com" class="cta-button">Request Demo</a>
             </div>
         </div>
     </div>
@@ -389,7 +389,7 @@
     <div class="container" style="text-align: center; padding: 80px 20px;">
         <h2 style="font-size: 2.5em; color: #213455; margin-bottom: 20px;">Ready to Protect Your Organization?</h2>
         <p style="font-size: 1.2em; color: #666; margin-bottom: 30px;">Schedule a demo to see how Guard My Email can protect your entire team</p>
-        <a href="/cdn-cgi/l/email-protection#e89b9d9898879a9ca88f9d899a8c85918d85898184c68b8785d79b9d8a828d8b9cd5ad869c8d9a989a819b8dc8ac8d8587c8ba8d999d8d9b9c" style="display: inline-block; padding: 18px 40px; background: #54cb5f; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.2em;">Request Enterprise Demo</a>
+        <a href="mailto:support@guardmyemail.com" style="display: inline-block; padding: 18px 40px; background: #54cb5f; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.2em;">Request Enterprise Demo</a>
     </div>
 
     <footer style="background: #2C3E50; color: white; padding: 40px 20px; text-align: center;">
@@ -403,7 +403,7 @@
                 <a href="privacy.html" style="color: white; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
                 <a href="terms.html" style="color: white; text-decoration: none; margin: 0 15px;">Terms of Service</a>
                 <a href="upgrade.html" style="color: white; text-decoration: none; margin: 0 15px;">Pricing</a>
-                <a href="/cdn-cgi/l/email-protection#01727471716e73754166746073656c78646c60686d2f626e6c" style="color: white; text-decoration: none; margin: 0 15px;">Contact</a>
+                <a href="mailto:support@guardmyemail.com" style="color: white; text-decoration: none; margin: 0 15px;">Contact</a>
             </nav>
         </div>
     </footer>
@@ -426,3 +426,16 @@
             eur: {
                 symbol: '€',
                 small: '€1.80',
+                         medium: '€2.25',
+                large: '€2.70'
+            }
+        };
+
+        document.getElementById('currency-selector').addEventListener('change', function(e) {
+            const currency = e.target.value;
+            const selected = pricing[currency];
+            document.getElementById('enterprise-price').textContent = `From ${selected.small}/user/month`;
+        });
+    </script>
+</body>
+</html>
