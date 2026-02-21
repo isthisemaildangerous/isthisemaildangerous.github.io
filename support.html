@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="cloudflare-email-protection" content="off">
+    <title>Support - Guard My Email</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #213455;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #54cb5f;
+            padding-bottom: 10px;
+        }
+        
+        .card h3 {
+            color: #213455;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-box {
+            background: #e8f5e9;
+            border-left: 4px solid #54cb5f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .contact-email {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #213455;
+            margin: 10px 0;
+        }
+        
+        .contact-email a {
+            color: #213455;
+            text-decoration: none;
+        }
+        
+        .contact-email a:hover {
+            color: #54cb5f;
+            text-decoration: underline;
+        }
+        
+        .step {
+            margin: 20px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: #54cb5f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .step h4 {
+            color: #213455;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .step p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .screenshot-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            margin: 15px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #54cb5f;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 10px 10px 0;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #48b553;
+        }
+        
+        .btn-secondary {
+            background: #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #5568d3;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #213455;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            color: #666;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d32f2f;
+        }
+        
+        footer {
+            background: #2C3E50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Guard My Email Support</h1>
+        <p>Get help with installation and usage</p>
+    </div>
+
+    <div class="container">
+        <!-- Contact Support -->
+        <div class="card">
+            <h2>📧 Contact Support</h2>
+            
+            <div class="contact-box">
+                <p><strong>Need help?</strong> Our support team is here to assist you.</p>
+                <div class="contact-email">
+                    Email: <a href="mailto:support@guardmyemail.com">support@guardmyemail.com</a>
+                </div>
+                <p style="margin-top: 10px;">We typically respond within 24 hours on business days.</p>
+            </div>
+            
+            <h3>What to Include in Your Support Request</h3>
+            <p>To help us assist you faster, please include:</p>
+            <ul>
+                <li>Your Gmail address</li>
+                <li>A clear description of the issue</li>
+                <li>Screenshots (if applicable)</li>
+                <li>Any error messages you received</li>
+                <li>Steps you've already tried</li>
+            </ul>
+            
+            <a href="mailto:support@guardmyemail.com?subject=Guard%20My%20Email%20Support%20Request" class="btn">Email Support Now</a>
+        </div>
+
+        <!-- Installation Instructions -->
+        <div class="card">
+            <h2>🚀 How to Install Guard My Email</h2>
+            
+            <h3>Installation from Google Workspace Marketplace</h3>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>Visit the Google Workspace Marketplace</h4>
+                <p>Go to the Google Workspace Marketplace and search for "Guard My Email"</p>
+                <a href="https://workspace.google.com/marketplace" class="btn-secondary btn" target="_blank">Open Marketplace</a>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>Click "Install"</h4>
+                <p>On the Guard My Email listing page, click the blue "Install" button</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>Review Permissions</h4>
+                <p>You'll see a list of permissions the add-on needs:</p>
+                <ul>
+                    <li>Read email when you use the add-on</li>
+                    <li>Access your email address</li>
+                    <li>Connect to external services (Claude AI)</li>
+                </ul>
+                <p>Click "Continue" to proceed</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h4>Grant Access</h4>
+                <p>Choose your Gmail account and click "Allow" to grant the necessary permissions</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <h4>Start Using Guard My Email</h4>
+                <p>Installation complete! Now you can:</p>
+                <ul>
+                    <li>Open any email in Gmail</li>
+                    <li>Look for the Guard My Email icon in the right sidebar</li>
+                    <li>Click the icon to open the add-on</li>
+                    <li>Click "Scan Now" to analyze the email</li>
+                </ul>
+            </div>
+            
+            <h3>Alternative: Install from Gmail</h3>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>Open Gmail Settings</h4>
+                <p>In Gmail, click the Settings gear icon → "See all settings"</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>Go to Add-ons Tab</h4>
+                <p>Click the "Add-ons" tab, then click "Get add-ons"</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>Search and Install</h4>
+                <p>Search for "Guard My Email" and click "Install"</p>
+            </div>
+        </div>
+
+        <!-- Quick Start Guide -->
+        <div class="card">
+            <h2>⚡ Quick Start Guide</h2>
+            
+            <h3>Using the Gmail Add-on</h3>
+            <ol style="margin-left: 20px;">
+                <li><strong>Open Gmail</strong> and select any email</li>
+                <li><strong>Find Guard My Email</strong> in the right sidebar</li>
+                <li><strong>Click the icon</strong> to open the add-on panel</li>
+                <li><strong>Click "Scan Now"</strong> to analyze the email</li>
+                <li><strong>Review results</strong> - you'll see a risk level and explanation</li>
+            </ol>
+            
+            <h3>Using Email Forwarding</h3>
+            <ol style="margin-left: 20px;">
+                <li><strong>Forward suspicious email</strong> to: <code>scan@guardmyemail.com</code></li>
+                <li><strong>Wait 1-2 minutes</strong> for analysis</li>
+                <li><strong>Receive results</strong> via email with risk assessment</li>
+            </ol>
+            
+            <h3>Free vs Premium</h3>
+            <ul>
+                <li><strong>Free:</strong> 5 scans per month</li>
+                <li><strong>Premium ($4.99/month):</strong> Unlimited scans</li>
+            </ul>
+            
+            <a href="https://guardmyemail.com/upgrade.html" class="btn">Upgrade to Premium</a>
+        </div>
+
+        <!-- FAQ -->
+        <div class="card">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">I installed the add-on but don't see the icon</div>
+                <div class="faq-answer">
+                    Try these steps:
+                    <ul>
+                        <li>Refresh Gmail (press F5 or Cmd+R)</li>
+                        <li>Check if the sidebar is collapsed - look for a small arrow</li>
+                        <li>Try a different browser or incognito window</li>
+                        <li>Reinstall the add-on from Workspace Marketplace</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What permissions does Guard My Email need?</div>
+                <div class="faq-answer">
+                    We only request essential permissions:
+                    <ul>
+                        <li><strong>Read emails:</strong> Only when you click "Scan Now" - we analyze the email content</li>
+                        <li><strong>Your email address:</strong> To track your monthly scan quota</li>
+                        <li><strong>External service:</strong> To send emails to Claude AI for analysis</li>
+                    </ul>
+                    We never store your email content. See our <a href="privacy.html">Privacy Policy</a>.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How accurate is the scam detection?</div>
+                <div class="faq-answer">
+                    Guard My Email uses advanced AI (Claude by Anthropic) to analyze emails. While highly effective, no system is 100% accurate. Always use your own judgment and verify suspicious requests independently. See our <a href="terms.html">Terms of Service</a> for details.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">I've used all my free scans. What now?</div>
+                <div class="faq-answer">
+                    Free users get 5 scans per month. You can either:
+                    <ul>
+                        <li>Wait until next month (scans reset on the 1st)</li>
+                        <li>Upgrade to Premium for unlimited scans at $4.99/month</li>
+                    </ul>
+                    <a href="https://guardmyemail.com/upgrade.html">Upgrade here</a>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Does this work on mobile?</div>
+                <div class="faq-answer">
+                    Yes! The Gmail add-on works on:
+                    <ul>
+                        <li>Gmail mobile app (Android & iOS)</li>
+                        <li>Gmail web on mobile browsers</li>
+                        <li>Email forwarding works from any email client</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I uninstall?</div>
+                <div class="faq-answer">
+                    To remove Guard My Email:
+                    <ol>
+                        <li>Gmail Settings → Add-ons tab</li>
+                        <li>Find "Guard My Email" under "Installed add-ons"</li>
+                        <li>Click "Manage" → "Remove"</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is my data secure?</div>
+                <div class="faq-answer">
+                    Yes. We:
+                    <ul>
+                        <li>Never store email content</li>
+                        <li>Use encrypted connections (HTTPS)</li>
+                        <li>Only analyze emails you specifically choose to scan</li>
+                        <li>Don't share your data with third parties</li>
+                    </ul>
+                    Read our full <a href="privacy.html">Privacy Policy</a>.
+                </div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="card">
+            <h2>🔧 Troubleshooting</h2>
+            
+            <h3>Common Issues and Solutions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Error: "Authorization failed"</div>
+                <div class="faq-answer">
+                    <ol>
+                        <li>Uninstall the add-on completely</li>
+                        <li>Clear your browser cache</li>
+                        <li>Reinstall from Workspace Marketplace</li>
+                        <li>Grant all requested permissions</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Error: "Quota exceeded"</div>
+                <div class="faq-answer">
+                    You've used all 5 free scans this month. Either wait until next month or <a href="https://guardmyemail.com/upgrade.html">upgrade to Premium</a> for unlimited scans.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Scan taking too long / timing out</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Very large emails may take longer to analyze</li>
+                        <li>Try refreshing and scanning again</li>
+                        <li>If persistent, forward the email to scan@guardmyemail.com instead</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Not receiving forwarded scan results</div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Check your spam folder</li>
+                        <li>Add scan@guardmyemail.com to your contacts</li>
+                        <li>Wait up to 5 minutes for results</li>
+                        <li>Verify you forwarded to scan@guardmyemail.com (not a typo)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px;">
+                <strong>Still having issues?</strong> Contact our support team:
+                <a href="mailto:support@guardmyemail.com" class="btn">Email Support</a>
+            </p>
+        </div>
+
+        <!-- Resources -->
+        <div class="card">
+            <h2>📚 Additional Resources</h2>
+            
+            <ul>
+                <li><a href="index.html">Homepage</a> - Learn more about Guard My Email</li>
+                <li><a href="privacy.html">Privacy Policy</a> - How we handle your data</li>
+                <li><a href="terms.html">Terms of Service</a> - Usage terms and limitations</li>
+                <li><a href="upgrade.html">Pricing</a> - Free vs Premium comparison</li>
+                <li><a href="enterprise.html">Enterprise</a> - Solutions for businesses</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p style="margin-bottom: 15px;">&copy; 2026 Guard My Email. All rights reserved.</p>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="enterprise.html">Enterprise</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="upgrade.html">Pricing</a>
+                <a href="mailto:support@guardmyemail.com">Contact</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
