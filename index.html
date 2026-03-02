@@ -879,6 +879,22 @@
         </div>
     </div>
 
+    <!-- Product Screenshot Section -->
+    <div style="background: #f8f9fa; padding: 60px 20px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" style="color: #213455; margin-bottom: 20px;">See It In Action</h2>
+            <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Guard My Email works right inside Gmail. Click scan, and instantly see if an email is dangerous.
+            </p>
+            <div style="max-width: 1000px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0,0,0,0.15); border-radius: 12px; overflow: hidden;">
+                <img src="gmail-addon-screenshot.png" alt="Guard My Email Gmail Add-on showing a phishing email detected with 9/10 risk score" style="width: 100%; height: auto; display: block;">
+            </div>
+            <p style="text-align: center; color: #666; font-size: 0.95em; margin-top: 20px; font-style: italic;">
+                This Gmail add-on instantly detected a cryptocurrency scam with a 9/10 danger score
+            </p>
+        </div>
+    </div>
+
     <!-- How It Works -->
     <div class="how-it-works">
         <div class="container">
@@ -1136,7 +1152,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Define tooltip functions first for immediate availability
         function showHowToStart() {
             const tooltip = document.querySelector('.how-to-tooltip');
@@ -1154,21 +1170,4 @@
             
             if (!tooltip.contains(event.target) && !button.contains(event.target)) {
                 tooltip.classList.remove('show');
-                document.removeEventListener('click', closeTooltipOnClickOutside);
-            }
-        }
-        
-        function copyEmail() {
-            // Email encoded to prevent obfuscation - decodes to scan@guardmyemail.com
-            const email = atob('c2NhbkBndWFyZG15ZW1haWwuY29t');
-            
-            // Check if clipboard API is available
-            if (!navigator.clipboard) {
-                // Fallback for older browsers or non-HTTPS
-                fallbackCopyEmail(email);
-                return;
-            }
-            
-            navigator.clipboard.writeText(email).then(() => {
-                const buttons = document.querySelectorAll('.copy-btn, .cta-button, .feedback-button');
-                buttons.f
+                d
