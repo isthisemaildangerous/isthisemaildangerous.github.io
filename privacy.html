@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Guard my email</title>
+    <title>Privacy Policy - Guard My Email</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, #2C3E50 0%, #34A853 100%);
+            background: linear-gradient(135deg, #213455 0%, #54cb5f 100%);
             color: white;
             padding: 2rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -59,16 +59,16 @@
         }
         
         h2 {
-            color: #2C3E50;
+            color: #213455;
             margin-top: 2rem;
             margin-bottom: 1rem;
             font-size: 1.5rem;
-            border-bottom: 2px solid #34A853;
+            border-bottom: 2px solid #54cb5f;
             padding-bottom: 0.5rem;
         }
         
         h3 {
-            color: #2C3E50;
+            color: #213455;
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
             font-size: 1.2rem;
@@ -93,8 +93,21 @@
             margin-bottom: 2rem;
         }
         
+        .important-notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .important-notice h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
         a {
-            color: #34A853;
+            color: #54cb5f;
             text-decoration: none;
         }
         
@@ -126,7 +139,7 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="logo-96x96.png" alt="Guard my email" class="logo">
+            <img src="logo-96x96.png" alt="Guard My Email" class="logo">
             <div>
                 <a href="index.html" class="back-link">← Back to Home</a>
                 <h1>Privacy Policy</h1>
@@ -136,58 +149,64 @@
     
     <div class="container">
         <div class="content-card">
-            <p class="last-updated">Last Updated: February 12, 2025</p>
+            <p class="last-updated">Last Updated: March 20, 2026</p>
             
             <h2>1. Introduction</h2>
-            <p>Guard my email ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our email security service and Gmail add-on.</p>
+            <p>Guard My Email ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our email security service and Gmail add-on.</p>
+            
+            <div class="important-notice">
+                <h3>Google API Services User Data Policy</h3>
+                <p>Guard My Email's use and transfer of information received from Google APIs to any other app will adhere to <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+            </div>
             
             <h2>2. Information We Collect</h2>
             
             <h3>2.1 Email Content (Temporary Processing Only)</h3>
             <p>When you scan an email using our service:</p>
             <ul>
-                <li>We temporarily process the email content (sender, subject, body, headers) to analyze phishing threats</li>
-                <li>This data is sent to Claude AI (Anthropic) for analysis</li>
-                <li><strong>We do NOT store or retain any email content after analysis is complete</strong></li>
-                <li>Email content is processed in real-time and immediately discarded</li>
+                <li>We temporarily process the email content (sender, subject, body, headers) <strong>only when you click "Scan Now"</strong></li>
+                <li>This data is sent to Claude AI (Anthropic) for real-time phishing analysis</li>
+                <li><strong>We do NOT store, log, or retain any email content after analysis is complete</strong></li>
+                <li>Email content is processed in memory only and immediately discarded</li>
+                <li>We do NOT access your inbox or emails you don't explicitly scan</li>
             </ul>
             
             <h3>2.2 Account Information</h3>
-            <p>We collect and store:</p>
+            <p>We collect and store only essential information:</p>
             <ul>
-                <li>Email address (for account authentication and usage tracking)</li>
-                <li>Google account ID (for Gmail add-on integration)</li>
-                <li>Usage statistics (number of scans, timestamps, monthly usage)</li>
-                <li>Subscription tier (free or paid)</li>
-                <li>Subscription/payment information via Stripe (if you use paid features)</li>
-                <li>Stripe customer ID and subscription ID (for billing management)</li>
+                <li>Email address (for user identification and quota tracking)</li>
+                <li>Google account user ID (for Gmail add-on authentication)</li>
+                <li>Usage statistics (number of scans per month, timestamps)</li>
+                <li>Subscription tier (free or premium)</li>
+                <li>Stripe customer ID and subscription ID (if you subscribe to premium)</li>
             </ul>
             
-            <h3>2.3 Enterprise Inquiries</h3>
-            <p>If you submit an enterprise demo request, we collect:</p>
+            <h3>2.3 Technical Information</h3>
             <ul>
-                <li>Company name</li>
-                <li>Work email address</li>
-                <li>Number of employees</li>
-                <li>Timestamp of submission</li>
-            </ul>
-            <p>This information is used solely to respond to your inquiry.</p>
-            
-            <h3>2.4 Technical Information</h3>
-            <ul>
-                <li>IP address</li>
-                <li>Browser type and version</li>
-                <li>Device information</li>
-                <li>Error logs and performance data</li>
+                <li>Error logs and performance data (for service improvement)</li>
+                <li>Browser type and version (for compatibility)</li>
             </ul>
             
             <h2>3. How We Use Your Information</h2>
-            <p>We use collected information to:</p>
+            
+            <h3>3.1 Limited Use Compliance</h3>
+            <p><strong>Gmail data accessed through Google APIs is used ONLY for providing email phishing detection functionality.</strong> Specifically:</p>
             <ul>
-                <li>Provide phishing detection and email security analysis</li>
+                <li>We access email content <strong>only when you click "Scan Now"</strong></li>
+                <li>Email content is used <strong>solely for AI phishing analysis</strong></li>
+                <li>We do NOT use Gmail data for advertising purposes</li>
+                <li>We do NOT use Gmail data for AI model training</li>
+                <li>We do NOT sell or transfer Gmail data to third parties (except Claude API for analysis, see below)</li>
+                <li>We do NOT display Gmail data to humans except you (the email owner)</li>
+            </ul>
+            
+            <h3>3.2 Other Uses</h3>
+            <p>We use non-Gmail information to:</p>
+            <ul>
                 <li>Authenticate your account and manage subscriptions</li>
-                <li>Improve our service quality and detection accuracy</li>
+                <li>Track usage against quota limits (free: 5 scans/month, premium: unlimited)</li>
                 <li>Send service updates and security notifications</li>
+                <li>Improve service quality and detection accuracy</li>
                 <li>Comply with legal obligations</li>
                 <li>Detect and prevent fraud or abuse</li>
             </ul>
@@ -195,39 +214,59 @@
             <h2>4. Data Sharing and Third Parties</h2>
             
             <h3>4.1 Anthropic (Claude AI)</h3>
-            <p>Email content is sent to Anthropic's Claude API for AI-powered phishing analysis. Anthropic's privacy policy applies to this processing: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a></p>
-            
-            <h3>4.2 We Do NOT:</h3>
+            <p>Email content is sent to Anthropic's Claude API for AI-powered phishing analysis:</p>
             <ul>
-                <li>Sell your personal information to third parties</li>
-                <li>Share your email content with advertisers</li>
-                <li>Use your emails for marketing purposes</li>
-                <li>Store your email content beyond the analysis session</li>
+                <li><strong>Purpose:</strong> Real-time email threat analysis only</li>
+                <li><strong>Data Sent:</strong> Email content (headers, body, sender)</li>
+                <li><strong>Retention:</strong> Anthropic does NOT retain email content per their privacy policy</li>
+                <li><strong>Usage:</strong> Anthropic does NOT use customer data to train AI models</li>
+                <li><strong>Privacy Policy:</strong> <a href="https://www.anthropic.com/legal/privacy" target="_blank">https://www.anthropic.com/legal/privacy</a></li>
             </ul>
             
-            <h3>4.3 We May Share Information With:</h3>
+            <h3>4.2 Google Cloud Platform</h3>
+            <p>We use Google Sheets to store user quota information:</p>
             <ul>
-                <li>Service providers (hosting, payment processing, analytics)</li>
-                <li>Legal authorities (when required by law)</li>
-                <li>Business partners (with your explicit consent)</li>
+                <li><strong>Data Stored:</strong> Email addresses, scan counts, subscription tiers</li>
+                <li><strong>Security:</strong> Encrypted at rest with AES-256 (Google-managed)</li>
+                <li><strong>Access:</strong> Limited to our backend service account only</li>
+            </ul>
+            
+            <h3>4.3 Stripe (Payment Processing)</h3>
+            <p>If you subscribe to premium:</p>
+            <ul>
+                <li>Payment information is processed and stored by Stripe (PCI DSS Level 1 certified)</li>
+                <li>We only store your Stripe customer ID and subscription ID</li>
+                <li>We never see or store your credit card information</li>
+            </ul>
+            
+            <h3>4.4 What We Do NOT Do</h3>
+            <ul>
+                <li><strong>We do NOT</strong> sell your personal information to third parties</li>
+                <li><strong>We do NOT</strong> share your email content with advertisers</li>
+                <li><strong>We do NOT</strong> use your emails for marketing purposes</li>
+                <li><strong>We do NOT</strong> store your email content beyond the analysis session</li>
+                <li><strong>We do NOT</strong> allow humans to read your emails</li>
+                <li><strong>We do NOT</strong> use Gmail data for purposes other than phishing detection</li>
             </ul>
             
             <h2>5. Data Retention</h2>
             <ul>
-                <li><strong>Email Content:</strong> Not stored (processed in real-time only)</li>
-                <li><strong>Account Information:</strong> Retained while your account is active</li>
-                <li><strong>Usage Statistics:</strong> Retained for 12 months</li>
-                <li><strong>Payment Records:</strong> Retained for 7 years (legal requirement)</li>
+                <li><strong>Email Content:</strong> Zero retention (processed in memory only, immediately discarded)</li>
+                <li><strong>Email Addresses:</strong> Retained while your account is active</li>
+                <li><strong>Usage Statistics:</strong> Retained indefinitely (for quota tracking)</li>
+                <li><strong>Payment Records:</strong> Retained per Stripe's policies and legal requirements</li>
             </ul>
+            <p>To delete your account and all associated data, contact <a href="mailto:support@guardmyemail.com">support@guardmyemail.com</a></p>
             
             <h2>6. Data Security</h2>
             <p>We implement industry-standard security measures:</p>
             <ul>
-                <li>End-to-end encryption for data transmission</li>
-                <li>Secure HTTPS connections</li>
-                <li>Regular security audits</li>
-                <li>Access controls and authentication</li>
-                <li>SOC 2 compliant infrastructure</li>
+                <li><strong>Encryption in Transit:</strong> All data transmitted via HTTPS/TLS 1.3</li>
+                <li><strong>Encryption at Rest:</strong> User data stored in Google Sheets encrypted with AES-256</li>
+                <li><strong>Access Controls:</strong> Limited to service accounts only, no human access to user data</li>
+                <li><strong>Security Certification:</strong> CASA Tier 2 certified (Google-required security assessment)</li>
+                <li><strong>OAuth Security:</strong> Google OAuth verified for all Gmail API access</li>
+                <li><strong>API Key Protection:</strong> Stored encrypted in Google Apps Script Properties Service</li>
             </ul>
             
             <h2>7. Your Rights</h2>
@@ -235,73 +274,108 @@
             <ul>
                 <li><strong>Access:</strong> Request a copy of your personal data</li>
                 <li><strong>Correction:</strong> Update inaccurate information</li>
-                <li><strong>Deletion:</strong> Request deletion of your account and data</li>
-                <li><strong>Portability:</strong> Receive your data in a machine-readable format</li>
-                <li><strong>Opt-out:</strong> Unsubscribe from marketing communications</li>
-                <li><strong>Withdraw Consent:</strong> Revoke permissions at any time</li>
+                <li><strong>Deletion:</strong> Request deletion of your account and all data</li>
+                <li><strong>Portability:</strong> Receive your data in a machine-readable format (CSV export available)</li>
+                <li><strong>Revoke Access:</strong> Remove Gmail permissions at any time via Google Account settings</li>
+                <li><strong>Withdraw Consent:</strong> Uninstall add-on or revoke permissions at any time</li>
             </ul>
+            <p>To exercise these rights, contact <a href="mailto:privacy@guardmyemail.com">privacy@guardmyemail.com</a></p>
             
             <h2>8. GDPR Compliance (EU Users)</h2>
-            <p>If you are in the European Union:</p>
+            <p>If you are in the European Union, we comply with GDPR:</p>
             <ul>
-                <li>We process data under legitimate interest and consent legal bases</li>
-                <li>You have additional rights under GDPR</li>
-                <li>Data transfers outside the EU use Standard Contractual Clauses</li>
-                <li>Contact our Data Protection Officer at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e5e5c47584f4d576e495b4f5c4a43574b434f4742004d4143">[email&#160;protected]</a></li>
+                <li><strong>Legal Basis:</strong> Consent (you authorize Gmail access) and Legitimate Interest (fraud prevention)</li>
+                <li><strong>Data Protection by Design:</strong> Zero email content retention by default</li>
+                <li><strong>International Transfers:</strong> Data sent to Anthropic (US) uses Standard Contractual Clauses</li>
+                <li><strong>Your Rights:</strong> Access, rectification, erasure, restriction, portability, objection</li>
+                <li><strong>Data Protection Officer:</strong> <a href="mailto:dpo@guardmyemail.com">dpo@guardmyemail.com</a></li>
+                <li><strong>Supervisory Authority:</strong> You may lodge a complaint with your local data protection authority</li>
             </ul>
             
             <h2>9. CCPA Compliance (California Users)</h2>
             <p>California residents have the right to:</p>
             <ul>
-                <li>Know what personal information is collected</li>
-                <li>Know if personal information is sold or disclosed</li>
-                <li>Opt-out of the sale of personal information (we don't sell data)</li>
-                <li>Request deletion of personal information</li>
+                <li>Know what personal information is collected, used, shared, or sold</li>
+                <li>Delete personal information held by businesses</li>
+                <li>Opt-out of sale of personal information (<strong>we do not sell data</strong>)</li>
                 <li>Non-discrimination for exercising privacy rights</li>
             </ul>
+            <p>To exercise CCPA rights, contact <a href="mailto:privacy@guardmyemail.com">privacy@guardmyemail.com</a></p>
             
             <h2>10. Children's Privacy</h2>
             <p>Our service is not directed to children under 13. We do not knowingly collect information from children under 13. If we discover such collection, we will delete the information immediately.</p>
             
-            <h2>11. Gmail Add-on Specific</h2>
-            <p>Our Gmail add-on:</p>
+            <h2>11. Gmail Add-on Specific Disclosures</h2>
+            
+            <h3>11.1 Permissions</h3>
+            <p>Our Gmail add-on requests the following permissions:</p>
             <ul>
-                <li>Only accesses emails you explicitly choose to scan</li>
-                <li>Requires minimal permissions (read current message only)</li>
-                <li>Does not access your entire inbox</li>
-                <li>Does not read, store, or access emails you don't scan</li>
-                <li>Complies with Google's API Services User Data Policy</li>
+                <li><strong>gmail.readonly:</strong> Read email content when you click "Scan Now"</li>
+                <li><strong>gmail.addons.current.message.readonly:</strong> Access email metadata in add-on sidebar</li>
+                <li><strong>gmail.addons.execute:</strong> Run as Gmail add-on</li>
+                <li><strong>script.external_request:</strong> Send email content to Claude API for analysis</li>
+                <li><strong>userinfo.email:</strong> Identify your account for quota tracking</li>
             </ul>
             
-            <h2>12. Cookies and Tracking</h2>
-            <p>We use:</p>
+            <h3>11.2 What We Access</h3>
+            <p>We ONLY access:</p>
             <ul>
-                <li><strong>Essential Cookies:</strong> For authentication and service functionality</li>
-                <li><strong>Analytics Cookies:</strong> To understand service usage (can be opted out)</li>
-                <li><strong>No Advertising Cookies:</strong> We do not use cookies for advertising</li>
+                <li>Emails you explicitly scan by clicking "Scan Now"</li>
+                <li>Your email address for account identification</li>
             </ul>
             
-            <h2>13. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy periodically. We will notify you of significant changes via:</p>
+            <h3>11.3 What We Do NOT Access</h3>
             <ul>
-                <li>Email notification</li>
-                <li>In-app notification</li>
-                <li>Website banner</li>
+                <li>Emails you don't scan</li>
+                <li>Your inbox or other folders</li>
+                <li>Email attachments (only text content is analyzed)</li>
+                <li>Sent emails, drafts, or archived emails</li>
+                <li>Contacts or calendar</li>
             </ul>
-            <p>Continued use after changes constitutes acceptance of the updated policy.</p>
             
-            <h2>14. Contact Us</h2>
+            <h3>11.4 Google Limited Use Disclosure</h3>
+            <p><strong>Guard My Email's use of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements.</strong></p>
+            <p>This means:</p>
+            <ul>
+                <li>Gmail data is used <strong>only</strong> for providing phishing detection functionality</li>
+                <li>Gmail data is <strong>not</strong> transferred to third parties except for the stated purpose (Claude API analysis)</li>
+                <li>Gmail data is <strong>not</strong> used for serving advertisements</li>
+                <li>Gmail data is <strong>not</strong> used to build user profiles</li>
+                <li>Gmail data is <strong>not</strong> used to train AI models</li>
+            </ul>
+            
+            <h2>12. Email Forwarding Service</h2>
+            <p>If you use our email forwarding option (scan@guardmyemail.com):</p>
+            <ul>
+                <li>Emails forwarded to scan@guardmyemail.com are processed the same way as Gmail add-on scans</li>
+                <li>Email content is analyzed in real-time and immediately deleted</li>
+                <li>Analysis results are emailed back to you</li>
+                <li>We do not store forwarded email content</li>
+            </ul>
+            
+            <h2>13. Contact Us</h2>
             <p>For privacy-related questions or requests:</p>
             <ul>
-                <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbbbb9a2bdaaa8b28bacbeaab9afa6b2aea6aaa2a7e5a8a4a6">[email&#160;protected]</a></li>
-                <li><strong>Support:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f2818782829d8086b295879380969f8b979f939b9edc919d9f">[email&#160;protected]</a></li>
+                <li><strong>Privacy Inquiries:</strong> <a href="mailto:privacy@guardmyemail.com">privacy@guardmyemail.com</a></li>
+                <li><strong>General Support:</strong> <a href="mailto:support@guardmyemail.com">support@guardmyemail.com</a></li>
+                <li><strong>Data Protection Officer (EU):</strong> <a href="mailto:dpo@guardmyemail.com">dpo@guardmyemail.com</a></li>
                 <li><strong>Website:</strong> <a href="https://guardmyemail.com">guardmyemail.com</a></li>
                 <li><strong>Response Time:</strong> We respond to requests within 30 days</li>
             </ul>
             
-            <h2>15. Data Protection Officer</h2>
-            <p>For EU users, contact our Data Protection Officer:</p>
-            <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="573327381730223625333a2e323a363e3b7934383a">[email&#160;protected]</a></p>
-            
-            <h2>16. Supervisory Authority</h2>
-            <p>EU users have the right to lodge a co
+            <p style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #eee; color: #666; font-size: 0.9rem;">
+                This Privacy Policy was last updated on March 20, 2026. Previous versions are available upon request.
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Guard My Email. All rights reserved.</p>
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="terms.html">Terms of Service</a> |
+            <a href="support.html">Support</a>
+        </p>
+    </footer>
+</body>
+</html>
