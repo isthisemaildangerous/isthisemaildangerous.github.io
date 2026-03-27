@@ -938,8 +938,15 @@
         // Detect user's country and set currency
         // Update all prices on the page
         function updatePrices(currency) {
+            console.log('updatePrices called with currency:', currency);
             currentCurrency = currency;
             const pricing = PRICING[currency];
+            console.log('Pricing data:', pricing);
+            
+            if (!pricing) {
+                console.error('No pricing data found for currency:', currency);
+                return;
+            }
             
             // Update currency symbols
             document.querySelectorAll('[data-currency-symbol]').forEach(el => {
@@ -970,6 +977,8 @@
             document.querySelectorAll('[data-savings-text]').forEach(el => {
                 el.innerHTML = '<strong>' + pricing.savingsText + '</strong>';
             });
+            
+            console.log('Prices updated successfully');
         }
         
         // Initialize on page load
@@ -983,25 +992,41 @@
         }
         
         window.addEventListener('DOMContentLoaded', async () => {
+            console.log('DOMContentLoaded fired');
+            
             // Initialize Stripe
             try {
                 stripe = Stripe('pk_live_51T1EWCE0mK6l668HqMzfQcEETetLzZw7BenTal28MvymPFHPkwuj6BvE3ul0k8OaFdQCikEiCwQp55U1zyNnna8700sZgHFE6Q');
+                console.log('Stripe initialized');
             } catch (error) {
                 console.error('Stripe failed to load:', error);
             }
             
             // Detect currency
             const detectedCurrency = await detectCurrency();
+            console.log('Detected currency:', detectedCurrency);
             
             // Set dropdown and update prices
             const select = document.getElementById('currency-select');
+            console.log('Currency select element:', select);
+            
+            if (!select) {
+                console.error('Currency select dropdown not found!');
+                return;
+            }
+            
             select.value = detectedCurrency;
+            console.log('Set dropdown value to:', detectedCurrency);
+            
             updatePrices(detectedCurrency);
             
             // Listen for manual changes
             select.addEventListener('change', (e) => {
+                console.log('Dropdown changed to:', e.target.value);
                 updatePrices(e.target.value);
             });
+            
+            console.log('Event listener attached to dropdown');
         });
         
         // Get user email if available (from URL parameter or localStorage)
