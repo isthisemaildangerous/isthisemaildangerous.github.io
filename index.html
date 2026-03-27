@@ -22,6 +22,66 @@
             color: #213455;
         }
         
+        /* Floating Header */
+        .floating-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
+        
+        .floating-header a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+        
+        .floating-header a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .floating-header .email-link {
+            background: white;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .floating-header .email-link:hover {
+            background: #f0f0f0;
+        }
+        
+        /* Add padding to body to account for fixed header */
+        body {
+            padding-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .floating-header {
+                font-size: 0.85em;
+                gap: 15px;
+                padding: 10px 15px;
+            }
+            
+            body {
+                padding-top: 100px;
+            }
+        }
+        
         .hero {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.5) 0%, rgba(118, 75, 162, 0.5) 100%),
                         url('./hero-image3.jpg') center/cover no-repeat;
@@ -866,16 +926,38 @@
     </style>
 </head>
 <body>
+    <!-- Floating Header -->
+    <div class="floating-header">
+        <span>Try it now - forward an email to</span>
+        <a href="mailto:scan@guardmyemail.com" class="email-link">scan@guardmyemail.com</a>
+        <span>or</span>
+        <a href="https://workspace.google.com/marketplace/app/guard_my_email/1028233364030" target="_blank">Install Gmail Add-on</a>
+    </div>
+    
     <div class="hero">
         <img src="logo.png" alt="Guard My Email" class="logo">
+        <h1 style="font-size: 3em; margin-bottom: 30px; font-weight: 800;">Email Scam Detection</h1>
         <p class="hero-stat">
-            <span class="hero-stat-highlight">900,000 people</span> lose <span class="hero-stat-highlight">$16.6 billion</span><br>
-            to email scams each year
+            Millions are scammed by email each year
         </p>
-        <p class="hero-warning">Don't let it happen to you or your loved ones</p>
+        <p class="hero-warning">Protect yourself and your loved ones with our free scam detection</p>
         <div class="email-box">
             <p style="margin-bottom: 10px; font-size: 0.65em; opacity: 0.8;">Try the free scam detection - simply forward any suspicious email to:</p>
             <p style="font-size: 1em; font-weight: 700; color: #34A853; margin: 0;">scan@guardmyemail.com</p>
+        </div>
+        
+        <!-- Gmail Add-on CTA -->
+        <div style="margin-top: 30px;">
+            <p style="color: white; font-size: 1.1em; margin-bottom: 15px; opacity: 0.95;">
+                <strong>📧 Using Gmail?</strong> Install our add-on for one-click scanning
+            </p>
+            <a href="https://workspace.google.com/marketplace/app/guard_my_email/1028233364030" 
+               target="_blank"
+               style="display: inline-block; background: white; color: #667eea; padding: 15px 35px; 
+                      border-radius: 50px; text-decoration: none; font-size: 1.2em; font-weight: 700;
+                      box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.2s;">
+                Install Gmail Add-on - Free
+            </a>
         </div>
     </div>
 
@@ -892,6 +974,18 @@
             <p style="text-align: center; color: #666; font-size: 0.95em; margin-top: 20px; font-style: italic;">
                 This Gmail add-on instantly detected a cryptocurrency scam with a 9/10 danger score
             </p>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://workspace.google.com/marketplace/app/guard_my_email/1028233364030" 
+                   target="_blank"
+                   style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                          color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; 
+                          font-size: 1.1em; font-weight: 700; box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);">
+                    Install for Gmail - Free
+                </a>
+                <p style="margin-top: 15px; color: #666; font-size: 0.9em;">
+                    5 free scans per month • Upgrade anytime for unlimited scans
+                </p>
+            </div>
         </div>
     </div>
 
@@ -903,12 +997,12 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Forward the Email</h3>
-                    <p>Suspicious email? Simply forward it to scan@guardmyemail.com</p>
+                    <p>Suspicious email? Simply forward it to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b4c7d7d5daf4d3c1d5c6d0d9cdd1d9d5ddd89ad7dbd9">[email&#160;protected]</a></p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>AI Analysis</h3>
-                    <p>Our AI (powered by Claude) instantly analyzes the email to check if it's safe or dangerous</p>
+                    <p>Our AI instantly analyzes the email to check if it's safe or dangerous</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
@@ -923,6 +1017,19 @@
     <div class="freemium">
         <div class="container">
             <h2 class="section-title">Simple, Transparent Pricing</h2>
+            
+            <!-- Currency Selector -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <label for="currency-select" style="font-size: 1em; color: #666; margin-right: 10px;">Currency:</label>
+                <select id="currency-select" onchange="updateCurrency()" style="padding: 8px 15px; border-radius: 8px; border: 2px solid #e0e0e0; font-size: 1em; cursor: pointer;">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="CAD">CAD ($)</option>
+                    <option value="AUD">AUD ($)</option>
+                </select>
+            </div>
+            
             <div class="plan-grid">
 
                 <div class="plan-card plan-free">
@@ -937,13 +1044,13 @@
                     </ul>
                     <div class="plan-instructions">
                         <p style="margin: 15px 0 5px 0; font-size: 0.9em; color: #666;">Free scam detection:</p>
-                        <p style="font-size: 1.1em; font-weight: 700; color: #213455; margin: 0;">scan@guardmyemail.com</p>
+                        <p style="font-size: 1.1em; font-weight: 700; color: #213455; margin: 0;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e6d7d7f705e796b7f6c7a73677b737f7772307d7173">[email&#160;protected]</a></p>
                     </div>
                 </div>
 
                 <div class="plan-card plan-premium">
                     <h3>Premium</h3>
-                    <div class="plan-price">$4.99</div>
+                    <div class="plan-price" id="premium-price">$4.99</div>
                     <div class="plan-period">/month · Cancel anytime</div>
                     <ul class="plan-features">
                         <li>✉️ Unlimited email forwards</li>
@@ -965,8 +1072,8 @@
     <div class="mobile-support">
         <div class="container">
             <h2 class="section-title">📱 Works with any device</h2>
-            <p style="text-align: center; color: rgba(255,255,255,0.7); max-width: 600px; margin: -30px auto 0; font-size: 1.1em;">
-                Guard My Email works across all your devices
+            <p style="text-align: center; color: rgba(255,255,255,0.7); max-width: 700px; margin: -30px auto 20px; font-size: 1.1em;">
+                Email forwarding works everywhere. Native add-on currently available for Gmail only.
             </p>
 
             <div class="mobile-grid">
@@ -974,19 +1081,19 @@
                 <div class="mobile-card">
                     <span class="platform-badge badge-all">✉️ All Devices</span>
                     <span class="platform-icon">📧</span>
-                    <h3>Email Forwarding</h3>
-                    <p>Works on every device and email client. Simply forward any suspicious email to scan@guardmyemail.com and receive an analysis reply.</p>
+                    <h3>Email Forwarding (Universal)</h3>
+                    <p>Works on every device and email client - Gmail, Outlook, Apple Mail, Yahoo, ProtonMail, Thunderbird. Just forward to scan@guardmyemail.com from anywhere.</p>
                     <div class="status">
                         <div class="status-dot dot-green"></div>
-                        <span style="color: #54cb5f;">Available on all devices</span>
+                        <span style="color: #54cb5f;">Works everywhere</span>
                     </div>
                 </div>
 
                 <div class="mobile-card">
-                    <span class="platform-badge badge-android">🤖 Android</span>
+                    <span class="platform-badge badge-android">🤖 Gmail on Android</span>
                     <span class="platform-icon">📱</span>
-                    <h3>Gmail Add-on + Forwarding</h3>
-                    <p>Premium subscribers get the full Gmail add-on experience on Android. Scan any email with one tap - results appear instantly in the Gmail app.</p>
+                    <h3>Native Gmail Add-on</h3>
+                    <p>Premium subscribers get the full Gmail add-on experience. Scan any email with one tap - results appear instantly in the Gmail app.</p>
                     <div class="status">
                         <div class="status-dot dot-green"></div>
                         <span style="color: #3DDC84;">Full add-on support</span>
@@ -994,24 +1101,35 @@
                 </div>
 
                 <div class="mobile-card">
-                    <span class="platform-badge badge-ios">🍎 iPhone & iPad</span>
+                    <span class="platform-badge badge-ios">🍎 Gmail on iPhone</span>
                     <span class="platform-icon">📲</span>
-                    <h3>Gmail Add-on + Forwarding</h3>
-                    <p>Premium subscribers access the add-on through Gmail's menu (tap ⋮ → Add-ons → Guard My Email), or use email forwarding for even faster scanning.</p>
+                    <h3>Native Gmail Add-on</h3>
+                    <p>Premium subscribers access the add-on through Gmail's menu (tap ⋮ → Add-ons → Guard My Email) for instant one-tap scanning.</p>
                     <div class="status">
                         <div class="status-dot dot-green"></div>
-                        <span style="color: #54cb5f;">Fully supported</span>
+                        <span style="color: #54cb5f;">Full add-on support</span>
                     </div>
                 </div>
 
                 <div class="mobile-card">
-                    <span class="platform-badge badge-all">💻 Desktop</span>
+                    <span class="platform-badge badge-all">💻 Gmail on Desktop</span>
                     <span class="platform-icon">🖥️</span>
-                    <h3>Gmail Add-on + Forwarding</h3>
-                    <p>The full experience. Premium subscribers get the Gmail sidebar add-on for instant one-click scanning alongside the email forwarding service.</p>
+                    <h3>Native Gmail Add-on</h3>
+                    <p>The full experience. Premium subscribers get the Gmail sidebar add-on for instant one-click scanning directly in your inbox.</p>
                     <div class="status">
                         <div class="status-dot dot-blue"></div>
-                        <span style="color: #4285F4;">Full experience available</span>
+                        <span style="color: #4285F4;">Full add-on support</span>
+                    </div>
+                </div>
+                
+                <div class="mobile-card">
+                    <span class="platform-badge badge-yellow" style="background: rgba(251, 188, 4, 0.2); color: #FBBC04; border: 1px solid rgba(251, 188, 4, 0.3);">⏳ Outlook & Apple Mail</span>
+                    <span class="platform-icon">📮</span>
+                    <h3>Native Add-on (Coming Soon)</h3>
+                    <p>Want a native add-on for Outlook or Apple Mail? Join our waiting list and we'll notify you when it's available.</p>
+                    <div class="status">
+                        <div class="status-dot dot-yellow"></div>
+                        <a href="mailto:scan@guardmyemail.com?subject=Waiting List - Native Add-on" style="color: #FBBC04; font-weight: 600; text-decoration: underline;">Join waiting list</a>
                     </div>
                 </div>
 
@@ -1023,6 +1141,9 @@
     <div class="security-features">
         <div class="container">
             <h2 class="section-title">Security & Privacy First</h2>
+            <p style="text-align: center; color: #666; font-size: 1.1em; margin: -30px auto 40px; max-width: 700px;">
+                <strong>CASA Tier 2 Certified</strong> - Independently verified security assessment by Google
+            </p>
             <div class="features-grid">
                 <div class="feature">
                     <div class="feature-icon">🔒</div>
@@ -1068,7 +1189,7 @@
                 <div class="reasons">
                     <p><strong>REASONS:</strong></p>
                     <ul style="list-style-position: inside; padding-left: 0;">
-                        <li>Sender email domain (secure-bank-verify.com) is not affiliated with any legitimate banking institution</li>
+                        <li>Sender email domain is not affiliated with any legitimate banking institution</li>
                         <li>Creates false urgency by claiming account will be "suspended within 24 hours"</li>
                         <li>Requests sensitive information (account credentials) through a suspicious link</li>
                         <li>Contains multiple spelling and grammar errors uncommon in professional bank communications</li>
@@ -1085,7 +1206,7 @@
         <p>Forward any suspicious email to get instant analysis. 5 free scans per month.</p>
         <div class="email-display-box">
             <p style="margin-bottom: 10px; font-size: 0.9em; opacity: 0.9;">Free scam detection - forward any suspicious email to:</p>
-            <p class="cta-email">scan@guardmyemail.com</p>
+            <p class="cta-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="225141434c6245574350464f5b474f434b4e0c414d4f">[email&#160;protected]</a></p>
         </div>
         <p style="margin-top: 20px; opacity: 0.8; font-size: 0.95em;">
             Need more? <a href="upgrade.html" style="color: white; font-weight: bold; text-decoration: underline;">Upgrade to Premium</a> for unlimited scans.
@@ -1152,22 +1273,32 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Define tooltip functions first for immediate availability
-        function showHowToStart() {
-            const tooltip = document.querySelector('.how-to-tooltip');
-            tooltip.classList.add('show');
+    <script>
+        // Currency conversion rates (approximate)
+        const currencyRates = {
+            'USD': { symbol: '$', rate: 1, price: 4.99 },
+            'EUR': { symbol: '€', rate: 0.92, price: 4.59 },
+            'GBP': { symbol: '£', rate: 0.79, price: 3.95 },
+            'CAD': { symbol: 'CA$', rate: 1.35, price: 6.75 },
+            'AUD': { symbol: 'A$', rate: 1.52, price: 7.59 }
+        };
+
+        function updateCurrency() {
+            const select = document.getElementById('currency-select');
+            const currency = select.value;
+            const priceElement = document.getElementById('premium-price');
             
-            // Close tooltip when clicking outside
-            setTimeout(() => {
-                document.addEventListener('click', closeTooltipOnClickOutside);
-            }, 100);
+            const currencyData = currencyRates[currency];
+            priceElement.textContent = currencyData.symbol + currencyData.price.toFixed(2);
         }
-        
-        function closeTooltipOnClickOutside(event) {
-            const tooltip = document.querySelector('.how-to-tooltip');
-            const button = document.querySelector('.plan-btn-free');
-            
-            if (!tooltip.contains(event.target) && !button.contains(event.target)) {
-                tooltip.classList.remove('show');
-                d
+
+        // Enterprise form handling (existing)
+        document.getElementById('enterprise-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('enterprise-thanks').style.display = 'block';
+            document.querySelector('.enterprise-default').style.display = 'none';
+            this.reset();
+        });
+    </script>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cg
