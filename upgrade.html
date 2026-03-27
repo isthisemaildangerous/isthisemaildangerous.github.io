@@ -1162,3 +1162,14 @@
                 } else if (error.message) {
                     errorMsg += 'Error: ' + error.message + '\n\n';
                 } else {
+                            errorMsg += 'Error: ' + error.message + '\n\n';
+                }
+                
+                errorMsg += 'Please contact support at scan@guardmyemail.com';
+                alert(errorMsg);
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
