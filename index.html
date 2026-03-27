@@ -929,7 +929,10 @@
     <!-- Floating Header -->
     <div class="floating-header">
         <span>Try it now - forward an email to</span>
-        <a href="mailto:scan@guardmyemail.com" class="email-link">scan@guardmyemail.com</a>
+        <span style="font-weight: 700; color: white;">scan@guardmyemail.com</span>
+        <button onclick="copyEmail('header')" id="copy-btn-header" style="background: rgba(255,255,255,0.2); color: white; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: background 0.3s;">
+            📋 Copy
+        </button>
         <span>or</span>
         <a href="https://workspace.google.com/marketplace/app/guard_my_email/1028233364030" target="_blank">Install Gmail Add-on</a>
     </div>
@@ -943,7 +946,10 @@
         <p class="hero-warning">Protect yourself and your loved ones with our free scam detection</p>
         <div class="email-box">
             <p style="margin-bottom: 10px; font-size: 0.65em; opacity: 0.8;">Try the free scam detection - simply forward any suspicious email to:</p>
-            <p style="font-size: 1em; font-weight: 700; color: #34A853; margin: 0;">scan@guardmyemail.com</p>
+            <p style="font-size: 1em; font-weight: 700; color: #34A853; margin: 0 0 15px 0;">scan@guardmyemail.com</p>
+            <button onclick="copyEmail('hero')" id="copy-btn-hero" style="background: #34A853; color: white; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9em; transition: background 0.3s;">
+                📋 Copy Email Address
+            </button>
         </div>
         
         <!-- Gmail Add-on CTA -->
@@ -1082,7 +1088,7 @@
                     <span class="platform-badge badge-all">✉️ All Devices</span>
                     <span class="platform-icon">📧</span>
                     <h3>Email Forwarding (Universal)</h3>
-                    <p>Works on every device and email client - Gmail, Outlook, Apple Mail, Yahoo, ProtonMail, Thunderbird. Just forward to scan@guardmyemail.com from anywhere.</p>
+                    <p>Works on every device and email client - Gmail, Outlook, Apple Mail, Yahoo, ProtonMail, Thunderbird. Just forward to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e09383818ea087958192848d99858d81898cce838f8d">[email&#160;protected]</a> from anywhere.</p>
                     <div class="status">
                         <div class="status-dot dot-green"></div>
                         <span style="color: #54cb5f;">Works everywhere</span>
@@ -1129,7 +1135,7 @@
                     <p>Want a native add-on for Outlook or Apple Mail? Join our waiting list and we'll notify you when it's available.</p>
                     <div class="status">
                         <div class="status-dot dot-yellow"></div>
-                        <a href="mailto:scan@guardmyemail.com?subject=Waiting List - Native Add-on" style="color: #FBBC04; font-weight: 600; text-decoration: underline;">Join waiting list</a>
+                        <a href="/cdn-cgi/l/email-protection#5d2e3e3c331d3a283c2f39302438303c3431733e3230622e283f37383e29600a3c342934333a7d11342e297d707d133c29342b387d1c3939703233" style="color: #FBBC04; font-weight: 600; text-decoration: underline;">Join waiting list</a>
                     </div>
                 </div>
 
@@ -1273,7 +1279,25 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Copy email address function
+        function copyEmail(source) {
+            const email = 'scan@guardmyemail.com';
+            navigator.clipboard.writeText(email).then(function() {
+                const btn = document.getElementById('copy-btn-' + source);
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✓ Copied!';
+                btn.style.background = source === 'header' ? 'rgba(255,255,255,0.4)' : '#48bb78';
+                
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                    btn.style.background = source === 'header' ? 'rgba(255,255,255,0.2)' : '#34A853';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
         // Currency conversion rates (approximate)
         const currencyRates = {
             'USD': { symbol: '$', rate: 1, price: 4.99 },
@@ -1296,9 +1320,4 @@
         document.getElementById('enterprise-form')?.addEventListener('submit', function(e) {
             e.preventDefault();
             document.getElementById('enterprise-thanks').style.display = 'block';
-            document.querySelector('.enterprise-default').style.display = 'none';
-            this.reset();
-        });
-    </script>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cg
+            document.querySelector('
